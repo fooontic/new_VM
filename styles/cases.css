@@ -1,0 +1,71 @@
+.cases {
+    width: 80vw;
+    aspect-ratio: 1/1;
+    max-height: 60dvh;
+    border-radius: 32px;
+    padding: 40px;
+    background-color: #eee;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+  
+  .cases__list {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .cases__item {
+    font-size: 20px;
+    padding: 40px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cases__item_active {
+    background-color: #ddd;
+    border-radius: 16px;
+  }
+  
+  .cases__item::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: #ccc;
+    transition: transform 100ms;
+    transform: translateX(-100%);
+  } 
+  
+  .cases__item_active::after {
+    transform: translateX(calc(-100% + var(--progress, 0%)));
+  }
+  
+  .cases__pics {
+    background-color: #ddd;
+    width: 100%;
+    padding: 40px;
+  }
+  
+  .cases__picture {
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+  
+  .cases__picture_active {
+    display: block;
+  }
+  
+  .cases__picture_red { background-color: red; }
+  .cases__picture_green { background-color: green; }
+  .cases__picture_blue { background-color: blue; }
+  .cases__picture_yellow { background-color: yellow; }

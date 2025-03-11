@@ -5,16 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vadik Matveev — an Amsterdam based Product Designer with more then 10 years of experience</title>
 
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
-
+<body class="main">
 
     <section class="hero">
         <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.75/build/spline-viewer.js"></script>
         <spline-viewer url="https://prod.spline.design/aBcRMcGXRuEC2psw/scene.splinecode"></spline-viewer>
 
     </section>
+
+    <div class="main__section">
+
+        <section class="cases">
+            <ul class="cases__list">
+            <li class="cases__item cases__item_red cases__item_active">Red</li>
+            <li class="cases__item cases__item_green">Green</li>
+            <li class="cases__item cases__item_blue">Blue</li>
+            <li class="cases__item cases__item_yellow">Yellow</li>
+            </ul>
+            <div class="cases__pics">
+            <div class="cases__picture cases__picture_red cases__picture_active"></div>
+            <div class="cases__picture cases__picture_green"></div>
+            <div class="cases__picture cases__picture_blue"></div>
+            <div class="cases__picture cases__picture_yellow"></div>
+            </div>
+        </section>
+
+    </div>
+
+    <script type="module" src="./main.js"></script>
 
 </body>
 </html>
