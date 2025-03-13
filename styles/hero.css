@@ -7,7 +7,7 @@
 }
 
 .hero__3d {
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
@@ -37,6 +37,19 @@
     font-family: "swear-display", sans-serif;
 }
 
+.hero__3d {
+    animation: disappearOnScroll linear both;
+    animation-range: cover 50% cover 80%;
+    animation-timeline: view(block);
+}
+
+.hero__text,
+.hero__carousel {
+    animation: fadeOnScroll linear both;
+    animation-range: cover 50% cover 80%;
+    animation-timeline: view(block);
+}
+
 @keyframes heroCarousel {
     0%, 15% {
         transform: translateY(0);
@@ -60,6 +73,26 @@
 
     100% {
         transform: translateY(calc(1.15em * -5));
+    }
+}
+
+@keyframes disappearOnScroll {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOnScroll {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
     }
 }
 
