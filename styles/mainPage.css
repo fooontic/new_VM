@@ -1,10 +1,19 @@
 .main {
+    --cc-bg: #001683;
+
     display: block;
+}
+
+.main__hero {
+    background-color: var(--cc-bg);
 }
 
 .main__section {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100dvh;
+    /* width: 80vw; */
+    /* max-width: 1200px; */
+    padding: 100px;
+    background-color: var(--cc-bg);
 }

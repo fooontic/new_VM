@@ -1,0 +1,91 @@
+.header {
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 24px 32px;
+    box-sizing: border-box;
+}
+
+/* .header__logo {
+    opacity: 0.8;
+} */
+
+.header__logo svg {
+    height: 24px;
+    shape-rendering: geometricPrecision;
+}
+
+.header__nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header__link {
+    position: relative;
+    padding-right: 20px;
+    font-size: var(--size-m);
+    line-height: 48px;
+    color: var(--c-content);
+    text-decoration: none;
+    opacity: 0.6;
+    transition: opacity 160ms;
+}
+
+.header__link::before,
+.header__link::after {
+    content: '';
+    position: absolute;
+    border-top: .08em solid var(--c-content);
+    border-right: .08em solid var(--c-content);
+    transform: translate(0, 0);
+    transition: transform 600ms;
+    transition-timing-function: ease-in;
+    
+}
+
+.header__link::before {
+    width: .5em;
+    height: .5em;
+    right: 0;
+    top: 12px;
+}
+
+.header__link::after {
+    width: .30em;
+    height: .30em;
+    right: 4px;
+    top: 16px;
+    transition-delay: 50px;
+}
+
+.header__link:hover {
+    opacity: 1;
+}
+
+@keyframes lnArrowBounce {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(25%, -25%);
+    }
+}
+
+.header__link:hover::before,
+.header__link:hover::after {
+    transform: translate(50%, -50%);
+    transition-timing-function: linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%);
+}
+
+.header__link:hover::after {
+    animation-delay: 50ms;
+}
+
+.header__link:not(:hover)::before,
+.header__link:not(:hover)::after {
+    transition-duration: 240ms;
+}

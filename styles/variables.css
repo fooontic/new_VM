@@ -1,0 +1,14 @@
+/* COLORS */
+:root {
+    --c-glass: #bbb;
+    --c-light: #fff;
+    --c-dark: #000;
+
+    --c-content: #fff;
+}
+
+
+/* TYPE */
+:root {
+    --size-m: 20px;
+}
