@@ -1,9 +1,9 @@
-export function initScrollEffect(selector) {
+export function heroScrollEffect(selector) { 
     const targetElement = document.querySelector(selector);
     if (!targetElement) return;
 
     function handleScroll() {
-        const scrollY = window.scrollY; // Используем window.scrollY вместо устаревшего pageYOffset
+        const scrollY = window.scrollY; 
         const maxScroll = window.innerHeight * 0.8; // Один полный экран для полного исчезновения
 
         // Определяем, насколько далеко прокручена страница (0 - начало, 1 - граница одного экрана)

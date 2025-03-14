@@ -1,11 +1,11 @@
 .main {
     --cc-bg: #001683;
-
+    
+    background-color: var(--cc-bg);
     display: block;
 }
 
 .main__hero {
-    background-color: var(--cc-bg);
     height: 100dvh;
 }
 
@@ -13,8 +13,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 80vw; */
-    /* max-width: 1200px; */
-    padding: 100px;
-    background-color: var(--cc-bg);
+    height: 90vh;
 }

@@ -26,6 +26,7 @@
         0px 1px 5px 0px color-mix(in srgb, var(--c-dark) 12%, transparent), 
         0px 6px 16px 0px color-mix(in srgb, var(--c-dark) 10%, transparent);
     overflow: hidden;
+    transform-origin: top;
     /* animation: casesOnScroll linear both;
     animation-range: cover;
     animation-timeline: view(block); */

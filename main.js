@@ -1,7 +1,8 @@
-import { initCases } from "./scripts/cases.js";
-import { initScrollEffect } from "./scripts/hero.js";
+import { initCases, casesScrollEffect } from "./scripts/cases.js";
+import { heroScrollEffect } from "./scripts/hero.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     initCases();
-    initScrollEffect(".hero"); // Замени на нужный селектор
+    heroScrollEffect(".hero"); // Замени на нужный селектор
+    casesScrollEffect(".cases");
 });

@@ -115,4 +115,46 @@ export function initCases() {
             }
         });
     });
-};
+}
+
+export function casesScrollEffect(selector) {
+    const targetElement = document.querySelector(selector);
+    if (!targetElement) return;
+
+    function handleScroll() {
+        const scrollY = window.scrollY; 
+        const maxScroll = window.innerHeight * 0.8; // Один полный экран
+        const minScale = 0.7;
+        const maxScale = 1;
+        const minTranslateY = 0.3;
+        const maxTranslateY = 0;
+
+        // Определяем, насколько далеко прокручена страница (0 - начало, 1 - граница одного экрана)
+        let scrollRatio = Math.min(1, scrollY / maxScroll);
+
+        // Увеличиваем scale
+        // let scaleValue = Math.min(scrollRatio, 1); 
+        let scaleValue = minScale + (maxScale - minScale) * scrollRatio;
+        let translateYValue = minTranslateY + (maxTranslateY - minTranslateY) * scrollRatio;
+        let translateYPercent = translateYValue * -100;
+
+        console.log(translateYValue);
+
+        targetElement.style.transform = `translateY(${translateYPercent}%) scale(${scaleValue})`;
+    }
+
+    // Используем requestAnimationFrame для плавности
+    function onScroll() {
+        requestAnimationFrame(handleScroll);
+    }
+
+    window.addEventListener("scroll", onScroll);
+    handleScroll(); // Первоначальный вызов для установки начального состояния
+}
+
+// 0.8 + (1 - 0.8) * 0.9 = 0.98
+// 0.8 + (1 - 0.8) * 0.8 = 0.96
+// 0.8 + (1 - 0.8) * 0.7 = 0.94
+
+// 1288/1355 = 0.95
+// 1200/1355 = 0.88
