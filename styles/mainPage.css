@@ -6,6 +6,7 @@
 
 .main__hero {
     background-color: var(--cc-bg);
+    height: 100dvh;
 }
 
 .main__section {
