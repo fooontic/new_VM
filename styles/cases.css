@@ -1,13 +1,11 @@
-
-
-@keyframes casesOnScroll {
+/* @keyframes casesOnScroll {
     from {
         transform: translateY(-40%) scale(0.7);
     } 
     to {
         transform: translateY(0) scale(1);;
     }
-}
+} */
 
 .cases {
     width: 80vw;
@@ -28,9 +26,9 @@
         0px 1px 5px 0px color-mix(in srgb, var(--c-dark) 12%, transparent), 
         0px 6px 16px 0px color-mix(in srgb, var(--c-dark) 10%, transparent);
     overflow: hidden;
-    animation: casesOnScroll linear both;
+    /* animation: casesOnScroll linear both;
     animation-range: cover;
-    animation-timeline: view(block);
+    animation-timeline: view(block); */
   }
   
 .cases__list {

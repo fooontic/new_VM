@@ -37,7 +37,7 @@
     font-family: "swear-display", sans-serif;
 }
 
-.hero__3d {
+/* .hero__3d {
     animation: disappearOnScroll linear both;
     animation-range: cover 50% cover 80%;
     animation-timeline: view(block);
@@ -48,6 +48,27 @@
     animation: fadeOnScroll linear both;
     animation-range: cover 50% cover 80%;
     animation-timeline: view(block);
+} */
+
+.hero__carousel {
+    font-family: "swear-display-cilati", sans-serif;
+    font-size: 5.3vw;
+    line-height: 1.15em;
+    height: 1em;
+    margin-top: 0.15em;
+    text-align: center;
+    font-weight: 700;
+    color: #80FF7E;
+    mix-blend-mode: difference;
+    overflow: hidden;
+}
+
+.hero__carousel-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-top: -0.1em;
+    animation: heroCarousel 12s cubic-bezier(0.65, 0.05, 0.17, 1) infinite;
 }
 
 @keyframes heroCarousel {
@@ -76,7 +97,7 @@
     }
 }
 
-@keyframes disappearOnScroll {
+/* @keyframes disappearOnScroll {
     from {
         transform: scale(1);
         opacity: 1;
@@ -94,25 +115,4 @@
     to {
         opacity: 0;
     }
-}
-
-.hero__carousel {
-    font-family: "swear-display-cilati", sans-serif;
-    font-size: 5.3vw;
-    line-height: 1.15em;
-    height: 1em;
-    margin-top: 0.15em;
-    text-align: center;
-    font-weight: 700;
-    color: #80FF7E;
-    mix-blend-mode: difference;
-    overflow: hidden;
-}
-
-.hero__carousel-list {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    margin-top: -0.1em;
-    animation: heroCarousel 12s cubic-bezier(0.65, 0.05, 0.17, 1) infinite;
-}
+} */
