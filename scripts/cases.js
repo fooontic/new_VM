@@ -119,6 +119,7 @@ export function initCases() {
 
 export function casesScrollEffect(selector) {
     const targetElement = document.querySelector(selector);
+    const mainPage = document.querySelector(".main");
     if (!targetElement) return;
 
     function handleScroll() {
@@ -128,6 +129,7 @@ export function casesScrollEffect(selector) {
         const maxScale = 1;
         const minTranslateY = 0.3;
         const maxTranslateY = 0;
+        const newColor = "#187CC4";
 
         // Определяем, насколько далеко прокручена страница (0 - начало, 1 - граница одного экрана)
         let scrollRatio = Math.min(1, scrollY / maxScroll);
@@ -137,10 +139,13 @@ export function casesScrollEffect(selector) {
         let scaleValue = minScale + (maxScale - minScale) * scrollRatio;
         let translateYValue = minTranslateY + (maxTranslateY - minTranslateY) * scrollRatio;
         let translateYPercent = translateYValue * -100;
+        let newColorRatio = scrollRatio * 100;
 
-        console.log(translateYValue);
+        console.log(newColorRatio);
+        console.log(mainPage);
 
         targetElement.style.transform = `translateY(${translateYPercent}%) scale(${scaleValue})`;
+        mainPage.style.backgroundColor = `color-mix(in srgb, ${newColor} ${newColorRatio}%, var(--cc-bg))`;
     }
 
     // Используем requestAnimationFrame для плавности
