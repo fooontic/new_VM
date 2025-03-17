@@ -117,6 +117,7 @@ export function initCases() {
     });
 }
 
+
 export function casesScrollEffect(selector) {
     const targetElement = document.querySelector(selector);
     const mainPage = document.querySelector(".main");
@@ -129,7 +130,7 @@ export function casesScrollEffect(selector) {
         const maxScale = 1;
         const minTranslateY = 0.3;
         const maxTranslateY = 0;
-        const newColor = "#187CC4";
+        const newColor = "#52018C";
 
         // Определяем, насколько далеко прокручена страница (0 - начало, 1 - граница одного экрана)
         let scrollRatio = Math.min(1, scrollY / maxScroll);

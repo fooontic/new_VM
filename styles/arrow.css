@@ -1,0 +1,42 @@
+.arrow {
+    display: block;
+    width: 12px;
+    height: 1.6px;
+    background-color: currentColor;
+    transition: scale 300ms ease-in;
+    opacity: 0;
+    transition: opacity 160ms;
+}
+
+.arrow::before,
+.arrow::after {
+    content: '';
+    position: absolute;
+}
+
+.arrow::before {
+    right: 0;
+    width: 100%;
+    height: 1.6px;
+    background-color: currentColor;
+    transform-origin: right center;
+    transition: scale 600ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.arrow::after {
+    right: 0;
+    width: 8px;
+    height: 8px;
+    border-top: 1.6px solid currentColor;
+    border-right: 1.6px solid currentColor;
+    rotate: 45deg;
+    translate: 0 calc(-50% + 0.8px);
+}
+
+.arrow-_-out:hover .arrow {
+    opacity: 1;
+}
+
+.arrow-_-out:hover .arrow::before {
+    scale: 3 1;
+}

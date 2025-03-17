@@ -37,7 +37,7 @@
 .hero__h {
     font-size: clamp(28px, 5vw, 80px);
     line-height: 1.2em;
-    font-family: "swear-display", sans-serif;
+    font-family: var(--f-display);
 }
 
 /* .hero__3d {
@@ -54,7 +54,7 @@
 } */
 
 .hero__carousel {
-    font-family: "swear-display-cilati", sans-serif;
+    font-family: var(--f-display-alt);
     font-size: clamp(30px, 5.3vw, 84px);
     line-height: 1.15em;
     height: 1em;
