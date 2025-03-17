@@ -40,19 +40,6 @@
     font-family: var(--f-display);
 }
 
-/* .hero__3d {
-    animation: disappearOnScroll linear both;
-    animation-range: cover 50% cover 80%;
-    animation-timeline: view(block);
-}
-
-.hero__text,
-.hero__carousel {
-    animation: fadeOnScroll linear both;
-    animation-range: cover 50% cover 80%;
-    animation-timeline: view(block);
-} */
-
 .hero__carousel {
     font-family: var(--f-display-alt);
     font-size: clamp(30px, 5.3vw, 84px);
@@ -99,23 +86,3 @@
         transform: translateY(calc(1.15em * -5));
     }
 }
-
-/* @keyframes disappearOnScroll {
-    from {
-        transform: scale(1);
-        opacity: 1;
-    }
-    to {
-        transform: scale(0.3);
-        opacity: 0;
-    }
-}
-
-@keyframes fadeOnScroll {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-} */

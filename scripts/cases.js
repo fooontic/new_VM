@@ -157,10 +157,3 @@ export function casesScrollEffect(selector) {
     window.addEventListener("scroll", onScroll);
     handleScroll(); // Первоначальный вызов для установки начального состояния
 }
-
-// 0.8 + (1 - 0.8) * 0.9 = 0.98
-// 0.8 + (1 - 0.8) * 0.8 = 0.96
-// 0.8 + (1 - 0.8) * 0.7 = 0.94
-
-// 1288/1355 = 0.95
-// 1200/1355 = 0.88

@@ -9,10 +9,6 @@
     box-sizing: border-box;
 }
 
-/* .header__logo {
-    opacity: 0.8;
-} */
-
 .header__logo svg {
     height: 24px;
     shape-rendering: geometricPrecision;
