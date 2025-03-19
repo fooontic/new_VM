@@ -24,10 +24,10 @@
 }
 
 .cases__title {
-    margin: 24px 0 20px;
+    margin: 2.6vh 0 2.2vh;
     padding-left: 32px;
     font-family: var(--f-display);
-    font-size: calc(var(--fz) * 2.4);
+    font-size: calc(var(--fz) * 2.6);
     line-height: 1em;
     transition: translate 160ms ease-in, opacity 160ms;
 }
@@ -37,6 +37,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    flex-basis: 50%;
 }
 
 .cases__list {
@@ -65,7 +66,7 @@
         "tags tags";
     align-items: baseline;
     border-radius: 16px;
-    padding: 24px 32px;
+    padding: 2.6vh 32px;
     text-decoration: none;
     color: var(--c-content);
     transition: box-shadow 200ms, background-color 160ms;
@@ -236,6 +237,8 @@
     width: 100%;
     padding: 32px;
     border-radius: 16px;
+    box-sizing: border-box;
+    flex-basis: 50%;
 }
 
 .cases__picture {

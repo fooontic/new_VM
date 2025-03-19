@@ -10,8 +10,11 @@
 }
 
 .header__logo svg {
+    fill: color-mix(in srgb, var(--c-content) 70%, transparent);
+    /* stroke: var(--c-content); */
     height: 24px;
     shape-rendering: geometricPrecision;
+    /* backdrop-filter: blur(24px); */
 }
 
 .header__nav {
