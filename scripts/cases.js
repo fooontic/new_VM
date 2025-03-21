@@ -121,6 +121,7 @@ export function initCases() {
 export function casesScrollEffect(selector) {
     const targetElement = document.querySelector(selector);
     const mainPage = document.querySelector(".main");
+    const casesPic = document.querySelector(".cases__pictures");
     if (!targetElement) return;
 
     function handleScroll() {
@@ -128,7 +129,7 @@ export function casesScrollEffect(selector) {
         const maxScroll = window.innerHeight * 0.8; // Один полный экран
         const minScale = 0.7;
         const maxScale = 1;
-        const minTranslateY = 0.3;
+        const minTranslateY = 0.05;
         const maxTranslateY = 0;
         const newColor = "#52018C";
 
@@ -143,7 +144,8 @@ export function casesScrollEffect(selector) {
         let newColorRatio = scrollRatio * 100;
 
         targetElement.style.transform = `translateY(${translateYPercent}%) scale(${scaleValue})`;
-        mainPage.style.backgroundColor = `color-mix(in srgb, ${newColor} ${newColorRatio}%, var(--cc-bg))`;
+        mainPage.style.backgroundColor = `color-mix(in srgb, ${newColor} ${scrollRatio * 100}%, var(--cc-bg))`;
+        casesPic.style.opacity = scrollRatio;
     }
 
     // Используем requestAnimationFrame для плавности
