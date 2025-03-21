@@ -1,7 +1,7 @@
 
 export function initCases() {
     const items = document.querySelectorAll(".cases__item");
-    const pictures = document.querySelectorAll(".cases__picture");
+    const pictures = document.querySelectorAll(".cases__pic");
     const casesContainer = document.querySelector(".cases"); // Контейнер с элементами
     if (!casesContainer) return; // Если блока нет, выход
 
@@ -29,10 +29,10 @@ export function initCases() {
                 items[idx].style.removeProperty("--progress"); // Удаление CSS-свойства
             }
         });
-        pictures.forEach((pic) => pic.classList.remove("cases__picture_active"));
+        pictures.forEach((pic) => pic.classList.remove("cases__pic_active"));
         
         items[index].classList.add("cases__item_active");
-        pictures[index].classList.add("cases__picture_active");
+        pictures[index].classList.add("cases__pic_active");
         
         currentIndex = index;
         if (hoveredIndex === null) {
@@ -141,9 +141,6 @@ export function casesScrollEffect(selector) {
         let translateYValue = minTranslateY + (maxTranslateY - minTranslateY) * scrollRatio;
         let translateYPercent = translateYValue * -100;
         let newColorRatio = scrollRatio * 100;
-
-        console.log(newColorRatio);
-        console.log(mainPage);
 
         targetElement.style.transform = `translateY(${translateYPercent}%) scale(${scaleValue})`;
         mainPage.style.backgroundColor = `color-mix(in srgb, ${newColor} ${newColorRatio}%, var(--cc-bg))`;
