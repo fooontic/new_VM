@@ -1,12 +1,12 @@
 .cases {
-    --fz: clamp(16px, 1.5vw, 20px);
+    --fz: clamp(16px, 1.2vw, 20px);
     --more-height: 60px;
 
-    width: 80vw;
+    width: 75vw;
     max-width: 1400px;
     min-height: min-content;
-    height: 700px;
-    /* max-height: 80dvh; */
+    height: 80dvh;
+    max-height: 860px;
     box-sizing: border-box;
     border-radius: 32px;
     padding: 16px;
@@ -26,7 +26,7 @@
 }
 
 .cases__title {
-    margin: 2.6vh 0 2.2vh;
+    margin: 2.6dvh 0 2.2dvh;
     padding-left: 32px;
     font-family: var(--f-display);
     font-size: calc(var(--fz) * 2.6);
@@ -38,7 +38,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 0.8dvh;
     flex-basis: 50%;
 }
 
@@ -155,8 +155,7 @@
 
 .cases__name {
     grid-area: name;
-    margin: 0.2em 0 0.3em;
-    font-size: clamp(20px, 3vw, 32px);
+    margin: 0.7dvh 0 1dvh;
     font-size: calc(var(--fz) * 1.4);
     font-weight: 400;
     display: -webkit-box;
@@ -194,8 +193,10 @@
 
 .cases__arrow {
     position: absolute;
-    right: 32px;
-    bottom: 30px;
+    grid-area: tags;
+    right: 0;
+    top: 50%;
+    translate: 0 -50%;
 }
 
 .cases__more {

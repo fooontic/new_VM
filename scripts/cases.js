@@ -141,7 +141,6 @@ export function casesScrollEffect(selector) {
         let scaleValue = minScale + (maxScale - minScale) * scrollRatio;
         let translateYValue = minTranslateY + (maxTranslateY - minTranslateY) * scrollRatio;
         let translateYPercent = translateYValue * -100;
-        let newColorRatio = scrollRatio * 100;
 
         targetElement.style.transform = `translateY(${translateYPercent}%) scale(${scaleValue})`;
         mainPage.style.backgroundColor = `color-mix(in srgb, ${newColor} ${scrollRatio * 100}%, var(--cc-bg))`;
@@ -154,5 +153,6 @@ export function casesScrollEffect(selector) {
     }
 
     window.addEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
     handleScroll(); // Первоначальный вызов для установки начального состояния
 }
