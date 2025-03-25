@@ -15,6 +15,12 @@ export function heroScrollEffect(selector) {
 
         targetElement.style.transform = `scale(${scaleValue})`;
         targetElement.style.opacity = opacityValue;
+
+        if (opacityValue == 0) {
+            targetElement.style.display = `block`;
+        } else {
+            targetElement.style.removeProperty('display');
+        }
     }
 
     // Используем requestAnimationFrame для плавности

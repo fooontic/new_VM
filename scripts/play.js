@@ -8,6 +8,9 @@ export function playScrollEffect(selector) {
     function handleScroll() {
         const rect = targetElement.getBoundingClientRect();
         const elementHeight = rect.height;
+
+        const minTranslateY = 0.12;
+        const maxTranslateY = 0;
         
         const visiblePart = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
 
@@ -16,30 +19,21 @@ export function playScrollEffect(selector) {
         // если видимость меньше 10%, scale остаётся 0.5
         const minRatio = 0.1;
         if (visibleRatio < minRatio) {
-            targetElement.style.transform = `scale(0.6)`;
+            targetElement.style.transform = `scale(0.7) translateY(-12dvh)`;
             return;
         }
 
-        const progress = (visibleRatio - minRatio) / (1 - minRatio);
+        let progress = (visibleRatio - minRatio) / (1 - minRatio);
 
-        console.log(progress);
+        let scale = 0.7 + 0.3 * progress;
+        let translateY = minTranslateY + (maxTranslateY - minTranslateY) * progress;
 
-        const scale = 0.6 + 0.4 * progress;
+        // console.log(translateY * -100);
 
-        targetElement.style.transform = `scale(${scale})`;
+        // targetElement.style.transform = scale;
+        targetElement.style.transform = `scale(${scale}) translateY(${translateY * -100}dvh)`;
         leftPicture.style.translate = `${(0.2 + 0.1 * progress) * -100}%`;
         rightPicture.style.translate = `${(0.2 + 0.1 * progress) * 100}%`;
-
-        // Увеличиваем scale
-        // let scaleValue = Math.min(scrollRatio, 1); 
-        // let scaleValue = minScale + (maxScale - minScale) * scrollRatio;
-        // let translateYValue = minTranslateY + (maxTranslateY - minTranslateY) * scrollRatio;
-        // let translateYPercent = translateYValue * -100;
-        // let newColorRatio = scrollRatio * 100;
-
-        // targetElement.style.transform = `translateY(${translateYPercent}%) scale(${scaleValue})`;
-        // mainPage.style.backgroundColor = `color-mix(in srgb, ${newColor} ${scrollRatio * 100}%, var(--cc-bg))`;
-        // casesPic.style.opacity = scrollRatio;
     }
 
     // Используем requestAnimationFrame для плавности

@@ -6,12 +6,12 @@
 }
 
 .main__hero {
-    height: 90dvh;
+    height: 95dvh;
 }
 
 .main__cases {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    /* padding: 10dvh 0; */
 }
