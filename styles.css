@@ -8,6 +8,7 @@
 @import "./styles/nav.css";
 @import "./styles/arrow.css";
 @import "./styles/play.css";
+@import "./styles/footer.css";
 
 @font-face {
   font-family: "DM Sans";

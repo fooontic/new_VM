@@ -1,0 +1,74 @@
+.footer {
+    width: 100%;
+    margin-top: 20dvh;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+.footer__cta {
+    margin: 0 0 1em 0;
+    font-size: 9.25vw;
+    line-height: 0.6em;
+    font-family: var(--f-display);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.footer__chat {
+    font-family: var(--f-display-alt);
+    color: var(--c-action);
+    text-decoration-thickness: 0.05em;
+    /* text-decoration-style: wavy; */
+    text-underline-position: under;
+    line-height: 1;
+}
+
+.footer__about {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    margin-bottom: 10dvh;
+}
+
+.footer__madeby {
+    margin: 0;
+    font-size: var(--size-s);
+    opacity: 0.5;
+    width: 300px;
+}
+
+.footer h4 {
+    margin: 0 0 1em 0;
+    font-size: var(--size-s);
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+    opacity: 0.5;
+}
+
+.footer__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+}
+
+.footer__link {
+    font-size: var(--size-m);
+    color: var(--c-content);
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+.footer__link:hover {
+    opacity: 1;
+}
+
+.footer__copyright {
+    font-size: var(--size-s);
+    opacity: 0.5;
+    margin: 0;
+}
+

@@ -126,7 +126,7 @@ export function casesScrollEffect(selector) {
 
     function handleScroll() {
         const scrollY = window.scrollY; 
-        const maxScroll = window.innerHeight * 0.8; // Один полный экран
+        const maxScroll = window.innerHeight * 0.6; 
         const minScale = 0.7;
         const maxScale = 1;
         const minTranslateY = 0.05;
