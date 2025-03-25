@@ -270,6 +270,6 @@
 }
 
 /* .cases__pic_pl { background-color: red; } */
-.cases__pic_pl2 { background-color: green; }
-.cases__pic_ya { background-color: blue; }
-.cases__pic_ya2 { background-color: yellow; }
+.cases__pic_pl2 { background-color: color-mix(in srgb, yellow 30%, transparent); }
+.cases__pic_ya { background-color: color-mix(in srgb, blue 30%, transparent); }
+.cases__pic_ya2 { background-color: color-mix(in srgb, red 30%, transparent); }
