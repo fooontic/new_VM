@@ -2,6 +2,7 @@
     --cc-bg: #001683;
     
     background-color: var(--cc-bg);
+    transition: background-color 500ms;
     display: block;
 }
 

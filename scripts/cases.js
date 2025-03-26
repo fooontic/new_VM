@@ -1,9 +1,15 @@
-
 export function initCases() {
     const items = document.querySelectorAll(".cases__item");
     const pictures = document.querySelectorAll(".cases__pic");
     const casesContainer = document.querySelector(".cases"); // Контейнер с элементами
+    const root = document.querySelector(".main");
     if (!casesContainer) return; // Если блока нет, выход
+
+    const pic1Color = "#52018C";
+    const pic2Color = "#8C0180";
+    const pic3Color = "#014B8C";
+    const pic4Color = "#42018C";
+    const defaultColor = "#001683";
 
     let currentIndex = 0;
     let interval;
@@ -63,6 +69,7 @@ export function initCases() {
                 items[index].style.removeProperty("--progress");
                 currentIndex = (currentIndex + 1) % items.length;
                 setActive(currentIndex);
+                updateBackgroundColor();
             }
         }, progressUpdateInterval);
         progressTimers.set(index, interval);
@@ -76,6 +83,7 @@ export function initCases() {
         interval = setInterval(() => {
             currentIndex = (currentIndex + 1) % items.length;
             setActive(currentIndex);
+            updateBackgroundColor();
         }, timerDuration - (progressIntervals.get(currentIndex) || 0) / 100 * timerDuration);
         startProgressTimer(currentIndex);
     }
@@ -85,10 +93,27 @@ export function initCases() {
         clearInterval(progressTimers.get(currentIndex));
     }
 
+    function updateBackgroundColor() {
+        const rect = casesContainer.getBoundingClientRect();
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        const visibleHeight = Math.min(viewportHeight, rect.bottom) - Math.max(0, rect.top);
+        const visibleRatio = visibleHeight / rect.height;
+
+        if (visibleRatio > 0.5) {
+            const activeIndex = Array.from(items).findIndex(item => item.classList.contains("cases__item_active"));
+            const color = [pic1Color, pic2Color, pic3Color, pic4Color][activeIndex] || defaultColor;
+            root.style.setProperty("--cc-bg", color);
+        } else {
+            root.style.setProperty("--cc-bg", defaultColor);
+        }
+    }
+
     function checkVisibility() {
         const rect = casesContainer.getBoundingClientRect();
         const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
         isVisible = rect.top >= 0 && rect.bottom <= viewportHeight * 1.2; // Проверяем, видим ли блок на 80%
+
+        updateBackgroundColor();
         
         if (isVisible) {
             startTimer();
@@ -107,6 +132,7 @@ export function initCases() {
             stopTimer();
             hoveredIndex = index;
             setActive(index);
+            updateBackgroundColor();
         });
         item.addEventListener("mouseleave", function () {
             if (hoveredIndex === index) {
@@ -143,7 +169,7 @@ export function casesScrollEffect(selector) {
         let translateYPercent = translateYValue * -100;
 
         targetElement.style.transform = `translateY(${translateYPercent}%) scale(${scaleValue})`;
-        mainPage.style.backgroundColor = `color-mix(in srgb, ${newColor} ${scrollRatio * 100}%, var(--cc-bg))`;
+        // mainPage.style.backgroundColor = `color-mix(in srgb, ${newColor} ${scrollRatio * 100}%, var(--cc-bg))`;
         casesPic.style.opacity = scrollRatio;
     }
 

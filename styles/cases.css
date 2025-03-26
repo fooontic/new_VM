@@ -249,6 +249,10 @@
     border-radius: 16px;
     box-sizing: border-box;
     background-color: color-mix(in srgb, var(--cc-bg) 80%, transparent);
+    transition: background-color 500ms;
+    box-shadow:     
+        inset 0.5px 1px 0 0 color-mix(in srgb, var(--c-dark) 16%, transparent),
+        inset -0.5px -1px 0 0 color-mix(in srgb, var(--c-light) 16%, transparent);
 }
 
 .cases__pic {
@@ -269,7 +273,3 @@
     display: block;
 }
 
-/* .cases__pic_pl { background-color: red; } */
-.cases__pic_pl2 { background-color: color-mix(in srgb, yellow 30%, transparent); }
-.cases__pic_ya { background-color: color-mix(in srgb, blue 30%, transparent); }
-.cases__pic_ya2 { background-color: color-mix(in srgb, red 30%, transparent); }
