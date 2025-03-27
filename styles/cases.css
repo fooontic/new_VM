@@ -1,4 +1,4 @@
-.cases {
+.cases_desktop {
     --fz: clamp(16px, 1.2vw, 20px);
     --more-height: 60px;
 
@@ -273,3 +273,96 @@
     display: block;
 }
 
+@media (min-width: 801px) {
+    .cases_mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .cases_desktop {
+        display: none;
+    }
+
+    .cases_mobile .cases__title {
+        font-size: 28px;
+        margin-top: 24px;
+        margin-bottom: 24px;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .cases_mobile .cases__item {
+        margin-bottom: 100px;
+
+        display: flex;
+        flex-direction: column;
+        width: calc(100vw - 80px);
+        height: 70dvh;
+        padding: 20px 20px 24px 20px;
+        box-sizing: border-box;
+        border-radius: 20px;
+        color: var(--c-content);
+        text-decoration: none;
+        background-color: color-mix(in srgb, var(--c-glass) 18%, transparent);
+        backdrop-filter: blur(24px);
+        box-shadow: 
+            inset 0 0 0 1px color-mix(in srgb, var(--c-light) 9%, transparent),
+            inset 0.3px 1px 0px 0px color-mix(in srgb, var(--c-light) 20%, transparent), 
+            inset -0.3px -1px 5px 0px color-mix(in srgb, var(--c-dark) 18%, transparent), 
+            0px 1px 5px 0px color-mix(in srgb, var(--c-dark) 12%, transparent), 
+            0px 6px 16px 0px color-mix(in srgb, var(--c-dark) 10%, transparent);
+    }
+
+    .cases_mobile .cases__pic {
+        display: block;
+        width: auto;    
+    }
+
+    .cases_mobile .cases__name {
+        position: relative;
+        padding-top: 16px;
+        margin-top: 20px;
+        margin-bottom: 8px;
+        font-size: 20px;
+        overflow: initial;
+    }
+
+    .cases_mobile .cases__name::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -8px;
+        width: calc(100% + 16px);
+        height: 1px;
+        background-color: color-mix(in srgb, var(--c-light) 9%, transparent);
+    }
+
+    .cases_mobile .cases__info {
+        position: relative;
+        display: flex;
+        gap: 8px;
+    }
+
+    .cases_mobile .cases__company {
+        font-size: 14px;
+        opacity: 1;
+    }
+
+    .cases_mobile .cases__year {
+        font-size: 14px;
+    }
+
+    .cases_mobile .cases__chevron {
+        position: absolute;
+        right: 0;
+        display: block;
+        right: 1px;
+        width: 6px;
+        height: 6px;
+        border-top: 2px solid currentColor;
+        border-right: 2px solid currentColor;
+        rotate: 45deg;
+        translate: 0 3px;
+    }
+}

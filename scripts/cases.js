@@ -1,7 +1,7 @@
 export function initCases() {
-    const items = document.querySelectorAll(".cases__item");
-    const pictures = document.querySelectorAll(".cases__pic");
-    const casesContainer = document.querySelector(".cases"); // Контейнер с элементами
+    const items = document.querySelectorAll(".cases_desktop .cases__item");
+    const pictures = document.querySelectorAll(".cases_desktop .cases__pic");
+    const casesContainer = document.querySelector(".cases_desktop"); // Контейнер с элементами
     const root = document.querySelector(".main");
     if (!casesContainer) return; // Если блока нет, выход
 
@@ -147,7 +147,7 @@ export function initCases() {
 export function casesScrollEffect(selector) {
     const targetElement = document.querySelector(selector);
     const mainPage = document.querySelector(".main");
-    const casesPic = document.querySelector(".cases__pictures");
+    const casesPic = document.querySelector(".cases_desktop .cases__pictures");
     if (!targetElement) return;
 
     function handleScroll() {

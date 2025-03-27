@@ -6,7 +6,7 @@ import { initPlane } from "./scripts/footer.js";
 document.addEventListener("DOMContentLoaded", () => {
     initCases();
     heroScrollEffect(".hero"); // Замени на нужный селектор
-    casesScrollEffect(".cases");
+    casesScrollEffect(".cases_desktop");
     playScrollEffect(".play");
     initPlane(".footer__chat", ".footer__plane");
 });
