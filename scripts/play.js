@@ -28,8 +28,6 @@ export function playScrollEffect(selector) {
         let scale = 0.7 + 0.3 * progress;
         let translateY = minTranslateY + (maxTranslateY - minTranslateY) * progress;
 
-        // console.log(translateY * -100);
-
         // targetElement.style.transform = scale;
         targetElement.style.transform = `scale(${scale}) translateY(${translateY * -100}dvh)`;
         leftPicture.style.translate = `${(0.2 + 0.1 * progress) * -100}%`;

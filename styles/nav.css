@@ -61,3 +61,12 @@
     opacity: 1;
 }
 
+@media (max-width: 500px) {
+    .nav {
+        padding: 4px;
+    }
+
+    .nav__link {
+        line-height: 36px;
+    }
+}
