@@ -182,3 +182,91 @@ export function casesScrollEffect(selector) {
     window.addEventListener("resize", onScroll);
     handleScroll(); // Первоначальный вызов для установки начального состояния
 }
+
+export function initMobileSlider(selector) {
+    const wrapper = document.querySelector(selector);
+    const slider = wrapper.querySelector(".cases__slider");
+    if (!slider) return;
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    function updateActiveSlide() {
+        const items = slider.querySelectorAll(".cases__item");
+        const dots = wrapper.querySelectorAll(".cases__dot");
+        const sliderRect = slider.getBoundingClientRect();
+
+        let closestItem = null;
+        let closestDistance = Infinity;
+
+        items.forEach((item) => {
+            const itemRect = item.getBoundingClientRect();
+            const itemCenter = itemRect.left + itemRect.width / 2;
+            const sliderCenter = sliderRect.left + sliderRect.width / 2;
+            const distance = Math.abs(sliderCenter - itemCenter);
+
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestItem = item;
+            }
+        });
+
+        items.forEach((item) => item.classList.remove("cases__item_active"));
+        if (closestItem) {
+            closestItem.classList.add("cases__item_active");
+        }
+
+        const activeItemIndex = Array.from(items).indexOf(closestItem);
+
+        dots.forEach((dot) => dot.classList.remove("cases__dot_active"));
+        dots[activeItemIndex].classList.add("cases__dot_active");
+
+    }
+
+    slider.addEventListener("mousedown", (e) => {
+        isDown = true;
+        slider.classList.add("dragging");
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener("mouseleave", () => {
+        isDown = false;
+        slider.classList.remove("dragging");
+    });
+
+    slider.addEventListener("mouseup", () => {
+        isDown = false;
+        slider.classList.remove("dragging");
+    });
+
+    slider.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 1.2;
+        slider.scrollLeft = scrollLeft - walk;
+        updateActiveSlide();
+    });
+
+    // Поддержка тач-свайпа
+    let startTouchX = 0;
+    let startScrollLeft = 0;
+
+    slider.addEventListener("touchstart", (e) => {
+        startTouchX = e.touches[0].pageX;
+        startScrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener("touchmove", (e) => {
+        const x = e.touches[0].pageX;
+        const walk = (x - startTouchX) * 1.2;
+        slider.scrollLeft = startScrollLeft - walk;
+        updateActiveSlide();
+    });
+
+    slider.addEventListener("scroll", updateActiveSlide);
+
+    updateActiveSlide();
+}

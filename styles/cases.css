@@ -273,6 +273,9 @@
     display: block;
 }
 
+
+/* ///// Mobile */
+
 @media (min-width: 801px) {
     .cases_mobile {
         display: none;
@@ -280,8 +283,24 @@
 }
 
 @media (max-width: 800px) {
+    body {
+        overflow-x: hidden;
+    }
+    
     .cases_desktop {
         display: none;
+    }
+
+    .cases_mobile {
+        margin-bottom: 100px;
+        width: 100%;
+    }
+
+    .cases_mobile .cases__wrapper {
+        position: relative;
+        height: 70dvh;
+        width: 100%;
+        /* overflow: hidden; */
     }
 
     .cases_mobile .cases__title {
@@ -292,9 +311,26 @@
         padding-left: 0;
     }
 
-    .cases_mobile .cases__item {
-        margin-bottom: 100px;
+    .cases_mobile .cases__slider {
+        display: flex;
+        /* gap: 16px; */
+        height: 100%;
+        padding: 0 40px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+        box-sizing: border-box;
+        scrollbar-width: none;
+    }
 
+    .cases__slider::-webkit-scrollbar {
+        display: none;
+      }
+
+    .cases_mobile .cases__item {
         display: flex;
         flex-direction: column;
         width: calc(100vw - 80px);
@@ -312,6 +348,15 @@
             inset -0.3px -1px 5px 0px color-mix(in srgb, var(--c-dark) 18%, transparent), 
             0px 1px 5px 0px color-mix(in srgb, var(--c-dark) 12%, transparent), 
             0px 6px 16px 0px color-mix(in srgb, var(--c-dark) 10%, transparent);
+        scroll-snap-align: center;
+        flex: 0 0 auto;
+        transform: scale(0.9);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .cases_mobile .cases__item_active {
+        transform: scale(1);
+        z-index: 1;
     }
 
     .cases_mobile .cases__pic {
@@ -364,5 +409,26 @@
         border-right: 2px solid currentColor;
         rotate: 45deg;
         translate: 0 3px;
+    }
+
+    .cases_mobile .cases__slider-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 12px;
+        gap: 4px;
+    }
+
+    .cases_mobile .cases__dot {
+        width: 4px;
+        height: 4px;
+        background-color: var(--c-content);
+        opacity: 0.4;
+        border-radius: 99em;
+        transition: scale 200ms, opacity 200ms;
+    }
+
+    .cases_mobile .cases__dot_active {
+        opacity: 0.8;
+        scale: 1.2;
     }
 }

@@ -11,8 +11,15 @@
 }
 
 .main__cases {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     /* padding: 10dvh 0; */
+}
+
+@media (max-width: 500px) {
+    .main__hero {
+        height: 100dvh;
+    }
 }
