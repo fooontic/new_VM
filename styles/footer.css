@@ -130,3 +130,52 @@
     margin: 0;
 }
 
+@media (max-width: 800px) {
+    .footer {
+        padding-bottom: 100px;
+    }
+
+    .footer__about {
+        grid-template-rows: auto;
+        grid-template-columns: auto;
+        grid-template-areas: 
+            "email"
+            "social" 
+            "madeby";
+    }
+
+    .footer__email {
+        grid-area: email;
+        margin-bottom: 3em;
+    }
+
+    .footer__social {
+        grid-area: social;
+        margin-bottom: 3em;
+    }
+
+    .footer__madeby {
+        grid-area: madeby;
+    }
+
+    .footer__about {
+        margin-bottom: 16px;
+    }
+
+    .footer__cta {
+        flex-direction: column;
+        gap: 0;
+        margin-right: 0;
+        padding-right: 0;
+        font-size: 12.5vw;
+        line-height: 1.1em;
+    }
+
+    .footer__cta::after {
+        display: none;
+    }
+
+    .footer__plane {
+        display: none;
+    }
+}
