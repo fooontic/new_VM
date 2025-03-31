@@ -11,7 +11,7 @@ export function heroScrollEffect(selector) {
 
         // Уменьшаем scale и уменьшаем прозрачность по мере прокрутки страницы
         let scaleValue = Math.max(0, 1 - scrollRatio * 0.6); 
-        let opacityValue = Math.max(0, 1 - scrollRatio * 1.7);
+        let opacityValue = Math.max(0, 1 - scrollRatio * 1.5);
 
         targetElement.style.transform = `scale(${scaleValue})`;
         targetElement.style.opacity = opacityValue;

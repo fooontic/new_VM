@@ -98,7 +98,7 @@
     font-size: 20px;
     opacity: 0;
     translate: 0 15%;
-    transition: translate 200ms, opacity 200ms;
+    transition: translate 300ms, opacity 200ms;
 }
 
 .play__link:hover {
@@ -120,4 +120,26 @@
 .play__pictures:has(.play__link:hover) .play__desc {
     opacity: 1;
     translate: 0 0;
+}
+
+@media (max-width: 500px) {
+    .play__pictures {
+        height: 50dvh;
+    }
+
+    .play__pic {
+        padding: 8px;
+        border-radius: 16px;
+    }
+
+    .play__pic img {
+        border-radius: 8px;
+    }
+
+    .play__desc_visible {
+        opacity: 1;
+        font-size: var(--fz-m);
+        bottom: -15%;
+        translate: 0 50%;
+    }
 }
