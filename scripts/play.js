@@ -8,7 +8,7 @@ export function playScrollEffect(selector) {
 
     const root = document.querySelector(".main");
 
-    const bgColor = "#161E1D";
+    const bgColor = "var(--cc-bg-default)";
 
     let isFullyVisible = false;
 
@@ -35,7 +35,7 @@ export function playScrollEffect(selector) {
             leftPicture.style.translate = `-30%`;
             rightPicture.style.translate = `30%`;
             
-            root.style.setProperty("--cc-bg", bgColor);
+            // root.style.setProperty("--cc-bg", bgColor);
             
             return;
         }

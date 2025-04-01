@@ -5,12 +5,6 @@ export function initCases() {
     const root = document.querySelector(".main");
     if (!casesContainer) return; // Если блока нет, выход
 
-    const pic1Color = "#52018C";
-    const pic2Color = "#8C0180";
-    const pic3Color = "#014B8C";
-    const pic4Color = "#42018C";
-    const defaultColor = "#001683";
-
     let currentIndex = 0;
     let interval;
     let progressIntervals = new Map(); // Хранит прогресс для каждого элемента
@@ -21,11 +15,9 @@ export function initCases() {
     let isVisible = false; // Флаг видимости контейнера
 
     function setActive(index) {
-        if (!isVisible) return; // Если блок не видим, не меняем активный элемент
-
         clearInterval(interval);
         clearInterval(progressTimers.get(currentIndex));
-        
+
         items.forEach((item, idx) => {
             item.classList.remove("cases__item_active");
             if (idx !== index) {
@@ -36,29 +28,28 @@ export function initCases() {
             }
         });
         pictures.forEach((pic) => pic.classList.remove("cases__pic_active"));
-        
+
         items[index].classList.add("cases__item_active");
         pictures[index].classList.add("cases__pic_active");
-        
+
         currentIndex = index;
         if (hoveredIndex === null) {
             startProgressTimer(index);
         }
+
+        const event = new CustomEvent("casesItemChanged", {
+            detail: { index, source: "desktop" }
+        });
+        window.dispatchEvent(event);
     }
 
     function startProgressTimer(index) {
-        if (!isVisible) return;
         clearInterval(progressTimers.get(index));
         let progress = progressIntervals.get(index) || 0;
         const steps = timerDuration / progressUpdateInterval;
         const progressStep = 100 / steps;
-        
+
         let interval = setInterval(() => {
-            if (hoveredIndex === index || !isVisible) {
-                clearInterval(interval);
-                progressTimers.set(index, null);
-                return;
-            }
             progress += progressStep;
             items[index].style.setProperty("--progress", Math.min(progress, 100).toFixed(1) + "%");
             progressIntervals.set(index, progress);
@@ -69,21 +60,18 @@ export function initCases() {
                 items[index].style.removeProperty("--progress");
                 currentIndex = (currentIndex + 1) % items.length;
                 setActive(currentIndex);
-                updateBackgroundColor();
             }
         }, progressUpdateInterval);
         progressTimers.set(index, interval);
     }
 
     function startTimer() {
-        if (!isVisible) return;
         clearInterval(interval);
         clearInterval(progressTimers.get(currentIndex));
-        
+
         interval = setInterval(() => {
             currentIndex = (currentIndex + 1) % items.length;
             setActive(currentIndex);
-            updateBackgroundColor();
         }, timerDuration - (progressIntervals.get(currentIndex) || 0) / 100 * timerDuration);
         startProgressTimer(currentIndex);
     }
@@ -93,37 +81,27 @@ export function initCases() {
         clearInterval(progressTimers.get(currentIndex));
     }
 
-    function updateBackgroundColor() {
-        const rect = casesContainer.getBoundingClientRect();
-        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-        const visibleHeight = Math.min(viewportHeight, rect.bottom) - Math.max(0, rect.top);
-        const visibleRatio = visibleHeight / rect.height;
-
-        if (visibleRatio > 0.5) {
-            const activeIndex = Array.from(items).findIndex(item => item.classList.contains("cases__item_active"));
-            const color = [pic1Color, pic2Color, pic3Color, pic4Color][activeIndex] || defaultColor;
-            root.style.setProperty("--cc-bg", color);
-        } else {
-            root.style.setProperty("--cc-bg", defaultColor);
-        }
-    }
-
     function checkVisibility() {
         const rect = casesContainer.getBoundingClientRect();
         const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-        isVisible = rect.top >= 0 && rect.bottom <= viewportHeight * 1.2; // Проверяем, видим ли блок на 80%
+        const visiblePart = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
+        const visibleRatio = Math.max(0, Math.min(visiblePart / rect.height, 1));
+        isVisible = visibleRatio >= 0.3;
+    }
 
-        updateBackgroundColor();
-        
-        if (isVisible) {
-            startTimer();
-        } else {
-            stopTimer();
+    let ticking = false;
+    function onScroll() {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                checkVisibility();
+                ticking = false;
+            });
+            ticking = true;
         }
     }
 
-    window.addEventListener("scroll", checkVisibility);
-    window.addEventListener("resize", checkVisibility);
+    window.addEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
     checkVisibility(); // Первоначальная проверка при загрузке
 
     items.forEach((item, index) => {
@@ -132,57 +110,28 @@ export function initCases() {
             stopTimer();
             hoveredIndex = index;
             setActive(index);
-            updateBackgroundColor();
         });
         item.addEventListener("mouseleave", function () {
             if (hoveredIndex === index) {
                 hoveredIndex = null;
+                checkVisibility();
                 startTimer();
             }
         });
     });
+
+    // Поддержка события смены слайда на мобилке
+    window.addEventListener("mobileCasesItemChanged", (event) => {
+        const index = event.detail.index;
+        if (typeof index === "number") {
+            root.style.setProperty("--cc-bg", `var(--cc-bg-case-${index + 1})`);
+        }
+    });
 }
 
 
-export function casesScrollEffect(selector) {
-    const targetElement = document.querySelector(selector);
-    const mainPage = document.querySelector(".main");
-    const casesPic = document.querySelector(".cases_desktop .cases__pictures");
-    if (!targetElement) return;
-
-    function handleScroll() {
-        const scrollY = window.scrollY; 
-        const maxScroll = window.innerHeight * 0.6; 
-        const minScale = 0.7;
-        const maxScale = 1;
-        const minTranslateY = 0.05;
-        const maxTranslateY = 0;
-        const newColor = "#52018C";
-
-        // Определяем, насколько далеко прокручена страница (0 - начало, 1 - граница одного экрана)
-        let scrollRatio = Math.min(1, scrollY / maxScroll);
-
-        // Увеличиваем scale
-        // let scaleValue = Math.min(scrollRatio, 1); 
-        let scaleValue = minScale + (maxScale - minScale) * scrollRatio;
-        let translateYValue = minTranslateY + (maxTranslateY - minTranslateY) * scrollRatio;
-        let translateYPercent = translateYValue * -100;
-
-        targetElement.style.transform = `translateY(${translateYPercent}%) scale(${scaleValue})`;
-        // mainPage.style.backgroundColor = `color-mix(in srgb, ${newColor} ${scrollRatio * 100}%, var(--cc-bg))`;
-        casesPic.style.opacity = scrollRatio;
-    }
-
-    // Используем requestAnimationFrame для плавности
-    function onScroll() {
-        requestAnimationFrame(handleScroll);
-    }
-
-    window.addEventListener("scroll", onScroll);
-    window.addEventListener("resize", onScroll);
-    handleScroll(); // Первоначальный вызов для установки начального состояния
-}
-
+////////////////////////////////////////////////
+// Мобильный слайдер ////////////////////////
 export function initMobileSlider(selector) {
     const wrapper = document.querySelector(selector);
     const slider = wrapper.querySelector(".cases__slider");
@@ -220,8 +169,15 @@ export function initMobileSlider(selector) {
         const activeItemIndex = Array.from(items).indexOf(closestItem);
 
         dots.forEach((dot) => dot.classList.remove("cases__dot_active"));
-        dots[activeItemIndex].classList.add("cases__dot_active");
+        if (dots[activeItemIndex]) {
+            dots[activeItemIndex].classList.add("cases__dot_active");
+        }
 
+        // ← ← ← добавили отправку события при смене активного слайда на мобилке
+        const event = new CustomEvent("mobileCasesItemChanged", {
+            detail: { index: activeItemIndex }
+        });
+        window.dispatchEvent(event);
     }
 
     slider.addEventListener("mousedown", (e) => {
@@ -267,6 +223,49 @@ export function initMobileSlider(selector) {
     });
 
     slider.addEventListener("scroll", updateActiveSlide);
-
     updateActiveSlide();
 }
+
+
+////////////////////////////////////////////////
+// Анимация по скроллу ////////////////////////
+export function casesScrollEffect(selector) {
+    const targetElement = document.querySelector(selector);
+    const mainPage = document.querySelector(".main");
+    const casesPic = document.querySelector(".cases_desktop .cases__pictures");
+    if (!targetElement) return;
+
+    function handleScroll() {
+        const scrollY = window.scrollY; 
+        const maxScroll = window.innerHeight * 0.6; 
+        const minScale = 0.7;
+        const maxScale = 1;
+        const minTranslateY = 0.05;
+        const maxTranslateY = 0;
+        const newColor = "#52018C";
+
+        // Определяем, насколько далеко прокручена страница (0 - начало, 1 - граница одного экрана)
+        let scrollRatio = Math.min(1, scrollY / maxScroll);
+
+        // Увеличиваем scale
+        // let scaleValue = Math.min(scrollRatio, 1); 
+        let scaleValue = minScale + (maxScale - minScale) * scrollRatio;
+        let translateYValue = minTranslateY + (maxTranslateY - minTranslateY) * scrollRatio;
+        let translateYPercent = translateYValue * -100;
+
+        targetElement.style.transform = `translateY(${translateYPercent}%) scale(${scaleValue})`;
+        // mainPage.style.backgroundColor = `color-mix(in srgb, ${newColor} ${scrollRatio * 100}%, var(--cc-bg))`;
+        casesPic.style.opacity = scrollRatio;
+    }
+
+    // Используем requestAnimationFrame для плавности
+    function onScroll() {
+        requestAnimationFrame(handleScroll);
+    }
+
+    window.addEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    handleScroll(); // Первоначальный вызов для установки начального состояния
+}
+
+

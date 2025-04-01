@@ -1,5 +1,12 @@
 .main {
-    --cc-bg: #001683;
+    --cc-bg-hero: #001683;
+    --cc-bg-case-1: #52018C;
+    --cc-bg-case-2: #8C0180;
+    --cc-bg-case-3: #014B8C;
+    --cc-bg-case-4: #42018C;
+    --cc-bg-default: #161E1D;
+
+    --cc-bg: var(--cc-bg-hero);
     
     background-color: var(--cc-bg);
     transition: background-color 500ms;

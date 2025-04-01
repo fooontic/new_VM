@@ -4,12 +4,13 @@
     padding: 32px;
     box-sizing: border-box;
     overflow: hidden;
+    background-color: color-mix(in srgb, var(--c-dark) 10%, transparent);
 }
 
 .footer__cta {
     position: relative;
     margin: 0 -1em 1em 0;
-    padding-top: 1em;
+    padding-top: 0.5em;
     padding-right: 1em;
     font-size: 8.8vw;
     font-family: var(--f-display);
