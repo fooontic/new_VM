@@ -25,6 +25,10 @@
     /* padding: 10dvh 0; */
 }
 
+.main__play {
+    overflow: hidden;
+}
+
 @media (max-width: 500px) {
     .main__hero {
         height: 100dvh;
