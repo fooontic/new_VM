@@ -78,7 +78,7 @@
 }
 
 .footer__plane svg {
-    fill: color-mix(in srgb, var(--c-content) 50%, transparent);
+    fill: color-mix(in srgb, var(--c-content) 90%, transparent);
     filter: drop-shadow(0px 1px 5px color-mix(in srgb, var(--c-dark) 30%, transparent));
 }
 
