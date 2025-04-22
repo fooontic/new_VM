@@ -23,7 +23,7 @@ export function changeBgColor() {
         root.style.setProperty("--cc-bg", `var(--cc-bg-case-${activeIndex + 1})`);
     }
 
-    function handleScroll() {
+    function handleBgColor() {
         const heroRatio = getVisibleRatio(hero);
         const desktopCasesRatio = getVisibleRatio(desktopCases);
         const mobileCasesRatio = getVisibleRatio(mobileCases);
@@ -36,6 +36,8 @@ export function changeBgColor() {
         } else if (mobileCasesRatio >= 0.7) {
             updateCasesColor("mobile");
         } else if (playRatio >= 0.7) {
+            root.style.setProperty("--cc-bg", "var(--cc-bg-default)");
+        } else {
             root.style.setProperty("--cc-bg", "var(--cc-bg-default)");
         }
     }
@@ -67,7 +69,19 @@ export function changeBgColor() {
         }
     });
 
-    window.addEventListener("scroll", () => requestAnimationFrame(handleScroll));
-    window.addEventListener("resize", () => requestAnimationFrame(handleScroll));
-    handleScroll();
+    window.addEventListener("scroll", () => requestAnimationFrame(handleBgColor));
+    window.addEventListener("resize", () => requestAnimationFrame(handleBgColor));
+    handleBgColor();
+
+    // корректное определение цвета при первой загрузке
+    window.addEventListener("load", () => {
+        requestAnimationFrame(() => {
+            handleBgColor();
+        });
+    });
+
+    // на всякий случай — fallback при инициализации
+    requestAnimationFrame(() => {
+        setTimeout(handleBgColor, 0);
+    });
 } 
