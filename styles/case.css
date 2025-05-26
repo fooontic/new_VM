@@ -1,0 +1,5 @@
+.case {}
+
+.case__intro {
+    background-color: var(--case-bg-color);
+}

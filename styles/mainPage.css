@@ -1,11 +1,4 @@
 .main {
-    --cc-bg-hero: #001683;
-    --cc-bg-case-1: #00599a;
-    --cc-bg-case-2: #20009a;
-    --cc-bg-case-3: #351f08;
-    --cc-bg-case-4: #2e2615;
-    --cc-bg-default: #161E1D;
-
     --cc-bg: var(--cc-bg-hero);
     
     background-color: var(--cc-bg);

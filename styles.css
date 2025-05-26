@@ -9,6 +9,7 @@
 @import "./styles/arrow.css";
 @import "./styles/play.css";
 @import "./styles/footer.css";
+@import "./styles/case.css";
 
 @font-face {
   font-family: "DM Sans";
