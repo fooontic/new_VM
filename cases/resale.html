@@ -34,7 +34,7 @@
         <section class="case__intro intro">
             <div class="intro__desc">
                 <div class="intro__company">Platinumlist app, 2024</div>
-                <h1 class="intro__h">In-app <span class="case__alt-font">resale</span> for concerts</h1>
+                <h1 class="intro__h">In-app <span class="alt-font">resale</span> for concerts</h1>
                 <div class="intro__deck">Design a full resale feature flow from scratch to help users resell tickets fairly and intuitively</div>
             </div>
     
@@ -95,7 +95,125 @@
         </div>
 
 
+        <div class="case__text-box">
+            <h2 class="case__h2" id="problem">The problem</h2>
+            <p class="case__text">
+                Scalping is a major issue in ticketing: resellers buy up large quantities early and sell them later at inflated prices. This harms fans, ticket providers, and even artists — many of whom now avoid platforms that don’t address resale abuse.
+            </p>
+            <p class="case__text">
+                In late 2023, our team set out to address this issue head-on. One of the initiatives we launched was a controlled resale feature. It limits ticket purchase volumes, caps resale prices. And as a bonus it funnels traffic into our app, generating revenue from secondary sales.
+            </p>
+        </div>
+
+        <div class="case__text-box">
+            <h2 class="case__h2" id="preparation-and-research">Preparation and  <span class="alt-font">Research</span></h2>
+            <p class="case__text">
+                As part of our fight against ticket scalpers, we rolled out a few major updates. Adding resale directly inside the Platinumlist app was actually the final step.</p>
+            <p class="case__text">
+                Before that, we had already launched smart tickets with dynamic QR codes and the ability to transfer tickets easily. This was big and quite challenging task I worked on with my team in 2023. I'd love to tell the full story about it another time!
+            </p>
+            <p class="case__text">
+                For now, what matters is: by the time we started on the resale feature, we already had a strong, flexible ticket system that we could build on.
+            </p>
+        </div>
+
+        <div class="case__text-box">
+            <p class="case__text">
+                After syncing up with stakeholders and our product manager, I started digging into how competitors handled resale — plus a few ideas from other industries. Based on that, I mapped out a first version of the "perfect flow" — just the happy path, no edge cases yet.
+            </p>
+        </div>
+
+        <div class="case__text-box">
+            <p class="case__text">
+                When we walked through it as a team, we quickly spotted a few areas that needed more attention.
+            </p>
+            <p class="case__text">
+                The trickiest part? Legal. It wasn’t clear yet what rules we could apply to users in different markets, and what exactly we needed to collect in the Withdrawal Request form. Spoiler: we didn’t get the final list until almost right before development started.
+            </p>
+        </div>
+
+        <div class="case__text-box">
+            <h2 class="case__h2" id="ideas-and-sketches">Early Ideas and <span class="alt-font">Sketches</span></h2>
+            <p class="case__text">
+                Even with a lot of unknowns, I had a pretty good picture of the main screens in my head, so I jumped into early designs. I decided to start with the resale listing flow because it had had the fewest open questions.    
+            </p>
+            <p class="case__text">
+                One of the biggest UX challenges was making resale feel consistent with the ticket transfer flow we’d already launched — but resale needed way more information (like price settings for example). I needed a way to show all of it without making the screens feel cluttered.
+            </p>
+        </div>
         
+        <div class="case__text-box">
+            <p class="case__text">
+                I used the ticket selection flow from transfers as my starting point and sketched a few variations on paper.
+            </p>
+            <p class="case__text">
+                Pretty quickly, I ran into the price-setting problem:
+            </p>
+            <ul class="case__text-list">
+                <li>I needed to clearly show the original ticket price.</li>
+                <li>I wanted users to easily adjust prices, but without taking up tons of screen space.</li>
+                <li>I had to allow individual pricing for each ticket (since sometimes users bought them at different prices).</li>
+            </ul>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                After a few rounds of sketching, I found a simple solution — a smart segmented control to switch between the original price and a custom price.
+            </p>
+            <p class="case__text">
+                Once I found this solution, I moved into Figma to start fleshing it out properly.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <h2 class="case__h2" id="design">De<span class="alt-font">sign</span></h2>
+            <p class="case__text">
+                While designing the screen, I had an idea to add simple animation with the "unfolding" ticket when users adjust the price. It gives additional visual visual hint that the price is editable.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                By this point, we had enough info to start building out more of the full journey: onboarding, post-listing steps, etc.
+            </p>
+            <p class="case__text">
+                For onboarding, I created a beatiful animation that made the resale flow feel more special and important.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                In the Resale tab, I also mapped out all the listing states and statuses — making sure everything was super clear for the user at every step.
+            </p>
+            <p class="case__text">
+                We spent extra time polishing the microcopy too. The whole team helped rework the text several times to make sure it felt sharp, clear, and friendly.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                Even though we still didn’t have a final list of the data we needed to collect in the Withdrawal Request form, <span class="bold">I put together a working prototype</span> with a placeholder set of fields so we could test the full resale experience end-to-end. 
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                <span class="bold">We ran a small round of user testing</span> — made a few tweaks based on feedback — and then I focused on filling in all the missing pieces: edge cases, skeleton screens, error states, Arabic localisation, Android version, everything. 
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                Meanwhile, another designer on the team, working under my guidance, finalized the Withdrawal Request form once all the legal details came together.
+            </p>
+        </div>
+
+        <div class="case__text-box">
+            <h2 class="case__h2" id="results">Results and <span class="alt-font">Impact</span></h2>
+            <p class="case__text">
+                Even in the first three months after launch, we saw a real impact. But over time, it became clear that Resale was even more significant than we expected — it has grown into a completely new business stream.
+            </p>
+        </div>
 
     </article>
 

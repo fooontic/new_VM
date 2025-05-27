@@ -30,6 +30,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   height: 100%;
@@ -43,4 +47,16 @@ canvas {
 .my-text {
 	font-feature-settings: "calt" 1, "liga" 1, "rlig" 1, "rvrn" 1, "kern" 1, "rclt" 1, "ss04" 1, "ss01" 1, "ss07" 1, "ss05" 1;
 	font-variation-settings: "opsz" 9, "wght" 400;
+}
+
+.alt-font {
+  font-family: var(--f-display-alt);
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.italic {
+  font-style: italic;
 }
