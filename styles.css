@@ -10,6 +10,9 @@
 @import "./styles/play.css";
 @import "./styles/footer.css";
 @import "./styles/case.css";
+@import "./styles/intro.css";
+
+@import "./styles/cases/resale.css";
 
 @font-face {
   font-family: "DM Sans";
