@@ -15,5 +15,6 @@
 .case__body {
     max-width: var(--w-l);
     margin: 0 auto;
-    padding: 0 5vw;
+    padding: 0 max(32px, 5vw) 10dvh;
 }
+

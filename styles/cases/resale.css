@@ -3,6 +3,8 @@
 .resale__intro {
     display: flex;
     align-items: center;
+    margin-top: clamp(60px, 12dvh, 150px);
+    margin-bottom: clamp(40px, 10dvh, 120px);
 }
 
 .resale__pic {
@@ -95,6 +97,11 @@
 }
 
 @media (max-width: 500px) {
+    .resale__intro {
+        margin-top: clamp(150px, 18dvh, 250px);
+        margin-bottom: clamp(120px, 14dvh, 200px);
+    }
+
     .resale__pic:nth-child(1) {
         display: none;
     }

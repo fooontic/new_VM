@@ -1,0 +1,46 @@
+.summary,
+.summary ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.summary a {
+    color: currentColor;
+    text-decoration-thickness: 0.05em;
+    text-underline-position: under;
+}
+
+.summary ul li {
+    margin-bottom: 0.4em;
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-auto-flow: column;
+    row-gap: 3em;
+}
+
+.summary__item {
+    /* margin-bottom: 1em; */
+    font-size: var(--fz);
+    line-height: 140%;
+}
+
+.summary__item_responsibilities {
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.summary__h {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.4em;
+}
+
+.summary__text {
+    display: block;
+    opacity: 0.6;
+}
