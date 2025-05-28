@@ -45,11 +45,11 @@ export function initFloatingToc() {
         });
     });
 
-    // ✅ вызвать сразу при загрузке
+    // вызвать сразу при загрузке
     window.addEventListener("load", () => {
         requestAnimationFrame(updateActiveToc);
     });
 
-    // ✅ и на всякий случай сразу после инициализации
+    // и на всякий случай сразу после инициализации
     requestAnimationFrame(updateActiveToc);
 }
