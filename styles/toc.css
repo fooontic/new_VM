@@ -95,6 +95,7 @@
     opacity: 0;
     transition: opacity 150ms;
     text-shadow: 0 1px 4px var(--case-bg-color);
+    font-weight: 500;
 }
 
 .toc:hover {
