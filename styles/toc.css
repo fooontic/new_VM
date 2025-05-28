@@ -1,0 +1,124 @@
+.toc {
+    position: fixed;
+    width: fit-content;
+    right: 0;
+    top: 50%;
+    translate: calc(100% - 4em) -50%;
+    padding: 4em 2em;
+    z-index: 10;
+    font-size: 16px;
+    transition: translate 300ms;
+}
+
+.toc::after {
+    content: '';
+    width: 150%;
+    height: 100dvh;
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    translate: 0 -50%;
+    background-image: linear-gradient(to left, color-mix(in srgb, var(--case-bg-color) 30%, transparent) 50%, transparent);
+    background-image: linear-gradient(
+        to left, 
+        color-mix(in srgb, var(--case-bg-color) 80%, transparent) 30%, 
+        color-mix(in srgb, var(--case-bg-color) 79%, transparent) 39%, 
+        color-mix(in srgb, var(--case-bg-color) 77%, transparent) 46%, 
+        color-mix(in srgb, var(--case-bg-color) 74%, transparent) 53%, 
+        color-mix(in srgb, var(--case-bg-color) 70%, transparent) 59%, 
+        color-mix(in srgb, var(--case-bg-color) 65%, transparent) 64%, 
+        color-mix(in srgb, var(--case-bg-color) 60%, transparent) 69%, 
+        color-mix(in srgb, var(--case-bg-color) 54%, transparent) 73%, 
+        color-mix(in srgb, var(--case-bg-color) 47%, transparent) 77%, 
+        color-mix(in srgb, var(--case-bg-color) 40%, transparent) 80%, 
+        color-mix(in srgb, var(--case-bg-color) 33%, transparent) 84%, 
+        color-mix(in srgb, var(--case-bg-color) 26%, transparent) 87%, 
+        color-mix(in srgb, var(--case-bg-color) 19%, transparent) 90%, 
+        color-mix(in srgb, var(--case-bg-color) 12%, transparent) 93%, 
+        color-mix(in srgb, var(--case-bg-color) 6%, transparent) 96%, 
+        transparent 100%);
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms;
+}
+
+.toc__list {
+    list-style: none;
+    line-height: 120%;
+    margin: 0;
+    padding: 0;
+    /* transform-origin: right center; */
+    scale: 0.66;
+    transition: scale 300ms;
+}
+
+.toc__item {
+    position: relative;
+    opacity: 0.6;
+    transition: opacity 150ms;
+}
+
+.toc__item:not(:last-child) {
+    margin-bottom: 0.8em;
+}
+
+.toc__item::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 1.5em;
+    height: 3px;
+    left: -4.5em;
+    top: calc(50% - 2px);
+    background-color: var(--c-content);
+    transition: opacity 150ms, scale 200ms;
+    transform-origin: right;
+}
+
+.toc__item_active {
+    opacity: 1;
+}
+
+.toc__item.toc__item_active::before {
+    scale: 1.5 1;
+}
+
+.toc__item:hover {
+    opacity: 1;
+}
+
+.toc a {
+    display: block;
+    color: var(--c-content);
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 150ms;
+    text-shadow: 0 1px 4px var(--case-bg-color);
+}
+
+.toc:hover {
+    translate: 0 -50%;
+}
+
+.toc:hover::after {
+    opacity: 1;
+}
+
+.toc:hover .toc__list {
+    scale: 1;
+}
+
+.toc:hover .toc__item::before {
+    opacity: 0;
+}
+
+.toc:hover a {
+    opacity: 1;
+}
+
+@media (max-width: 800px) {
+    .toc {
+        display: none;
+    }
+}

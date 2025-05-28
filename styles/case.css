@@ -6,6 +6,7 @@
     --fz: clamp(16px, 1.3vw, 20px);
     
     background-color: var(--case-bg-color);
+    overflow-x: hidden;
 }
 
 .case__body {
