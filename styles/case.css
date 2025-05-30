@@ -61,14 +61,17 @@
 
 .case__container_s {
     max-width: var(--w-s);
+    margin: 0 auto;
 }
 
 .case__container_m {
     max-width: var(--w-m);
+    margin: 0 auto;
 }
 
 .case__container_l {
     max-width: var(--w-l);
+    margin: 0 auto;
 }
 
 .case__pic {
