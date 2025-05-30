@@ -47,23 +47,23 @@
                 <div class="intro__deck">Design a full resale feature flow from scratch to help users resell tickets fairly and intuitively</div>
             </div>
     
-            <div class="intro__hero resale__intro">
-                <div class="intro__pic resale__pic">
-                    <img src="/img/cases/resale/Intro 01.jpg" alt="">
+            <div class="intro__hero --intro">
+                <div class="intro__pic --intro__pic">
+                    <img src="/img/cases/resale/intro_1.jpg" alt="">
                 </div>
-                <div class="intro__pic resale__pic">
-                    <img src="/img/cases/resale/Intro 02.jpg" alt="">
+                <div class="intro__pic --intro__pic">
+                    <img src="/img/cases/resale/intro_2.jpg" alt="">
                 </div>
-                <div class="intro__pic resale__pic">
-                    <video class="resale__video" autoplay muted>
+                <div class="intro__pic --intro__pic">
+                    <video class="--intro__video" autoplay muted>
                         <source src="/img/resale.mp4" type="video/mp4">
                     </video>
                 </div>
-                <div class="intro__pic resale__pic">
-                    <img src="/img/cases/resale/Intro 04.jpg" alt="">
+                <div class="intro__pic --intro__pic">
+                    <img src="/img/cases/resale/intro_4.jpg" alt="">
                 </div>
-                <div class="intro__pic resale__pic">
-                    <img src="/img/cases/resale/Intro 05.jpg" alt="">
+                <div class="intro__pic --intro__pic">
+                    <img src="/img/cases/resale/intro_5.jpg" alt="">
                 </div>
             </div>
         </section>
@@ -126,17 +126,40 @@
             </p>
         </div>
 
-        <fieldset class="switcher">
-            <legend class="visually-hidden">Choose version</legend>
-            <label class="switcher__option">
-                <input class="switcher__input" type="radio" name="version" value="old" />
-                <span>Old</span>
-            </label>
-            <label class="switcher__option">
-                <input class="switcher__input" type="radio" name="version" value="new" checked />
-                <span>New</span>
-            </label>
-        </fieldset>
+        <div class="contentSwitcher">
+            <fieldset class="switcher contentSwitcher__control">
+                <legend class="visually-hidden">Choose version</legend>
+                <label class="switcher__option">
+                    <input class="switcher__input contentSwitcher__input" type="radio" name="version" value="old" c-option="1" checked/>
+                    <span>Old</span>
+                </label>
+                <label class="switcher__option">
+                    <input class="switcher__input contentSwitcher__input" type="radio" name="version" value="new" c-option="2" />
+                    <span>New</span>
+                </label>
+                <div class="switcher__toggle"></div>
+            </fieldset>
+    
+            <div class="--tickets contentSwitcher__content">
+                <div class="--tickets__container --tickets__container_old contentSwitcher__choice" c-choice="1">
+                    <div class="--tickets__item">
+                        <img src="/img/cases/resale/old-ticket_1.jpg" alt="">
+                    </div>
+                    <div class="--tickets__item">
+                        <img src="/img/cases/resale/old-ticket_2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="--tickets__container --tickets__container_new contentSwitcher__choice" c-choice="2">
+                    <div class="--tickets__item">
+                        <img src="/img/cases/resale/new-ticket_1.jpg" alt="">
+                    </div>
+                    <div class="--tickets__item">
+                        <img src="/img/cases/resale/new-ticket_2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <div class="case__text-box">
             <p class="case__text">

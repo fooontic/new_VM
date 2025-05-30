@@ -1,4 +1,5 @@
 .switcher {
+    position: relative;
     display: flex;
     align-items: center;
     width: fit-content;
@@ -39,7 +40,7 @@
     box-sizing: border-box;
     border-radius: 99em;
     opacity: 0.6;
-    transition: opacity 160ms;
+    transition: all 160ms;
 }
 
 .switcher__option:hover {
@@ -49,5 +50,43 @@
 
 .switcher__option:has(input:checked) {
     opacity: 1;
+}
+
+.switcher::after {
+    content: '';
+    position: absolute;
+    left: 0.2em;
+    top: 0.2em;
+    display: block;
+    width: calc(50% - 0.2em);
+    height: calc(100% - 0.4em);
+    border-radius: 99em;
     background-color: color-mix(in srgb, var(--c-glass) 14%, transparent);
+    z-index: -1;
+    /* transition: translate 200ms; */
+}
+
+.switcher:has(input[c-option="1"]:checked)::after {
+    translate: 0 0;
+    scale: 1 1;
+    /* animation: springToggle 150ms ease-in-out both; */
+    transform-origin: left;
+    transition: translate 160ms ease, scale 185ms linear(0 0%, -36 50%, 1 100%);
+}
+
+.switcher:has(input[c-option="2"]:checked)::after {
+    translate: 100% 0;
+    scale: 1.01 1;
+    /* animation: springToggle 150ms ease-in-out both; */
+    transform-origin: right;
+    transition: translate 160ms ease, scale 185ms linear(0 0%, 36 50%, 1 100%);
+}
+
+@keyframes springToggle {
+    0%, 100% {
+        scale: 1 1;
+    }
+    50% {
+        scale: 1.5 1;
+    }
 }

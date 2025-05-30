@@ -1,0 +1,35 @@
+.contentSwitcher__content {
+    display: grid;
+}
+
+.contentSwitcher__control {
+    margin-bottom: 32px;
+}
+
+.contentSwitcher__choice {
+    grid-area: 1 / 1;
+    opacity: 0;
+    transition: translate 500ms ease, opacity 300ms ease;
+}
+
+.contentSwitcher__choice[c-choice="1"] {
+    translate: -7% 0;
+}
+
+.contentSwitcher__choice[c-choice="2"] {
+    translate: 7% 0;
+}
+
+
+.contentSwitcher:has(input[c-option="1"]:checked) .contentSwitcher__choice[c-choice="1"] {
+    opacity: 1;
+    translate: 0 0;
+    transition-delay: 100ms;
+}
+
+.contentSwitcher:has(input[c-option="2"]:checked) .contentSwitcher__choice[c-choice="2"] {
+    opacity: 1;
+    translate: 0 0;
+    transition-delay: 100ms;
+    --starsScaleAnimation: 1;
+}

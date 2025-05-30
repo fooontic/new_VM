@@ -1,27 +1,31 @@
-.resale {}
+.resale {
+    font-size: var(--fz);
+}
 
-.resale__intro {
+/* Intro ///////////////////// */
+
+.resale .--intro {
     display: flex;
     align-items: center;
     margin-top: clamp(60px, 12dvh, 150px);
     margin-bottom: clamp(40px, 10dvh, 120px);
 }
 
-.resale__pic {
+.resale .--intro__pic {
     width: 100%;
     position: relative;
     font-size: var(--fz);
 }
 
-.resale__pic img,
-.resale__pic video {
+.resale .--intro__pic img,
+.resale .--intro__pic video {
     width: 100%;
     display: block;
     object-fit: contain;
     position: relative;
 }
 
-.resale__pic img {
+.resale .--intro__pic img {
     padding: 8px;
     border-radius: 1.5em;
     box-sizing: border-box;
@@ -37,7 +41,7 @@
         0px 6px 16px 0px color-mix(in srgb, var(--c-dark) 10%, transparent);
 }
 
-.resale__pic:nth-child(3) {
+.resale .--intro__pic:nth-child(3) {
     z-index: 2;
     filter: 
         drop-shadow(0 1px 2px color-mix(in srgb, var(--c-dark) 16%, transparent)) 
@@ -46,77 +50,169 @@
         drop-shadow(0 12px 32px color-mix(in srgb, var(--c-dark) 16%, transparent));
 }
 
-.resale__pic:nth-child(3) video {
+.resale .--intro__pic:nth-child(3) video {
     scale: 1.36;
 }
 
-.resale__pic:nth-child(2) img,
-.resale__pic:nth-child(4) img {
+.resale .--intro__pic:nth-child(2) img,
+.resale .--intro__pic:nth-child(4) img {
     width: 118%;
     left: 50%;
     translate: -50%;
     z-index: 1;
 }
 
-.resale__pic:nth-child(1) img,
-.resale__pic:nth-child(5) img {
+.resale .--intro__pic:nth-child(1) img,
+.resale .--intro__pic:nth-child(5) img {
     width: 105%;
     z-index: 0;
 }
 
-.resale__pic:nth-child(1) img {
+.resale .--intro__pic:nth-child(1) img {
     left: 0;
 }
 
-.resale__pic:nth-child(5) img {
+.resale .--intro__pic:nth-child(5) img {
     left: 100%;
     translate: -100%
 }
 
-.resale__video {
+.resale .--intro__video {
     mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="715" height="1456" viewBox="0 0 715 1456" fill="none"><path d="M6 187.2C6 121.674 6 88.9108 18.7522 63.8831C29.9694 41.8681 47.8681 23.9694 69.8831 12.7522C94.9108 0 127.674 0 193.2 0H522.8C588.326 0 621.089 0 646.117 12.7522C668.132 23.9694 686.031 41.8681 697.248 63.8831C710 88.9108 710 121.674 710 187.2V462H712C713.657 462 715 463.343 715 465V633C715 634.657 713.657 636 712 636H710V1268.8C710 1334.33 710 1367.09 697.248 1392.12C686.031 1414.13 668.132 1432.03 646.117 1443.25C621.089 1456 588.326 1456 522.8 1456H193.2C127.674 1456 94.9108 1456 69.8831 1443.25C47.8681 1432.03 29.9694 1414.13 18.7522 1392.12C6 1367.09 6 1334.33 6 1268.8V636H3C1.34315 636 0 634.657 0 633V529C0 527.343 1.34315 526 3 526H6V495H3C1.34315 495 0 493.657 0 492V388C0 386.343 1.34315 385 3 385H6V334H3C1.34315 334 0 332.657 0 331V284C0 282.343 1.34315 281 3 281H6V187.2Z" fill="white"/></svg>');
     mask-size: contain;
     mask-position: center;
     mask-repeat: no-repeat;
 }
 
+/* Tickets ///////////////////// */
+
+.resale .--tickets {
+    max-width: var(--w-s);
+    margin: 0 auto;
+}
+
+.resale .--tickets__container {
+    display: flex;
+    gap: 24px;
+}
+
+.resale .--tickets img {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    position: relative;
+    border-radius: min(1.2em, 3vw);
+}
+
+.resale .--tickets__item {
+    position: relative;
+}
+
+.resale .--tickets__container_new .--tickets__item::before,
+.resale .--tickets__container_new .--tickets__item::after {
+    /* --starsScaleAnimation: 0; */
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><foreignObject x="-10" y="-10" width="80" height="80"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(5px);clip-path:url(%23bgblur_0_2085_4291_clip_path);height:100%;width:100%"></div></foreignObject><path data-figma-bg-blur-radius="10" d="M60 30C31.5 31.5 31.5 31.5 30 60C28.5 31.5 28.5 31.5 0 30C28.5 28.5 28.5 28.5 30 0C31.5 28.5 31.5 28.5 60 30Z" fill="white"/><defs><clipPath id="bgblur_0_2085_4291_clip_path" transform="translate(10 10)"><path d="M60 30C31.5 31.5 31.5 31.5 30 60C28.5 31.5 28.5 31.5 0 30C28.5 28.5 28.5 28.5 30 0C31.5 28.5 31.5 28.5 60 30Z"/></clipPath></defs></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 1;
+    scale: var(--starsScaleAnimation, 0);
+    transition: scale 600ms linear(0 0%, 0.06 12.21%, 0.24 25.29%, 1.08 44.76%, 1.22 50.12%, 1.27 58.83%, 1.23 68.29%, 1.13 77.4%, 1.06 83.33%, 1.01 92.25%, 1 100%);
+}
+
+
+
+.resale .--tickets__container_new .--tickets__item:first-child::before {
+    width: 24%;
+    aspect-ratio: 1;
+    bottom: 16%;
+    left: -9%;
+    transition-delay: 200ms;
+}
+
+.resale .--tickets__container_new .--tickets__item:first-child::after {
+    width: 14%;
+    aspect-ratio: 1;
+    bottom: 25%;
+    left: -12%;
+    transition-delay: 350ms;
+}
+
+.resale .--tickets__container_new .--tickets__item:last-child::before {
+    width: 20%;
+    aspect-ratio: 1;
+    top: 9%;
+    right: -14%;
+    transition-delay: 500ms;
+}
+
+.resale .--tickets__container_new .--tickets__item:last-child::after {
+    width: 10%;
+    aspect-ratio: 1;
+    top: 18%;
+    right: 0;
+    transition-delay: 300ms;
+}
+
+@keyframes ticketsStarsAnimation {
+    from { 
+        scale: 0;
+        opacity: 0;
+    } to {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+
+/* //////////////////////////////////////
+/////////////////////////////////////////
+// Media queries ///////////////////// */
+
 @media (max-width: 1000px) {
-    .resale__pic:nth-child(3) video {
+    .resale .--intro__pic:nth-child(3) video {
         scale: 2;
     }
 
-    .resale__pic:nth-child(2) img,
-    .resale__pic:nth-child(4) img {
+    .resale .--intro__pic:nth-child(2) img,
+    .resale .--intro__pic:nth-child(4) img {
         width: 150%;
     }
 
-    .resale__pic:nth-child(1) img,
-    .resale__pic:nth-child(5) img {
+    .resale .--intro__pic:nth-child(1) img,
+    .resale .--intro__pic:nth-child(5) img {
         width: 125%;
     }
 }
 
+
 @media (max-width: 500px) {
-    .resale__intro {
+    .resale .--intro {
         margin-top: clamp(150px, 18dvh, 250px);
         margin-bottom: clamp(120px, 14dvh, 200px);
     }
 
-    .resale__pic:nth-child(1) {
+    .resale .--intro__pic:nth-child(1) {
         display: none;
     }
     
-    .resale__pic:nth-child(5) {
+    .resale .--intro__pic:nth-child(5) {
         display: none;
     }
 
-    .resale__pic:nth-child(2) img {
+    .resale .--intro__pic:nth-child(2) img {
         left: 0;
         translate: 0;
     }
     
-    .resale__pic:nth-child(4) img {
+    .resale .--intro__pic:nth-child(4) img {
         left: 100%;
         translate: -100%
+    }
+
+    .resale .--tickets__container {
+        gap: 16px;
     }
 }
