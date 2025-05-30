@@ -44,12 +44,13 @@
 .case__text-list {
     font-size: var(--fz);
     line-height: 150%;
-    padding-left: 1.4em;
+    padding-left: 0.6ch;
+    width: 90%;
 }
 
 .case__text-list li {
     margin-bottom: 0.8em;
-    padding-inline-start: 1ch;
+    padding-inline-start: 1.8ch;
 }
 
 .case__text-list li::marker {
@@ -76,4 +77,13 @@
     object-fit: contain;
     position: relative;
     border-radius: var(--radius-m);
+}
+
+.case__caption {
+    margin-top: 32px;
+    padding: 0 24px;
+    font-size: calc(var(--fz) * 0.8);
+    font-style: italic;
+    text-align: center;
+    opacity: 0.6;
 }
