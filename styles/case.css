@@ -4,6 +4,9 @@
     --w-l: 1280px;
 
     --fz: clamp(16px, 1.3vw, 20px);
+
+    --radius-m: min(1.2em, 3vw);
+    --min-padding: 32px;
     
     background-color: var(--case-bg-color);
     overflow-x: hidden;
@@ -13,7 +16,7 @@
 .case__body {
     max-width: var(--w-l);
     margin: 0 auto;
-    padding: 0 max(32px, 5vw) 10dvh;
+    padding: 0 max(var(--min-padding), 5vw) 10dvh;
 }
 
 .case__summary {
@@ -53,4 +56,24 @@
     content: '✦';
     font-size: 0.8em;
     color: color-mix(in srgb, currentColor, transparent 60%);
+}
+
+.case__container_s {
+    max-width: var(--w-s);
+}
+
+.case__container_m {
+    max-width: var(--w-m);
+}
+
+.case__container_l {
+    max-width: var(--w-l);
+}
+
+.case__pic {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    position: relative;
+    border-radius: var(--radius-m);
 }

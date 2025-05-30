@@ -101,7 +101,7 @@
     width: 100%;
     object-fit: contain;
     position: relative;
-    border-radius: min(1.2em, 3vw);
+    border-radius: var(--radius-m);
 }
 
 .resale .--tickets__item {
@@ -214,5 +214,13 @@
 
     .resale .--tickets__container {
         gap: 16px;
+    }
+
+    .resale .--map {
+        margin: 0 calc(var(--min-padding) * -1);
+    }
+
+    .resale .--map__pic {
+        border-radius: 0;
     }
 }
