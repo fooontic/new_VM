@@ -308,6 +308,14 @@
     gap: var(--gap);
 }
 
+/* Form /////////////////////*/
+
+.resale .--form__container {
+    --gap: 24px;
+    display: flex;
+    gap: var(--gap);
+}
+
 
 
 /* //////////////////////////////////////
@@ -439,4 +447,34 @@
         --gap: 16px;
         padding: 0 var(--min-padding);
     }
+
+
+
+    .resale .--all {
+        margin: 0 calc(var(--min-padding) * -1);
+    }
+    
+    .resale .--all img {
+        border-radius: 0;
+    }
+
+
+
+    .resale .--form {
+        overflow-x: scroll;
+        margin: 0 calc(var(--min-padding) * -1);
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    .resale .--form::-webkit-scrollbar {
+        display: none;
+    }
+
+    .resale .--form__container {
+        width: 170%;
+        --gap: 16px;
+        padding: 0 var(--min-padding);
+    }
+
 }
