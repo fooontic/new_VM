@@ -293,13 +293,28 @@
     background-image: url(/img/cases/resale/onboarding_bg.png);
 }
 
+/* Details /////////////////////*/
+
+.resale .--details__container {
+    --gap: 24px;
+    display: grid;
+    grid-template-columns: 26.5fr 23.5fr 26.5fr 23.5fr;
+    gap: var(--gap);
+}
+
+.resale .--details__col:nth-child(even) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
 
 
 /* //////////////////////////////////////
 /////////////////////////////////////////
 // Media queries ///////////////////// */
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
     .resale .--intro__pic:nth-child(3) video {
         scale: 2;
     }
@@ -312,6 +327,18 @@
     .resale .--intro__pic:nth-child(1) img,
     .resale .--intro__pic:nth-child(5) img {
         width: 125%;
+    }
+
+    .resale .--tickets__container {
+        gap: 16px;
+    }
+
+    .resale .--rs-tickets__container {
+        gap: 16px;
+    }
+
+    .resale .--details__container {
+        --gap: 16px;
     }
 }
 
@@ -388,8 +415,28 @@
     }
 
 
+
     .resale .--onboarding {
         margin: 0 calc(var(--min-padding) * -1);
         overflow: hidden;
+    }
+
+
+
+    .resale .--details {
+        overflow-x: scroll;
+        margin: 0 calc(var(--min-padding) * -1);
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    .resale .--details::-webkit-scrollbar {
+        display: none;
+    }
+
+    .resale .--details__container {
+        width: 220%;
+        --gap: 16px;
+        padding: 0 var(--min-padding);
     }
 }
