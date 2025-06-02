@@ -32,7 +32,7 @@
 .case__h2 {
     margin: 80px auto 32px;
     font-family: var(--f-display);
-    font-size: clamp(28px, 4vw, 48px);
+    font-size: clamp(32px, 4vw, 48px);
 }
 
 .case__text {
@@ -46,6 +46,11 @@
     line-height: 150%;
     padding-left: 0.6ch;
     width: 90%;
+}
+
+.case__text,
+.case__text-list {
+    color: color-mix(in srgb, var(--c-content) 80%, transparent);
 }
 
 .case__text-list li {
