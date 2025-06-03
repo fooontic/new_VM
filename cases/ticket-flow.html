@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="../styles.css">
 </head>
-<body class="case" style="--case-bg-color: var(--cc-bg-case-2);">
+<body class="case case__funnel funnel" style="--case-bg-color: var(--cc-bg-case-2);">
     
     <div class="header">
         <div class="header__logo">
@@ -27,12 +27,278 @@
         <a href="#" class="header__link">Linkedin</a>
     </div>
 
-    <div class="case__toc toc"></div>
+    
+    <nav class="case__toc toc">
+        <ol class="toc__list">
+            <li class="toc__item"><a href="#overview">Overview</a></li>
+            <li class="toc__item"><a href="#problem">The Problem</a></li>
+            <li class="toc__item"><a href="#legacy">What We Had</a></li>
+            <li class="toc__item"><a href="#iteration-1">Iteration 1.0: Quick Wins</a></li>
+            <li class="toc__item"><a href="#iteration-1_2">Iteration 1.2: Schedule Rescheduled</a></li>
+            <li class="toc__item"><a href="#iteration-2">Iteration 2.0: Rethinking</a></li>
+            <li class="toc__item"><a href="#results">Results and Impact</a></li>
+        </ol>
+    </nav>
 
-    <section class="case__intro intro">
-        <div class="intro__company">Platinumlist website, 2023–2024</div>
-        <h1 class="intro__h">Improving sales funnel through ticket flow</h1>
-        <div class="intro__deck">!!!! Design a full resale feature flow from scratch to help users resell tickets fairly and intuitively</div>
-    </section>
+    <article class="case__body">
+
+        <section class="case__intro intro">
+            <div class="intro__desc">
+                <div class="intro__company">Platinumlist website, 2023–2024</div>
+                <h1 class="intro__h">Improving sales funnel through ticket flow</h1>
+                <div class="intro__deck">!!!! Design a full resale feature flow from scratch to help users resell tickets fairly and intuitively</div>
+            </div>
+        </section>
+
+        <div class="case__summary">
+            <ul class="summary">
+                <li class="summary__item">
+                    <span class="summary__h">Company</span>
+                    <span class="summary__text"><a href="platinumlist.net">Platinumlist</a></span>
+                </li>
+                <li class="summary__item">
+                    <span class="summary__h">Timeline</span>
+                    <span class="summary__text">Fall 2023–Summer 2024</span>
+                </li>
+                <li class="summary__item">
+                    <span class="summary__h">Fields</span>
+                    <ul>
+                        <li class="summary__text">Website</li>
+                        <li class="summary__text">Coversion rate</li>
+                        <li class="summary__text">B2C, Ticketing platform</li>
+                    </ul>
+                </li>
+                <li class="summary__item">
+                    <span class="summary__h">My role</span>
+                    <span class="summary__text">Product Lead Designer</span>
+                </li>
+                <li class="summary__item summary__item_responsibilities">
+                    <span class="summary__h">Responsibilities</span>
+                    <ul>
+                        <li class="summary__text">Feature Scoping</li>
+                        <li class="summary__text">Research</li>
+                        <li class="summary__text">Prototyping</li>
+                        <li class="summary__text">Interaction & Visual Design</li>
+                        <li class="summary__text">Team Leading</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="case__text-box">
+            <h2 class="case__h2" id="problem">The Problem</h2>
+            <p class="case__text">
+                When I joined Platinumlist, my first big project was to fix the ticket purchase funnel. The team already sensed something was off and had started exploring some early fixes. My job was to dig into the experience, spot the pain points, and come up with a better plan.
+            </p>
+            <p class="case__text">
+                What I didn’t expect was just how massive the funnel was—from the event page all the way to the final success screen. But the most complex part? Ticket selection. That’s where this case study mostly focuses. 
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                The ticket selection screen was the biggest, messiest part of the whole platform. Tons of variations, edge cases, and legacy code—and no one could tell you all the ways it could behave.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <h2 class="case__h2" id="legacy">What <span class="alt-font">We Had</span></h2>
+            <p class="case__text">
+                I kicked things off by breaking down the current flow. Internally, we split events into two main types: "concerts" (like live shows, festivals, temporary exhibitions) and "attractions" (ongoing stuff like safaris, museums, theaters, etc.).
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                From there, it gets complicated fast. Some events don’t need a schedule at all, some have multiple sessions per day, some use seat maps, others don’t, but some may need both for the same event and many mix and match ticket types like family, kids, or VIP, etc.
+            </p>
+            <p class="case__text">
+                Plus, we had a ton of legacy logic and one-off requests from organizers—many of which contradicted each other.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                I gathered all the use cases I could find, mapped out the pain points, and sat down with the team to prioritize: what’s quick to fix, what needs more dev effort, and what’s still too unclear to tackle?
+            </p>
+            <p class="case__text">
+                The seat map flow was by far the trickiest because of all the old code behind it. So we decided to go step by step—start with smaller fixes, track metrics, and build momentum.
+            </p>
+        </div>
+        
+        
+        <div class="case__text-box">
+            <h2 class="case__h2" id="iteration-1">Iteration 1.0: <span class="alt-font">Quick Wins</span></h2>
+            <p class="case__text">/ Sept–Oct 2023</p>
+            <p class="case__text">
+                The first thing I tackled was the ticket selector for events without a seat map. The original version used a dropdown. I pitched switching to an e-commerce-style counter instead.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                The dropdown made technical sense—especially for high-demand events—because it reserved tickets immediately. But from a UX point of view, it was clunky. It took more clicks, couldn’t be used with the keyboard, and just felt off.
+            </p>
+            <p class="case__text">
+                I reworked the logic so counters could still support backend reservations, added keyboard support, and built in smart defaults for high-quantity use cases.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                To make it feel polished, I added subtle micro-animations to give feedback and keep the interaction feeling alive.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                Next up: events with both a schedule and a seat map. Originally, users landed on a list view—not the map, because there was impossible to choose date and time.
+            </p>
+            <p class="case__text">
+                We couldn’t change the architecture right away, so I moved the "Go to Map" button to a more obvious place, so it became the natural next step after choosing a date.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                That small tweak made a big difference—users now went from date selection straight to the map, and only used the list view if they really wanted to.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                We also didn’t have a proper mini-cart across the funnel. I designed a lightweight, always-visible version that adapted slightly at each step with a smooth animation on the top of that. 
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                Moreover I fixed various little things throughout the whole tunnel, refreshed the success page, created several prototypes, and—for the first time in the company—built full responsive designs for all screen sizes.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                To wrap up this phase, I documented the full funnel and shared a clickable map of all sections, along with ideas for what to do next.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                These small tweaks alone led to a 10% boost in purchase conversion.
+            </p>
+        </div>
+        
+
+        <div class="case__text-box">
+            <h2 class="case__h2" id="iteration-1_2">Iteration 1.2: <span class="alt-font">Schedule Resceduled</span></h2>
+            <p class="case__text">/ Nov–Dec 2023</p>
+            <p class="case__text">
+                The date selection still felt bulky—especially on mobile. I designed a cleaner version with responsive date chips that scrolled horizontally when needed, replaced dropdowns with a simple list of time slots, and gave the calendar UI a refresh.
+            </p>
+            <p class="case__text">
+                Stakeholders were excited, but just as we were about to start implementation, priorities shifted and the team moved to a different project. I didn’t save the visuals, but many of the ideas fed into the next iteration.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <h2 class="case__h2" id="iteration-2">Iteration 2: <span class="alt-font">Schedule Resceduled</span></h2>
+            <p class="case__text">/ Summer 2024</p>
+            <p class="case__text">
+                I was really exited when we finally had time to tackle the map-based flow! The issue was the same: if an event had multiple dates or times, we couldn’t send users straight to the seat map. Instead, they had to go through a confusing list view first, <a href="">which was described before</a>.
+            </p>
+            <p class="case__text">
+                I looked at how competitors handled this and brainstormed how we could adapt. We couldn’t skip date selection, but we could make it feel seamless.
+            </p>
+            <p class="case__text">
+                So I mocked up a popup that appeared on top of the map. The user would land directly on the map, but with a light overlay prompting them to pick a date and time.
+            </p>
+        </div>
+
+        <div class="case__text-box">
+            <p class="case__text">
+                Why it worked better:
+            </p>
+            <ol class="case__text-list">
+                <li>We got rid of the intermediate page—users always saw the map first.</li>
+                <li>Date/time selection became much faster and easier, especially on mobile where the interaction was thumb-friendly.</li>
+            </ul>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                The stakeholders loved the new concept, so I continued working on more cases. And as I worked through more scenarios, I realized this pattern could work everywhere, even for list-based events.
+            </p>
+            <p class="case__text">
+                To confirm my ideas I built out a few new prototypes with different scenarios which we tested on several rounds for user research. 
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                Feedback was clear: the new flow was way easier to understand. After polishing some edge cases, I finalized everything.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                When it was the promo code's turn, I added a playful little interaction to make it feel more rewarding.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                Another important piece was the long-requested lunar calendar. I started working on it during the Iteration 1.2 before the Ramadan 2024 and later refined it into a clean, localized component that worked for both English and Arabic users.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                !!!! Another important piece was the long-requested lunar calendar. I started working on it during the Iteration 1.2 before the Ramadan 2024 and later refined it into a clean, localized component that worked for both English and Arabic users.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                !!!! Another important piece was the long-requested lunar calendar. I started working on it during the Iteration 1.2 before the Ramadan 2024 and later refined it into a clean, localized component that worked for both English and Arabic users.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                !!!! Another important piece was the long-requested lunar calendar. I started working on it during the Iteration 1.2 before the Ramadan 2024 and later refined it into a clean, localized component that worked for both English and Arabic users.
+            </p>
+        </div>
+
+        <div class="--results case__text-box">
+            <h2 class="case__h2" id="results">Results and <span class="alt-font">Impact</span></h2>
+            <p class="case__text">
+                As a result I streamlined the entire ticket flow keeping the same core steps and just making them clearer, faster, and easier by sticking to "one screen = one task."
+            </p>
+            <p class="case__text">
+                A/B tests showed:
+            </p>
+            <ul class="--results__impact metrics">
+                <li class="--results__metric metrics__item">
+                    <p class="metrics__number" aria-labelledby="revenue">-20%</p>
+                    <p id="revenue" class="case__text">Reduction in time to purchase the tickets</p>
+                </li>
+                <li class="--results__metric metrics__item">
+                    <p class="metrics__number" aria-labelledby="traffic">+38%</p>
+                    <p id="traffic" class="case__text">Increase in conversion</p>
+                </li>
+            </ul>
+            <p class="case__text">
+                There’s still more to improve. The seat maps themselves are outdated and could definitely use a full redesign. But that’s a whole other project...
+            </p>
+        </div>
+
+        
+
+    </article>
+
+
+    <script src="/modernizr-custom.js"></script>
+    <script type="module" src="./case.js"></script>
 
 </body>

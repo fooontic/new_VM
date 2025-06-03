@@ -285,7 +285,7 @@
     background-size: contain;
 }
 
-.webp .resale .--onboarding::before {
+.resale .--onboarding::before {
     background-image: url(/img/cases/resale/onboarding_bg.webp);
 }
 

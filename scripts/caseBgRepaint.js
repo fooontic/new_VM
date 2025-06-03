@@ -1,5 +1,6 @@
 export function initScrollBgRepaint() {
     const body = document.body;
+    const caseColor = body.style.getPropertyValue('--case-bg-color');
     let threshold = window.innerHeight * 0.5; // одна видимая часть экрана
 
     function updateBgColor() {
@@ -7,7 +8,7 @@ export function initScrollBgRepaint() {
         if (scrolled >= threshold) {
             body.style.setProperty("--case-bg-color", "var(--cc-bg-default)");
         } else {
-            body.style.setProperty("--case-bg-color", "var(--cc-bg-case-1)");
+            body.style.setProperty("--case-bg-color", caseColor);
         }
     }
 
