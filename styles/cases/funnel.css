@@ -48,4 +48,14 @@
         width: 100%;
         translate: 0 0;
     }
+
+
+
+    .funnel .--map {
+        margin: 0 calc(var(--min-padding) * -1);
+    }
+
+    .funnel .--map__pic {
+        border-radius: 0;
+    }
 }
