@@ -38,6 +38,18 @@
 }
 
 
+/* Resale tickets /////////////////////*/
+
+.funnel .--old-select__container {
+    display: flex;
+    gap: 24px;
+}
+
+
+/* //////////////////////////////////////
+/////////////////////////////////////////
+// Media queries ///////////////////// */
+
 @media (max-width: 500px) {
     .funnel .--intro__site {
         display: none;
@@ -56,6 +68,22 @@
     }
 
     .funnel .--map__pic {
+        border-radius: 0;
+    }
+
+
+
+    .funnel .--old-select__container {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+
+    .funnel .--mess {
+        margin: 0 calc(var(--min-padding) * -1);
+    }
+
+    .funnel .--mess img {
         border-radius: 0;
     }
 }
