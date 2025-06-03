@@ -8,8 +8,14 @@
 .summary a {
     color: currentColor;
     text-decoration-thickness: 0.05em;
-    text-underline-position: under;
+    text-underline-position: under;text-decoration-color: color-mix(in srgb, currentColor, transparent 70%);
+    transition: all 160ms;
 }
+
+.summary a:hover {
+    color: var(--c-action);
+}
+
 
 .summary ul li {
     margin-bottom: 0.4em;
@@ -42,5 +48,5 @@
 
 .summary__text {
     display: block;
-    opacity: 0.6;
+    color: color-mix(in srgb, var(--c-content) 80%, transparent);
 }

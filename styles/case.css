@@ -41,6 +41,18 @@
     line-height: 150%;
 }
 
+.case__text a {
+    color: currentColor;
+    text-decoration-thickness: 0.05em;
+    text-underline-position: under;
+    text-decoration-color: color-mix(in srgb, currentColor, transparent 70%);
+    transition: all 160ms;
+}
+
+.case__text a:hover {
+    color: var(--c-action);
+}
+
 .case__text-list {
     font-size: var(--fz);
     line-height: 150%;

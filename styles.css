@@ -18,6 +18,7 @@
 @import "./styles/metrics.css";
 
 @import "./styles/cases/resale.css";
+@import "./styles/cases/funnel.css";
 
 @font-face {
   font-family: "DM Sans";
