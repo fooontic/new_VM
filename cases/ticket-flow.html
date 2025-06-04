@@ -203,18 +203,62 @@
                 We couldn’t change the architecture right away, so I moved the "Go to Map" button to a more obvious place, so it became the natural next step after choosing a date.
             </p>
         </div>
+
+        <div class="contentSwitcher case__container_l">
+            <fieldset class="switcher contentSwitcher__control">
+                <legend class="visually-hidden">Choose version</legend>
+                <label class="switcher__option">
+                    <input class="switcher__input contentSwitcher__input" type="radio" name="version" value="old" c-option="1" checked/>
+                    <span>Old</span>
+                </label>
+                <label class="switcher__option">
+                    <input class="switcher__input contentSwitcher__input" type="radio" name="version" value="new" c-option="2" />
+                    <span>New</span>
+                </label>
+                <div class="switcher__toggle"></div>
+            </fieldset>
+    
+            <div class="--map-btn contentSwitcher__content">
+                <figure class="--map-btn__container --map-btn__container_old contentSwitcher__choice" c-choice="1">
+                    <div class="--map-btn__item">
+                        <img class="case__pic case__pic_rounded_s" src="/img/cases/funnel/map-old_desktop.webp" alt="">
+                    </div>
+                    <div class="--map-btn__item">
+                        <img class="case__pic case__pic_rounded" src="/img/cases/funnel/map-old_mobile.webp" alt="">
+                    </div>
+                </figure>
+                <figure class="--map-btn__container --map-btn__container_new contentSwitcher__choice" c-choice="2">
+                    <div class="--map-btn__item">
+                        <img class="case__pic case__pic_rounded_s" src="/img/cases/funnel/map-new_desktop.webp" alt="">
+                    </div>
+                    <div class="--map-btn__item">
+                        <img class="case__pic case__pic_rounded" src="/img/cases/funnel/map-new_mobile.webp" alt="">
+                    </div>
+                </figure>
+            </div>
+        </div>
         
         <div class="case__text-box">
             <p class="case__text">
                 That small tweak made a big difference—users now went from date selection straight to the map, and only used the list view if they really wanted to.
             </p>
         </div>
+
+        <figure class="case__container_m">
+            <img src="/img/cases/funnel/map-sight-flow.webp" alt="" class="case__pic case__pic_rounded_s">
+        </figure>
         
         <div class="case__text-box">
             <p class="case__text">
                 We also didn’t have a proper mini-cart across the funnel. I designed a lightweight, always-visible version that adapted slightly at each step with a smooth animation on the top of that. 
             </p>
         </div>
+
+        <figure class="--cart case__container_m">
+            <video class="--cart__video case__pic" preload="metadata" autoplay muted loop>
+                <source src="/img/cases/funnel/cart_comp.mp4" type="video/mp4">
+            </video>
+        </figure>
         
         <div class="case__text-box">
             <p class="case__text">

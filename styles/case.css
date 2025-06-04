@@ -5,13 +5,14 @@
 
     --fz: clamp(16px, 1.3vw, 20px);
 
-    --radius-s: min(0.8em, 2vw);
+    --radius-s: min(0.6em, 1.5vw);
     --radius-m: min(1.2em, 3vw);
     --min-padding: 32px;
     
     background-color: var(--case-bg-color);
     overflow-x: hidden;
     transition: background-color 500ms;
+    font-size: var(--fz);
 }
 
 .case__body {

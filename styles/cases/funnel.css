@@ -66,18 +66,18 @@
     background-repeat: no-repeat;
 }
 
-/* Counters /////////////////////*/
+/* Counter animation /////////////////////*/
 
 
 .funnel .--counter-anim {
     --c: color-mix(in srgb, var(--c-light) 40%, transparent);
     --xtr: 36px;
     --p: 8px;
-
+    
     position: relative;
     max-width: 400px;
     margin: 0 auto;
-    padding: var(--p);
+    padding: 0 var(--p) var(--p) 0;
     border-radius: 0 0 calc(var(--radius-m) + var(--p)) 0;
     border: 1px solid transparent;
     background: 
@@ -98,11 +98,105 @@
     width: calc(100% + var(--xtr));
     height: calc(100% + var(--xtr));
     background: 
-        linear-gradient(to top, var(--c), transparent) calc(var(--xtr) + var(--p)) calc(var(--xtr) / 2 + var(--p)) / 1px 20px no-repeat,
-        linear-gradient(to left, var(--c), transparent) calc(var(--xtr) / 2 + var(--p)) calc(var(--xtr) + var(--p)) / 20px 1px no-repeat,
-        linear-gradient(to top, var(--c), transparent) calc(100% - var(--p)) calc(1px + var(--p)) / 1px var(--xtr) no-repeat,
-        linear-gradient(to left, var(--c), transparent) calc(1px + var(--p)) calc(100% - var(--p)) / var(--xtr) 1px no-repeat;
-    /* z-index: 1; */
+        linear-gradient(to top, var(--c), transparent) var(--xtr) calc(var(--xtr) / 2 + 1px) / 1px 20px no-repeat,
+        linear-gradient(to left, var(--c), transparent) calc(var(--xtr) / 2 + 1px) var(--xtr) / 20px 1px no-repeat,
+        linear-gradient(to top, var(--c), transparent) calc(100% - var(--p)) 1px / 1px var(--xtr) no-repeat,
+        linear-gradient(to left, var(--c), transparent) 1px calc(100% - var(--p)) / var(--xtr) 1px no-repeat;
+}
+
+/* Map button /////////////////////*/
+
+.funnel .--map-btn__container {
+    display: flex;
+    gap: 24px;
+}
+
+.funnel .--map-btn__item {
+    position: relative;
+}
+
+.funnel .--map-btn__container_new .--map-btn__item::before,
+.funnel .--map-btn__container_new .--map-btn__item::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: 
+        url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M60 30C31.5 31.5 31.5 31.5 30 60C28.5 31.5 28.5 31.5 0 30C28.5 28.5 28.5 28.5 30 0C31.5 28.5 31.5 28.5 60 30Z" fill="%2337A7F8"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 1;
+    scale: var(--starsScaleAnimation, 0);
+    transition: scale 600ms linear(0 0%, 0.06 12.21%, 0.24 25.29%, 1.08 44.76%, 1.22 50.12%, 1.27 58.83%, 1.23 68.29%, 1.13 77.4%, 1.06 83.33%, 1.01 92.25%, 1 100%);
+}
+
+
+
+.funnel .--map-btn__container_new .--map-btn__item:first-child::before {
+    height: 12%;
+    aspect-ratio: 1;
+    bottom: 16%;
+    left: -6%;
+    transition-delay: 200ms;
+}
+
+.funnel .--map-btn__container_new .--map-btn__item:first-child::after {
+    height: 7%;
+    aspect-ratio: 1;
+    bottom: 26%;
+    left: -6%;
+    transition-delay: 350ms;
+}
+
+.funnel .--map-btn__container_new .--map-btn__item:last-child::before {
+    height: 10%;
+    aspect-ratio: 1;
+    top: 12%;
+    right: -15%;
+    transition-delay: 500ms;
+}
+
+.funnel .--map-btn__container_new .--map-btn__item:last-child::after {
+    height: 6%;
+    aspect-ratio: 1;
+    top: 19%;
+    right: -3%;
+    transition-delay: 300ms;
+}
+
+/* Cart ///////////////////////*/
+
+.funnel .--cart {
+    --c: color-mix(in srgb, var(--c-light) 40%, transparent);
+    --xtr: 36px;
+    --p: 8px;
+    
+    position: relative;
+    margin: 0 auto;
+    padding: 0 0 var(--p) var(--p);
+    border-radius: 0 0 0 calc(var(--radius-m) + var(--p));
+    border: 1px solid transparent;
+    background: 
+        radial-gradient(105% 90% at -8% 90%, color-mix(in srgb, var(--c-light) 22%, var(--case-bg-color)) 24.5%, transparent 100%) padding-box,
+        radial-gradient(105% 90% at -8% 90%, color-mix(in srgb, var(--c-light) 30%, transparent) 24.5%, transparent 100%) border-box;
+    }
+
+.funnel .--cart__video {
+    position: relative;
+    border-radius: 0 0 0 var(--radius-m);
+}
+
+.funnel .--cart::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% + var(--xtr));
+    height: calc(100% + var(--xtr));
+    background: 
+        linear-gradient(to top, var(--c), transparent) calc(100% - var(--xtr)) calc(var(--xtr) / 2 + 1px) / 1px 20px no-repeat,
+        linear-gradient(to right, var(--c), transparent) calc(100% - var(--xtr) / 2 + 1px) var(--xtr) / 20px 1px no-repeat,
+        linear-gradient(to top, var(--c), transparent) var(--p) 1px / 1px var(--xtr) no-repeat,
+        linear-gradient(to right, var(--c), transparent) 100% calc(100% - var(--p)) / var(--xtr) 1px no-repeat;
 }
 
 
@@ -166,6 +260,65 @@
         scale: 1 -1;
         rotate: 90deg;
         width: 36%;
+    }
+
+
+
+    .funnel .--counter-anim {
+        --xtr: 28px;
+        --p: 6px;
+    }
+
+
+
+    .funnel .--map-btn {
+        overflow-x: scroll;
+        margin: 0 calc(var(--min-padding) * -1);
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    .funnel .--map-btn::-webkit-scrollbar {
+        display: none;
+    }
+
+    .funnel .--map-btn__container {
+        width: 220%;
+        gap: 16px;
+        padding: 0 var(--min-padding);
+    }
+
+    .funnel .--map-btn__item:first-child {
+        order: 2;
+    }
+
+    .funnel .--map-btn__container_new .--map-btn__item:first-child::before {
+        left: initial;
+        right: -6%;
+        bottom: 84%;
+    }
+    
+    .funnel .--map-btn__container_new .--map-btn__item:first-child::after {
+        left: initial;
+        right: -1%;
+        bottom: 78%;
+    }
+    
+    .funnel .--map-btn__container_new .--map-btn__item:last-child::before {
+        right: initial;
+        left: -5%;
+        top: 75%;
+    }
+    
+    .funnel .--map-btn__container_new .--map-btn__item:last-child::after {
+        right: initial;
+        left: -11%;
+        top: 70%;
+    }
+
+    .funnel .--cart {
+        --xtr: 28px;
+        --p: 6px;
     }
 
 }
