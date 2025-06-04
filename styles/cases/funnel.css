@@ -38,12 +38,74 @@
 }
 
 
-/* Resale tickets /////////////////////*/
+/* Old ticket select /////////////////////*/
 
 .funnel .--old-select__container {
     display: flex;
     gap: 24px;
 }
+
+/* Counters /////////////////////*/
+
+.funnel .--counter {
+    position: relative;
+    display: flex;
+    gap: 24px;
+}
+
+.funnel .--counter::after {
+    content: '';
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    translate: -50% 0;
+    width: 20%;
+    aspect-ratio: 8;
+    background-image: url('data:image/svg+xml,<svg width="199" height="23" viewBox="0 0 199 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.34559 10.0404C1.53945 9.84949 0.731215 10.3483 0.540353 11.1544C0.349491 11.9606 0.848273 12.7688 1.65441 12.9596L2.34559 10.0404ZM198.277 10.2865C198.712 9.58115 198.492 8.65716 197.787 8.22276L186.291 1.14382C185.586 0.709423 184.662 0.929113 184.228 1.63451C183.793 2.33991 184.013 3.2639 184.718 3.6983L194.936 9.99069L188.644 20.2086C188.209 20.914 188.429 21.838 189.135 22.2724C189.84 22.7068 190.764 22.4871 191.198 21.7817L198.277 10.2865ZM2 11.5L1.65441 12.9596C55.4027 25.6851 139.941 24.6083 197.347 10.9593L197 9.5L196.653 8.04068C139.659 21.5917 55.5973 22.6482 2.34559 10.0404L2 11.5Z" fill="%23EA396B"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Counters /////////////////////*/
+
+
+.funnel .--counter-anim {
+    --c: color-mix(in srgb, var(--c-light) 40%, transparent);
+    --xtr: 36px;
+    --p: 8px;
+
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: var(--p);
+    border-radius: 0 0 calc(var(--radius-m) + var(--p)) 0;
+    border: 1px solid transparent;
+    background: 
+        radial-gradient(90% 80% at 92% 90%, color-mix(in srgb, var(--c-light) 22%, var(--case-bg-color)) 24.5%, transparent 100%) padding-box,
+        radial-gradient(90% 80% at 92% 90%, color-mix(in srgb, var(--c-light) 30%, transparent) 24.5%, transparent 100%) border-box;
+}
+
+.funnel .--counter-anim__video {
+    position: relative;
+    border-radius: 0 0 var(--radius-m) 0;
+}
+
+.funnel .--counter-anim::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: calc(100% + var(--xtr));
+    height: calc(100% + var(--xtr));
+    background: 
+        linear-gradient(to top, var(--c), transparent) calc(var(--xtr) + var(--p)) calc(var(--xtr) / 2 + var(--p)) / 1px 20px no-repeat,
+        linear-gradient(to left, var(--c), transparent) calc(var(--xtr) / 2 + var(--p)) calc(var(--xtr) + var(--p)) / 20px 1px no-repeat,
+        linear-gradient(to top, var(--c), transparent) calc(100% - var(--p)) calc(1px + var(--p)) / 1px var(--xtr) no-repeat,
+        linear-gradient(to left, var(--c), transparent) calc(1px + var(--p)) calc(100% - var(--p)) / var(--xtr) 1px no-repeat;
+    /* z-index: 1; */
+}
+
+
 
 
 /* //////////////////////////////////////
@@ -79,11 +141,31 @@
     }
 
 
-    .funnel .--mess {
+
+    .funnel .--mess,
+    .funnel .--counter-spec {
         margin: 0 calc(var(--min-padding) * -1);
     }
 
-    .funnel .--mess img {
+    .funnel .--mess img,
+    .funnel .--counter-spec img {
         border-radius: 0;
     }
+
+
+
+    .funnel .--counter {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .funnel .--counter::after {
+        top: 48%;
+        left: 85%;
+        translate: -50% 0;
+        scale: 1 -1;
+        rotate: 90deg;
+        width: 36%;
+    }
+
 }
