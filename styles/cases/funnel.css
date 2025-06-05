@@ -407,6 +407,36 @@
     background-image: url(/img/cases/funnel/promocode_bg.webp);
 }
 
+/* Hijiri ///////////////////////*/
+
+.funnel .--hijiri__container {
+    display: flex;
+    gap: 24px;
+}
+
+/* Hijiri ///////////////////////*/
+
+.funnel .--exploration__container {
+    position: relative;
+    display: flex;
+    gap: 24px;
+    padding-top: 2em;
+}
+
+.funnel .--exploration__container::after {
+    content: '';
+    position: absolute;
+    width: 82%;
+    height: 24px;
+    left: 50%;
+    top: 0;
+    translate: -50% 0;
+    background-image: url('data:image/svg+xml,<svg width="1053" height="24" viewBox="0 0 1053 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 12C-3.86258e-07 16.4183 3.58172 20 8 20C12.4183 20 16 16.4183 16 12C16 7.58172 12.4183 4 8 4C3.58172 4 3.86258e-07 7.58172 0 12ZM1052.06 13.0608C1052.65 12.475 1052.65 11.5252 1052.06 10.9394L1042.51 1.39349C1041.93 0.807702 1040.98 0.807702 1040.39 1.39349C1039.81 1.97928 1039.81 2.92902 1040.39 3.51481L1048.88 12.0001L1040.39 20.4854C1039.81 21.0712 1039.81 22.0209 1040.39 22.6067C1040.98 23.1925 1041.93 23.1925 1042.51 22.6067L1052.06 13.0608ZM8 12L8 13.5L1051 13.5001L1051 12.0001L1051 10.5001L8 10.5L8 12Z" fill="%23EA396B"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
 
 /* //////////////////////////////////////
 /////////////////////////////////////////
@@ -615,5 +645,52 @@
         margin: 0 calc(var(--min-padding) * -1);
         overflow: hidden;
     }
+
+
+
+    .funnel .--hijiri {
+        overflow-x: scroll;
+        margin: 0 calc(var(--min-padding) * -1);
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    .funnel .--hijiri::-webkit-scrollbar {
+        display: none;
+    }
+
+    .funnel .--hijiri__container {
+        width: 150%;
+        padding: 0 var(--min-padding);
+        gap: 16px;
+    }
+
+
+
+    .funnel .--exploration {
+        overflow-x: scroll;
+        margin: 0 calc(var(--min-padding) * -1);
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    .funnel .--exploration::-webkit-scrollbar {
+        display: none;
+    }
+
+    .funnel .--exploration__container {
+        width: 300%;
+        padding: 2em var(--min-padding) 0;
+        gap: 16px;
+    }
+
+    .funnel .--exploration__container::after {
+        width: 77%;
+    }
+
+
+
+    
+    
 
 }
