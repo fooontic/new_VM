@@ -176,9 +176,9 @@
     border-radius: 0 0 0 calc(var(--radius-m) + var(--p));
     border: 1px solid transparent;
     background: 
-        radial-gradient(105% 90% at -8% 90%, color-mix(in srgb, var(--c-light) 22%, var(--case-bg-color)) 24.5%, transparent 100%) padding-box,
-        radial-gradient(105% 90% at -8% 90%, color-mix(in srgb, var(--c-light) 30%, transparent) 24.5%, transparent 100%) border-box;
-    }
+    radial-gradient(105% 90% at -8% 90%, color-mix(in srgb, var(--c-light) 22%, var(--case-bg-color)) 24.5%, transparent 100%) padding-box,
+    radial-gradient(105% 90% at -8% 90%, color-mix(in srgb, var(--c-light) 30%, transparent) 24.5%, transparent 100%) border-box;
+}
 
 .funnel .--cart__video {
     position: relative;
@@ -193,12 +193,98 @@
     width: calc(100% + var(--xtr));
     height: calc(100% + var(--xtr));
     background: 
-        linear-gradient(to top, var(--c), transparent) calc(100% - var(--xtr)) calc(var(--xtr) / 2 + 1px) / 1px 20px no-repeat,
-        linear-gradient(to right, var(--c), transparent) calc(100% - var(--xtr) / 2 + 1px) var(--xtr) / 20px 1px no-repeat,
-        linear-gradient(to top, var(--c), transparent) var(--p) 1px / 1px var(--xtr) no-repeat,
-        linear-gradient(to right, var(--c), transparent) 100% calc(100% - var(--p)) / var(--xtr) 1px no-repeat;
+    linear-gradient(to top, var(--c), transparent) calc(100% - var(--xtr)) calc(var(--xtr) / 2 + 1px) / 1px 20px no-repeat,
+    linear-gradient(to right, var(--c), transparent) calc(100% - var(--xtr) / 2 + 1px) var(--xtr) / 20px 1px no-repeat,
+    linear-gradient(to top, var(--c), transparent) var(--p) 1px / 1px var(--xtr) no-repeat,
+    linear-gradient(to right, var(--c), transparent) 100% calc(100% - var(--p)) / var(--xtr) 1px no-repeat;
 }
 
+/* Cart ///////////////////////*/
+
+.funnel .--schedule {
+    position: relative;
+}
+
+.funnel .--schedule__desktop {
+    position: relative;
+    margin-bottom: -22%;
+}
+
+.funnel .--schedule__desktop::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    background: 
+        linear-gradient(to top, 
+            color-mix(in srgb, var(--case-bg-color), transparent 0%) 15.12%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 1%) 15.78%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 2%) 16.98%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 3%) 18.79%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 5%) 21.28%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 7%) 24.53%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 11%) 28.61%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 16%) 33.59%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 22%) 39.55%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 30%) 46.56%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 40%) 54.7%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 51%) 64.04%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 65%) 74.65%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 81%) 86.62%,
+            color-mix(in srgb, var(--case-bg-color), transparent 100%) 100%
+        ),
+        linear-gradient(to top, 
+        color-mix(in srgb, var(--case-bg-color), transparent 0%) 0%, 
+        color-mix(in srgb, var(--case-bg-color), transparent 100%) 80%
+        );
+}
+
+.funnel .--schedule::after {
+    content: '';
+    display: block;
+    width: 100%;
+    min-height: 140%;
+}
+
+.funnel .--schedule__mobile-container {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    max-width: var(--w-m);
+    margin: 0 auto;
+}
+
+.funnel .--schedule__mobile {
+    --p: 8px;
+    
+    padding: var(--p);
+    border-radius: calc(1.5em + var(--p));
+    box-sizing: border-box;
+    background-color: 
+        color-mix(in srgb, var(--c-glass) 18%, transparent);
+    backdrop-filter: blur(16px);
+    will-change: transform;
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) 9%, transparent),
+        inset 0.3px 1px 0px 0px color-mix(in srgb, var(--c-light) 20%, transparent), 
+        inset -0.3px -1px 5px 0px color-mix(in srgb, var(--c-dark) 18%, transparent), 
+        0px 3px 5px 0px color-mix(in srgb, var(--c-dark) 12%, transparent), 
+        0px 10px 16px 0px color-mix(in srgb, var(--c-dark) 10%, transparent);
+}
+
+.funnel .--schedule__mobile:nth-child(2) {
+    translate: 0 -13%;
+}
+
+.funnel .--schedule__mobile:nth-child(3) {
+    translate: 0 -26%;
+}
+
+.funnel .--schedule__mobile img {
+    border-radius: 1.5em;
+}
 
 
 
@@ -342,6 +428,43 @@
     .funnel .--flow-map__container {
         width: 220%;
         padding: 0 var(--min-padding);
+    }
+
+
+
+    .funnel .--schedule__scroll-wrapper {
+        overflow-x: scroll;
+        margin: 0 calc(var(--min-padding) * -1);
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    .funnel .--schedule__scroll-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .funnel .--schedule__mobile-container {
+        width: 180%;
+        padding: 0 var(--min-padding);
+    }
+
+    .funnel .--schedule__desktop::after {
+        height: 60%;
+    }
+
+    .funnel .--schedule__mobile { --p: 6px; }
+
+    .funnel .--schedule__mobile:nth-child(2),
+    .funnel .--schedule__mobile:nth-child(3) {
+        translate: 0;
+    }
+
+    .funnel .--schedule__desktop {
+        margin: 0 calc(var(--min-padding) * -1) -38%;
+    }
+
+    .funnel .--schedule__desktop img {
+        border-radius: 0;
     }
 
 }
