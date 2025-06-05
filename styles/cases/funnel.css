@@ -237,12 +237,14 @@
 
 
     .funnel .--mess,
-    .funnel .--counter-spec {
+    .funnel .--counter-spec,
+    .funnel .--responsive {
         margin: 0 calc(var(--min-padding) * -1);
     }
 
     .funnel .--mess img,
-    .funnel .--counter-spec img {
+    .funnel .--counter-spec img,
+    .funnel .--responsive img {
         border-radius: 0;
     }
 
@@ -316,9 +318,30 @@
         top: 70%;
     }
 
+
+
+
     .funnel .--cart {
         --xtr: 28px;
         --p: 6px;
+    }
+
+
+
+    .funnel .--flow-map {
+        overflow-x: scroll;
+        margin: 0 calc(var(--min-padding) * -1);
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    .funnel .--flow-map::-webkit-scrollbar {
+        display: none;
+    }
+
+    .funnel .--flow-map__container {
+        width: 220%;
+        padding: 0 var(--min-padding);
     }
 
 }
