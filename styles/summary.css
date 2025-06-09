@@ -3,6 +3,8 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    font-size: var(--fz);
+    line-height: 140%;
 }
 
 .summary a {
@@ -17,7 +19,8 @@
 }
 
 
-.summary ul li {
+.summary ul li,
+.summary__text {
     margin-bottom: 0.4em;
 }
 
@@ -26,13 +29,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, auto);
     grid-auto-flow: column;
-    row-gap: 3em;
-}
-
-.summary__item {
-    /* margin-bottom: 1em; */
-    font-size: var(--fz);
-    line-height: 140%;
+    row-gap: calc(1lh + 0.4em);
 }
 
 .summary__item_responsibilities {
