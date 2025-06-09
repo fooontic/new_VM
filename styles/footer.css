@@ -18,8 +18,13 @@
     white-space: nowrap;
     display: flex;
     align-items: baseline;
+    /* justify-content: space-between; */
     gap: 0.3em;
     overflow: hidden;
+}
+
+.footer_case .footer__cta {
+    font-size: 9.5vw;
 }
 
 .footer__cta::after {
