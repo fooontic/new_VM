@@ -27,6 +27,32 @@
   font-style: normal;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
+/* html {
+  view-transition-name: root;
+} */
+
+::view-transition-old(root) {
+  animation: fadePageOut 0.5s ease-in;
+}
+
+::view-transition-new(root) {
+  animation: fadePageIn 0.5s ease-out;
+}
+
+@keyframes fadePageIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadePageOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
 body {
   margin: 0;
   font-family: var(--f-primary);
