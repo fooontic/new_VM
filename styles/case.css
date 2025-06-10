@@ -37,6 +37,17 @@
     font-size: clamp(32px, 4vw, 48px);
 }
 
+.case__h2:has(+ .case__subtitle) {
+    margin-bottom: 0;
+}
+
+.case__subtitle {
+    margin: 0.8em 0 32px;
+    font-size: calc(var(--fz) * 0.8);
+    line-height: 150%;
+    opacity: 0.6;
+}
+
 .case__text {
     margin: 0 auto 0.8em;
     font-size: var(--fz);
