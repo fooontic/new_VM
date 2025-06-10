@@ -229,7 +229,7 @@ export function initMobileSlider(selector) {
 
 ////////////////////////////////////////////////
 // Анимация по скроллу ////////////////////////
-export function casesScrollEffect(selector) {
+export function casesScrollEffect(selector, registerScrollHandler) {
     const targetElement = document.querySelector(selector);
     const mainPage = document.querySelector(".main");
     const casesPic = document.querySelector(".cases_desktop .cases__pictures");
@@ -248,24 +248,21 @@ export function casesScrollEffect(selector) {
         let scrollRatio = Math.min(1, scrollY / maxScroll);
 
         // Увеличиваем scale
-        // let scaleValue = Math.min(scrollRatio, 1); 
         let scaleValue = minScale + (maxScale - minScale) * scrollRatio;
         let translateYValue = minTranslateY + (maxTranslateY - minTranslateY) * scrollRatio;
         let translateYPercent = translateYValue * -100;
 
         targetElement.style.transform = `translateY(${translateYPercent}%) scale(${scaleValue})`;
-        // mainPage.style.backgroundColor = `color-mix(in srgb, ${newColor} ${scrollRatio * 100}%, var(--cc-bg))`;
         casesPic.style.opacity = scrollRatio;
     }
 
-    // Используем requestAnimationFrame для плавности
-    function onScroll() {
+    if (typeof registerScrollHandler === "function") {
+        registerScrollHandler(handleScroll);
+    } else {
+        window.addEventListener("scroll", () => requestAnimationFrame(handleScroll));
+        window.addEventListener("resize", () => requestAnimationFrame(handleScroll));
         requestAnimationFrame(handleScroll);
     }
-
-    window.addEventListener("scroll", onScroll);
-    window.addEventListener("resize", onScroll);
-    handleScroll(); // Первоначальный вызов для установки начального состояния
 }
 
 

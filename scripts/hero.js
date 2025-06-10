@@ -2,6 +2,9 @@ export function heroScrollEffect(selector) {
     const targetElement = document.querySelector(selector);
     if (!targetElement) return;
 
+    let lastScale = 1;
+    let lastOpacity = 1;
+
     function handleScroll() {
         const scrollY = window.scrollY; 
         const maxScroll = window.innerHeight * 0.8; // Один полный экран для полного исчезновения
@@ -13,21 +16,30 @@ export function heroScrollEffect(selector) {
         let scaleValue = Math.max(0, 1 - scrollRatio * 0.6); 
         let opacityValue = Math.max(0, 1 - scrollRatio * 1.5);
 
-        targetElement.style.transform = `scale(${scaleValue})`;
-        targetElement.style.opacity = opacityValue;
+        if (scaleValue !== lastScale || opacityValue !== lastOpacity) {
+            targetElement.style.transform = `scale(${scaleValue})`;
+            targetElement.style.opacity = opacityValue;
 
-        if (opacityValue == 0) {
-            targetElement.style.display = `block`;
-        } else {
-            targetElement.style.removeProperty('display');
+            // Вместо display: none/block — используем visibility и pointer-events
+            if (opacityValue <= 0) {
+                targetElement.style.visibility = "hidden";
+            } else {
+                targetElement.style.visibility = "visible";
+            }
+
+            lastScale = scaleValue;
+            lastOpacity = opacityValue;
         }
     }
 
-    // Используем requestAnimationFrame для плавности
-    function onScroll() {
-        requestAnimationFrame(handleScroll);
+    // Используем scrollHub, если он передан
+    if (typeof registerScrollHandler === "function") {
+        registerScrollHandler(handleScroll);
+    } else {
+        // fallback: обычный scroll
+        window.addEventListener("scroll", () => requestAnimationFrame(handleScroll));
     }
 
-    window.addEventListener("scroll", onScroll);
-    handleScroll(); // Первоначальный вызов для установки начального состояния
+    // вызовем при инициализации
+    requestAnimationFrame(handleScroll);
 }

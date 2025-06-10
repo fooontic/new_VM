@@ -338,6 +338,11 @@
         padding-left: 0;
     }
 
+    .cases:has(.cases__item:last-of-type:hover) .cases__title {
+        translate: 0;
+        opacity: 1;
+    }
+
     .cases_mobile .cases__slider {
         display: flex;
         /* gap: 16px; */

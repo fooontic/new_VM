@@ -1,14 +1,10 @@
-export function playScrollEffect(selector) {
+export function playScrollEffect(selector, registerScrollHandler) {
     const targetElement = document.querySelector(selector);
     if (!targetElement) return;
 
     const leftPicture = targetElement.querySelector(".play__pic:nth-child(1)");
     const rightPicture = targetElement.querySelector(".play__pic:nth-child(3)");
     const description = targetElement.querySelector(".play__desc");
-
-    const root = document.querySelector(".main");
-
-    const bgColor = "var(--cc-bg-default)";
 
     let isFullyVisible = false;
 
@@ -35,8 +31,6 @@ export function playScrollEffect(selector) {
             leftPicture.style.translate = `-30%`;
             rightPicture.style.translate = `30%`;
             
-            // root.style.setProperty("--cc-bg", bgColor);
-            
             return;
         }
 
@@ -51,7 +45,6 @@ export function playScrollEffect(selector) {
         let scale = 0.7 + 0.3 * progress;
         let translateY = minTranslateY + (maxTranslateY - minTranslateY) * progress;
 
-        // targetElement.style.transform = scale;
         targetElement.style.transform = `scale(${scale}) translateY(${translateY * -100}dvh)`;
         leftPicture.style.translate = `${(0.2 + 0.1 * progress) * -100}%`;
         rightPicture.style.translate = `${(0.2 + 0.1 * progress) * 100}%`;
@@ -61,12 +54,11 @@ export function playScrollEffect(selector) {
         }
     }
 
-    // Используем requestAnimationFrame для плавности
-    function onScroll() {
+    if (typeof registerScrollHandler === "function") {
+        registerScrollHandler(handleScroll);
+    } else {
+        window.addEventListener("scroll", () => requestAnimationFrame(handleScroll));
+        window.addEventListener("resize", () => requestAnimationFrame(handleScroll));
         requestAnimationFrame(handleScroll);
     }
-
-    window.addEventListener("scroll", onScroll);
-    window.addEventListener("resize", onScroll);
-    handleScroll(); // Первоначальный вызов для установки начального состояния
 }

@@ -1,4 +1,4 @@
-export function changeBgColor() {
+export function changeBgColor(registerScrollHandler) {
     const root = document.querySelector(".main");
     const hero = document.querySelector(".main__hero");
     const desktopCases = document.querySelector(".cases_desktop");
@@ -69,19 +69,15 @@ export function changeBgColor() {
         }
     });
 
-    window.addEventListener("scroll", () => requestAnimationFrame(handleBgColor));
-    window.addEventListener("resize", () => requestAnimationFrame(handleBgColor));
-    handleBgColor();
+    if (typeof registerScrollHandler === "function") {
+        registerScrollHandler(handleBgColor);
+    } else {
+        window.addEventListener("scroll", () => requestAnimationFrame(handleBgColor));
+        window.addEventListener("resize", () => requestAnimationFrame(handleBgColor));
+    }
 
-    // корректное определение цвета при первой загрузке
-    window.addEventListener("load", () => {
-        requestAnimationFrame(() => {
-            handleBgColor();
-        });
-    });
-
-    // на всякий случай — fallback при инициализации
-    requestAnimationFrame(() => {
-        setTimeout(handleBgColor, 0);
-    });
-} 
+    // начальный вызов для инициализации
+    requestAnimationFrame(handleBgColor);
+    window.addEventListener("load", () => requestAnimationFrame(handleBgColor));
+    setTimeout(() => requestAnimationFrame(handleBgColor), 0);
+}
