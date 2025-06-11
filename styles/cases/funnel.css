@@ -1,7 +1,7 @@
 .funnel .--intro {
     position: relative;
-    margin-top: clamp(40px, 10dvh, 120px);
-    margin-bottom: clamp(40px, 10dvh, 120px);
+    margin-top: clamp(40px, 10lvh, 120px);
+    margin-bottom: clamp(40px, 10lvh, 120px);
 }
 
 .funnel .--intro__video video {

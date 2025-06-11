@@ -7,7 +7,7 @@
 }
 
 .main__hero {
-    height: 95dvh;
+    height: 95lvh;
 }
 
 .main__cases {
@@ -15,7 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding: 10dvh 0; */
+    /* padding: 10lvh 0; */
 }
 
 .main__play {
@@ -24,6 +24,6 @@
 
 @media (max-width: 500px) {
     .main__hero {
-        height: 100dvh;
+        height: 100lvh;
     }
 }

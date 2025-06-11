@@ -1,5 +1,5 @@
 .intro {
-    padding-top: clamp(100px, 20dvh, 300px);
+    padding-top: clamp(100px, 20lvh, 300px);
 }
 
 .intro__desc {

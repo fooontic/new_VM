@@ -26,7 +26,7 @@
 }
 
 .cases__title {
-    margin: 2.6dvh 0 2.2dvh;
+    margin: 2.6lvh 0 2.2lvh;
     padding-left: 32px;
     font-family: var(--f-display);
     font-size: calc(var(--fz) * 2.6);
@@ -38,7 +38,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0.8dvh;
+    gap: 0.8lvh;
     flex-basis: 50%;
 }
 
@@ -155,7 +155,7 @@
 
 .cases__name {
     grid-area: name;
-    margin: 0.7dvh 0 1dvh;
+    margin: 0.7lvh 0 1lvh;
     font-size: calc(var(--fz) * 1.4);
     font-weight: 400;
     display: -webkit-box;
@@ -319,13 +319,13 @@
     }
 
     .cases_mobile {
-        margin-bottom: 4dvh;
+        margin-bottom: 4lvh;
         width: 100%;
     }
 
     .cases_mobile .cases__wrapper {
         position: relative;
-        height: 70dvh;
+        height: 70lvh;
         width: 100%;
         /* overflow: hidden; */
     }
