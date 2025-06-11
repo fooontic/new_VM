@@ -17,7 +17,7 @@ export function heroScrollEffect(selector) {
         let opacityValue = Math.max(0, 1 - scrollRatio * 1.5);
 
         if (scaleValue !== lastScale || opacityValue !== lastOpacity) {
-            targetElement.style.transform = `scale(${scaleValue})`;
+            // targetElement.style.transform = `scale(${scaleValue})`;
             targetElement.style.opacity = opacityValue;
 
             // Вместо display: none/block — используем visibility и pointer-events

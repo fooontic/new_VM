@@ -88,9 +88,3 @@
     }
 }
 
-
-@media (max-width: 500px) {
-    .hero__3d {
-        scale: 160%
-    }
-}
