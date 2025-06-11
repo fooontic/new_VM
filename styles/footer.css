@@ -1,6 +1,6 @@
 .footer {
     width: 100%;
-    margin-top: 5dvh;
+    margin-top: 5lvh;
     padding: 32px;
     box-sizing: border-box;
     overflow: hidden;
@@ -91,7 +91,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: 3fr 1fr 1fr;
-    margin-bottom: 10dvh;
+    margin-bottom: 10lvh;
 }
 
 .footer__madeby {

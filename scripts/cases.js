@@ -201,7 +201,7 @@ export function initMobileSlider(selector) {
         if (!isDown) return;
         e.preventDefault();
         const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 1.2;
+        const walk = (x - startX) * 1.8;
         slider.scrollLeft = scrollLeft - walk;
         updateActiveSlide();
     });
@@ -217,7 +217,7 @@ export function initMobileSlider(selector) {
 
     slider.addEventListener("touchmove", (e) => {
         const x = e.touches[0].pageX;
-        const walk = (x - startTouchX) * 1.2;
+        const walk = (x - startTouchX) * 1.8;
         slider.scrollLeft = startScrollLeft - walk;
         updateActiveSlide();
     });

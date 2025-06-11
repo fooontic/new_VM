@@ -29,11 +29,11 @@ export function changeBgColor(registerScrollHandler) {
         const mobileCasesRatio = getVisibleRatio(mobileCases);
         const playRatio = getVisibleRatio(play);
 
-        if (heroRatio >= 0.7) {
+        if (heroRatio >= 0.6) {
             root.style.setProperty("--cc-bg", "var(--cc-bg-hero)");
         } else if (desktopCasesRatio >= 0.7) {
             updateCasesColor("desktop");
-        } else if (mobileCasesRatio >= 0.7) {
+        } else if (mobileCasesRatio >= 0.3) {
             updateCasesColor("mobile");
         } else if (playRatio >= 0.7) {
             root.style.setProperty("--cc-bg", "var(--cc-bg-default)");
