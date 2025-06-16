@@ -63,13 +63,11 @@
     border-radius: 99em;
     background-color: color-mix(in srgb, var(--c-glass) 14%, transparent);
     z-index: -1;
-    /* transition: translate 200ms; */
 }
 
 .switcher:has(input[c-option="1"]:checked)::after {
     translate: 0 0;
     scale: 1 1;
-    /* animation: springToggle 150ms ease-in-out both; */
     transform-origin: left;
     transition: translate 160ms ease, scale 185ms linear(0 0%, -36 50%, 1 100%);
 }
@@ -77,16 +75,6 @@
 .switcher:has(input[c-option="2"]:checked)::after {
     translate: 100% 0;
     scale: 1.01 1;
-    /* animation: springToggle 150ms ease-in-out both; */
     transform-origin: right;
     transition: translate 160ms ease, scale 185ms linear(0 0%, 36 50%, 1 100%);
-}
-
-@keyframes springToggle {
-    0%, 100% {
-        scale: 1 1;
-    }
-    50% {
-        scale: 1.5 1;
-    }
 }
