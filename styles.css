@@ -19,6 +19,7 @@
 
 @import "./styles/cases/resale.css";
 @import "./styles/cases/funnel.css";
+@import "./styles/cases/movie-card.css";
 
 @font-face {
   font-family: "DM Sans";

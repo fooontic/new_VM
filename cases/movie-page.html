@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="../styles.css">
 </head>
-<body class="case" style="--case-bg-color: var(--cc-bg-case-3);">
+<body class="case case__movie movie" style="--case-bg-color: var(--cc-bg-case-3);">
     
     <div class="header">
         <div class="header__logo">
@@ -29,10 +29,32 @@
 
     <div class="case__toc toc"></div>
 
-    <section class="case__intro intro">
-        <div class="intro__company">Yandex Smart TV, 2024</div>
-        <h1 class="intro__h">Redesigning the movie page for Smart TV</h1>
-        <div class="intro__deck">!!!!! Design a full resale feature flow from scratch to help users resell tickets fairly and intuitively</div>
-    </section>
+    <article class="case__body">
+
+        <section class="case__intro intro">
+            <div class="intro__desc">
+                <div class="intro__company">Yandex Smart TV, 2024</div>
+                <h1 class="intro__h">Redesigning the movie page for Smart TV</h1>
+                <div class="intro__deck">
+                    !!!!! Design a full resale feature flow from scratch to help users resell tickets fairly and intuitively
+                </div>
+            </div>
+
+            <div class="intro__hero --intro">
+                <div class="--intro__tv">
+                    <video class="" autoplay playsinline muted loop poster="/img/movie-card_poster.webp">
+                        <source src="/img/movie-card.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="--intro__remote">
+                    <img src="/img/cases/movie-card/remote.webp" alt="">
+                </div>
+            </div>
+        </section>
+
+    </article>
+
+    <script type="module" src="./case.js"></script>
 
 </body>
