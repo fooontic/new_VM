@@ -27,14 +27,23 @@
         <a href="#" class="header__link">Linkedin</a>
     </div>
 
-    <div class="case__toc toc"></div>
+    <nav class="case__toc toc">
+        <ol class="toc__list">
+            <li class="toc__item"><a href="#overview">Overview</a></li>
+            <li class="toc__item"><a href="#about">Yandex TV</a></li>
+            <li class="toc__item"><a href="#problem">The Problem</a></li>
+            <li class="toc__item"><a href="#first-screen">The First Screen</a></li>
+            <li class="toc__item"><a href="#rest">The Rest</a></li>
+            <li class="toc__item"><a href="#results">Results</a></li>
+        </ol>
+    </nav>
 
     <article class="case__body">
 
         <section class="case__intro intro">
             <div class="intro__desc">
                 <div class="intro__company">Yandex Smart TV, 2024</div>
-                <h1 class="intro__h">Redesigning the movie page for Smart TV</h1>
+                <h1 class="intro__h" id="overview">Redesigning the movie page for Smart TV</h1>
                 <div class="intro__deck">
                     !!!!! Design a full resale feature flow from scratch to help users resell tickets fairly and intuitively
                 </div>
@@ -53,6 +62,191 @@
             </div>
         </section>
 
+        <div class="case__summary">
+            <ul class="summary">
+                <li class="summary__item">
+                    <span class="summary__h">Company</span>
+                    <span class="summary__text"><a href="https://alice.yandex.ru/tv-stations">Yandex</a></span>
+                </li>
+                <li class="summary__item">
+                    <span class="summary__h">Timeline</span>
+                    <span class="summary__text">Winter 2023</span>
+                </li>
+                <li class="summary__item">
+                    <span class="summary__h">Fields</span>
+                    <ul>
+                        <li class="summary__text">Smart TV OS</li>
+                        <li class="summary__text">Voice User Interface</li>
+                        <li class="summary__text">B2C, TV Streaming</li>
+                    </ul>
+                </li>
+                <li class="summary__item">
+                    <span class="summary__h">My role</span>
+                    <span class="summary__text">Senior Product Designer</span>
+                </li>
+                <li class="summary__item summary__item_responsibilities">
+                    <span class="summary__h">Responsibilities</span>
+                    <ul>
+                        <li class="summary__text">Feature Scoping</li>
+                        <li class="summary__text">Research</li>
+                        <li class="summary__text">Prototyping</li>
+                        <li class="summary__text">Interaction & Visual Design</li>
+                        <li class="summary__text">Motion Design</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="case__text-box">
+            <h2 class="case__h2" id="about">Yandex TV</h2>
+            <p class="case__text">
+                Yandex TV is a Russian smart TV operating system based on Android. For the first few years, it was only shipped on budget TVs made by third-party manufacturers.
+            </p>
+            <p class="case__text">
+                But in 2023, Yandex launched its first self-branded TVs — higher-quality devices in a more premium segment.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                To match the launch of these new devices, our team was tasked with updating the interface to feel just as modern and high-performance as the hardware. My focus was on redesigning one of the most important parts of the system: <strong class="bold">the movie/series page</strong>.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <h2 class="case__h2" id="problem">The Problem</h2>
+            <p class="case__text">
+                The old design had its fair share of issues. It looked a bit dated and, more importantly, didn’t play nicely with all poster types. Our content team couldn’t always rework artwork to fit the right-aligned layout, which often led to large parts of posters getting lost under gradients, text, or logos.
+            </p>
+            <p class="case__text">
+                The same thing happened with autoplaying trailers — a feature we had just launched—where nearly half the video ended up hidden behind the interface.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                The page felt cluttered and didn’t really encourage users to explore. It doesn’t seem scrollable at a glance, the rating (a super important factor when choosing what to watch) was barely noticeable, and the button block often turned into an infinite button’ graveyard.
+            </p>
+            <p class="case__text">
+                We set out to simplify things, keep what mattered, and give the content more breathing room.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <h2 class="case__h2" id="first-screen">The First Screen</h2>
+            <p class="case__text">
+                The top of the page is super important—less than 10% of users ever scroll past it. So it had to do all the heavy lifting when it came to helping someone decide what to watch.
+            </p>
+            <p class="case__text">
+                <strong class="bold">First step:</strong> make the content shine. I gave the poster and logo more breathing room and even tinted the interface based on the poster's dominant color to make it feel more immersive.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                Then I moved on to the UI blocks, starting with the most overloaded one: the buttons — which had grown significantly since the product first launched.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                Since trailers were now autoplaying in the background, I removed the trailer button first of all and replaced it with a small animated arrow that, when clicked up, clears the UI and plays the trailer fullscreen.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                I did the same with the "Seasons & Episodes" button for series. Instead of cluttering the button area, that section now appears naturally as users scroll, making the page feel more open and scrollable.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                Previously, the “episode navigator” lived on a subpage. Now that I moved it up, it was the perfect time to redesign that too.
+            </p>
+            <p class="case__text">
+                We couldn’t stick with the “standard layout” (seasons on the left, episodes on the right) because we needed to keep upward navigation back to the top screen.
+            </p>
+            <p class="case__quote">
+                So I invented a simple, but really cool "click-skipping" mechanic
+            </p>
+            <p class="case__text">
+                Works elegant: one tap on the remote takes you straight to the section, but going back requires pressing up twice — once to reach the mini filter/navigation layer, and again to return to the top.
+            </p>
+            <p class="case__text">
+                It preserved the idea of keeping primary navigation vertical and everything extra — like filters and episode browsing — horizontal.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                Going back to the button list, I also added a small rating button that expands into two options: rate the title or choose not to recommend it.
+            </p>
+        </div>
+
+        <div class="case__text-box">
+            <p class="case__text">
+                When I finished with the buttons, I moved on to the supporting blocks — description, specs, rating, etc.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                I paid extra attention to the rating block. In Russia, Kinopoisk is a well-known and trusted platform — kind of like the local IMDb — and people rely on its scores a lot when deciding what to watch.
+            </p>
+            <p class="case__text">
+                To make that more helpful, I gave the rating more space and designed a few layout variations depending on whether the title had a high score, made it into top lists, or won awards.
+            </p>
+        </div>
+
+        <div class="case__text-box">
+            <p class="case__text">
+                In the end, the top of the page became much cleaner and easier to use, bringing key info front and center and letting the content speak for itself.
+            </p>
+            <p class="case__text">
+                As for the rest of the page? The main engagement hooks were already in place: episodes and seasons for shows, cast for movies.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <h2 class="case__h2" id="rest">The Rest</h2>
+            <p class="case__text">
+                After trailers and ratings, the crew and cast is the third most important thing people check while deciding what to watch. 
+            </p>
+            <p class="case__text">
+                So I gave this carousel a refresh to match the new visual language and finally added the long-awaited "top crew" section. Since we already sync that info with Kinopoisk, it was easy to plug in.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                Next up: the detailed film info section. I reused the rating block here, made it bigger, and added a clear, easy-to-spot rating button. On the left side, I added a section with full movie details that opens in a full-screen popover.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                Since Yandex TV is a full operating system — not just an app — we can also run third-party apps. So at the very end of the page, I added a smart carousel that pulls in web videos related to the title — perfect for users who love watching reviews, breakdowns, or extras about the movie they’ve just watched.
+            </p>
+        </div>
+        
+        <div class="case__text-box">
+            <p class="case__text">
+                I also finished and tidied up a few more different UI elements to keep everything consistent. 
+            </p>
+        </div>
+
+        <div class="case__text-box">
+            <h2 class="case__h2" id="results">Results</h2>
+            <p class="case__text">
+                Blablabla
+            </p>
+            <p class="case__text">
+                Blablabla
+            </p>
+        </div>
+        
+        
     </article>
 
     <script type="module" src="./case.js"></script>
