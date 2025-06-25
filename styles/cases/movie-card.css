@@ -39,6 +39,98 @@
     gap: 24px;
 }
 
+/* Details /////////////////////*/
+
+.movie .--details {
+    --ratio: 0.45;
+    --p: 8px;
+    --r: 20px;
+    position: relative;
+}
+
+.movie .--details__item {
+    width: 100%;
+    max-width: calc(100% - ((100% - var(--w-m)) * 0.5));
+}
+
+.movie .--details__item:nth-child(1) {
+    position: relative;
+    margin-left: max(0px, calc((100% - var(--w-m)) * 0.5));
+    padding-bottom: calc((100% - ((100% - var(--w-m)) * 0.5)) * var(--ratio));
+    z-index: 2;
+}
+
+.movie .--details__item img {
+    border-radius: var(--r);
+    padding: var(--p);
+    box-sizing: border-box;
+    background-color: 
+        color-mix(in srgb, var(--c-glass) 18%, transparent);
+    backdrop-filter: blur(16px);
+    will-change: transform;
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) 9%, transparent),
+        inset 0.3px 1px 0px 0px color-mix(in srgb, var(--c-light) 20%, transparent), 
+        inset -0.3px -1px 5px 0px color-mix(in srgb, var(--c-dark) 18%, transparent), 
+        0px 1px 5px 0px color-mix(in srgb, var(--c-dark) 12%, transparent), 
+        0px 6px 16px 0px color-mix(in srgb, var(--c-dark) 10%, transparent),
+
+        0px 60px 58px 0px color-mix(in srgb, var(--c-dark) 28%, transparent), 
+        0px 21px 21px 0px color-mix(in srgb, var(--c-dark) 19%, transparent), 
+        0px 10px 10px 0px color-mix(in srgb, var(--c-dark) 16%, transparent), 
+        0px 5px 5px 0px color-mix(in srgb, var(--c-dark) 12%, transparent),
+        0px 2px 2px 0px color-mix(in srgb, var(--c-dark) 9%, transparent);
+}
+
+.movie .--details__item:nth-child(2) {
+    position: absolute;
+    top: 27%;
+    left: 0;
+    z-index: 1;
+}
+
+.movie .--details__item:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50%;
+    z-index: 0;
+}
+
+.movie .--details__item:nth-child(2):after,
+.movie .--details__item:nth-child(3):after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 65%;
+    top: 0;
+    left: 0;
+    background: 
+        linear-gradient(to bottom, 
+            color-mix(in srgb, var(--case-bg-color), transparent 0%) 15.12%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 1%) 15.78%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 2%) 16.98%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 3%) 18.79%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 5%) 21.28%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 7%) 24.53%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 11%) 28.61%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 16%) 33.59%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 22%) 39.55%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 30%) 46.56%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 40%) 54.7%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 51%) 64.04%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 65%) 74.65%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 81%) 86.62%,
+            color-mix(in srgb, var(--case-bg-color), transparent 100%) 100%
+            ),
+        linear-gradient(to bottom, 
+            color-mix(in srgb, var(--case-bg-color), transparent 0%) 0%, 
+            color-mix(in srgb, var(--case-bg-color), transparent 100%) 80%
+        );
+}
+
+
+
 
 
 
@@ -93,5 +185,11 @@
         width: 170%;
         gap: 16px;
         padding: 0 var(--min-padding);
+    }
+
+    .movie .--details {
+        --ratio: 0.33;
+        --p: 4px;
+        --r: 10px;
     }
 }
