@@ -491,16 +491,6 @@
 
 
 
-    .funnel .--map {
-        margin: 0 calc(var(--min-padding) * -1);
-    }
-
-    .funnel .--map__pic {
-        border-radius: 0;
-    }
-
-
-
     .funnel .--old-select__container {
         flex-direction: column;
         gap: 16px;
@@ -508,6 +498,7 @@
 
 
 
+    .funnel .--map,
     .funnel .--mess,
     .funnel .--counter-spec,
     .funnel .--responsive,
@@ -515,6 +506,7 @@
         margin: 0 calc(var(--min-padding) * -1);
     }
 
+    .funnel .--map img,
     .funnel .--mess img,
     .funnel .--counter-spec img,
     .funnel .--responsive img,
