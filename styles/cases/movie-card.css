@@ -161,14 +161,16 @@
     .movie .--yatv,
     .movie .--old,
     .movie .--buttons,
-    .movie .--navigator {
+    .movie .--navigator,
+    .movie .--tv {
         margin: 0 calc(var(--min-padding) * -1);
     }
 
     .movie .--yatv img,
     .movie .--old img,
     .movie .--buttons img,
-    .movie .--navigator video {
+    .movie .--navigator video,
+    .movie .--tv video {
         border-radius: 0;
     }
 
