@@ -128,6 +128,27 @@
     opacity: 0.6;
 }
 
+.case__quote {
+    position: relative;
+    font-size: calc(var(--fz) * 1.6);
+    font-family: var(--f-display);
+    font-weight: bold;
+    padding-left: min(2em, 10vw);
+}
+
+.case__quote::before {
+    content: '';
+    position: absolute;
+    left: -0.8em;
+    background: currentColor;
+    mask: 
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 65 51"><path fill="url(%23a)" d="M1.181 51 0 48.487c9.008-4.878 16.392-12.122 16.392-19.809 0-5.913-2.544-10.939-11.485-15.443C7.337 5.174 15.211 0 23.777 0c8.86 0 13.29 5.322 13.29 14.34 0 16.26-16.392 27.643-35.886 36.66Zm27.933 0-1.181-2.513c9.008-4.878 16.392-12.122 16.392-19.809 0-5.913-2.544-10.939-11.485-15.443C36.27 5.174 43.143 0 51.709 0 60.569 0 65 5.322 65 14.34 65 30.6 48.608 41.982 29.114 51Z"/><defs><linearGradient id="a" x1="50" x2="9" y1="5" y2="70" gradientUnits="userSpaceOnUse"><stop stop-color="black"/><stop offset="1" stop-color="transparent"/></linearGradient></defs></svg>');
+    width: min(2.4em, 12vw);
+    aspect-ratio: 1;
+    mask-repeat: no-repeat;
+    opacity: 0.8;
+}
+
 h1[id], h2[id], h3[id] {
     scroll-margin-top: 120px; 
 }
