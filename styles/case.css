@@ -3,7 +3,7 @@
     --w-m: 880px;
     --w-l: 1280px;
 
-    --fz: clamp(16px, 1.3vw, 20px);
+    --fz: clamp(16px, 1.5vw, 20px);
 
     --radius-s: min(0.6em, 1.5vw);
     --radius-m: min(1.2em, 3vw);
