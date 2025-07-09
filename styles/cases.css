@@ -370,7 +370,6 @@
         padding: 20px 20px 24px 20px;
         box-sizing: border-box;
         border-radius: 20px;
-        color: var(--c-content);
         text-decoration: none;
         background-color: color-mix(in srgb, var(--c-glass) 18%, transparent);
         backdrop-filter: blur(24px);
@@ -416,6 +415,8 @@
     }
 
     .cases_mobile .cases__info {
+        color: var(--c-content);
+        text-decoration: none;
         position: relative;
         display: flex;
         gap: 8px;
