@@ -395,16 +395,22 @@
         width: auto;    
     }
 
-    .cases_mobile .cases__name {
-        position: relative;
-        padding-top: 16px;
+    .cases_mobile .cases__link {
+        display: block;
+        height: auto;
         margin-top: 20px;
-        margin-bottom: 8px;
-        font-size: 20px;
+        border-radius: 0;
+        background: none;
+        padding: 0;
+        box-shadow: none;
         overflow: initial;
     }
 
-    .cases_mobile .cases__name::before {
+    .cases_mobile .cases__link::after {
+        content: none;
+    }
+
+    .cases_mobile .cases__link::before {
         content: '';
         position: absolute;
         top: 0;
@@ -412,6 +418,14 @@
         width: calc(100% + 16px);
         height: 1px;
         background-color: color-mix(in srgb, var(--c-light) 9%, transparent);
+    }
+
+    .cases_mobile .cases__name {
+        position: relative;
+        margin-top: 16px;
+        margin-bottom: 8px;
+        font-size: 20px;
+        overflow: initial;
     }
 
     .cases_mobile .cases__info {
