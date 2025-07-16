@@ -85,6 +85,7 @@ canvas {
   font-family: var(--f-display-alt);
 }
 
+strong,
 .bold {
   font-weight: bold;
 }
