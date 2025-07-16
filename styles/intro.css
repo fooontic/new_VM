@@ -21,6 +21,7 @@
     line-height: 1.2em;
     margin: 0.3em 0 0.45em;
     text-align: center;
+    max-width: calc(var(--w-m) + 10%);
 }
 
 .intro__deck {

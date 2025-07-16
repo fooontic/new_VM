@@ -1,0 +1,5 @@
+.screensavers .--intro {
+    position: relative;
+    margin-top: clamp(40px, 11lvh, 150px);
+    margin-bottom: clamp(40px, 11lvh, 150px);
+}
