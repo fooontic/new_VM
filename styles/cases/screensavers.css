@@ -3,3 +3,48 @@
     margin-top: clamp(40px, 11lvh, 150px);
     margin-bottom: clamp(40px, 9lvh, 100px);
 }
+
+/* Details /////////////////////*/
+
+.screensavers .--themes {
+    --ratio: 0.5;
+    --p: 8px;
+    --r: 20px;
+    position: relative;
+}
+
+.screensavers .--themes__item {
+    width: 100%;
+    max-width: var(--w-m);
+}
+
+.screensavers .--themes__item:nth-child(1) {
+    position: relative;
+    margin-left: max(0px, calc((100% - var(--w-s)) * 0.5) + var(--w-s) - var(--w-m));
+    padding-bottom: min(calc((100% - ((100% - var(--w-m)) * 0.5)) * var(--ratio)), calc(var(--w-m) / 1.78));
+    z-index: 2;
+}
+
+.screensavers .--themes__item img {
+    box-shadow: 
+        0px 60px 58px 0px color-mix(in srgb, var(--c-dark) 28%, transparent), 
+        0px 21px 21px 0px color-mix(in srgb, var(--c-dark) 19%, transparent), 
+        0px 10px 10px 0px color-mix(in srgb, var(--c-dark) 16%, transparent), 
+        0px 5px 5px 0px color-mix(in srgb, var(--c-dark) 12%, transparent),
+        0px 2px 2px 0px color-mix(in srgb, var(--c-dark) 9%, transparent);
+}
+
+.screensavers .--themes__item:nth-child(2) {
+    position: absolute;
+    top: 25%;
+    right: max(0px, calc((100% - var(--w-s)) * 0.5) + var(--w-s) - var(--w-m));
+    z-index: 1;
+}
+
+.screensavers .--themes__item:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50%;
+    z-index: 0;
+}
