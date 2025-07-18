@@ -133,6 +133,27 @@
     z-index: 1;
 }
 
+/* Prototype /////////////////////*/ 
+
+.screensavers .--prototype {
+    position: relative;
+}
+
+.screensavers .--prototype__video {
+    border-radius: 0.4%;
+}
+
+.screensavers .--prototype::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    aspect-ratio: 16 / 1;
+    background-image: url(/img/cases/screensavers/legs.webp);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center 0;
+}
 
 
 
