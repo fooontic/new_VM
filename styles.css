@@ -16,6 +16,8 @@
 @import "./styles/switcher.css";
 @import "./styles/contentSwitcher.css";
 @import "./styles/metrics.css";
+@import "./styles/me.css";
+@import "./styles/wip.css";
 
 @import "./styles/cases/resale.css";
 @import "./styles/cases/funnel.css";

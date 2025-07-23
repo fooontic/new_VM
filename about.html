@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="./styles.css">
 </head>
-<body class="main">
+<body class="me case" style="--case-bg-color: var(--cc-bg-hero);">
 
     <div class="header">
         <div class="header__logo">
@@ -18,7 +18,7 @@
 
         <nav class="header__nav nav">
             <ul class="nav__list">
-                <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
                 <li class="nav__item"><a href="play.html" class="nav__link">Play</a></li>
                 <li class="nav__item nav__item_active"><a href="#" class="nav__link">Me</a></li>
             </ul>
@@ -26,6 +26,23 @@
 
         <a href="#" class="header__link">Linkedin</a>
     </div>
+
+    <article class="case__body">
+        
+        <div class="me__intro">
+            <div class="wip">
+                <div class="me__wip me__wip_1 wip__tape"></div>
+                <figure class="me__photo">
+                    <img src="/img/me.webp" alt="Photo of me">
+                </figure>
+                <div class="me__wip me__wip_2 wip__tape"></div>
+            </div>
+            <h1 class="me__h" id="overview"><span class="alt-font">Hi again! 👋</span><br>My name is Vadik Matveev</h1>
+        </div>
+
+    </article>
+
+    <script type="module" src="/cases/case.js"></script>
 
 </body>
 </html>

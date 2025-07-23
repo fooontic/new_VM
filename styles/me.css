@@ -1,0 +1,67 @@
+.me {}
+
+.me__intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: clamp(90px, 14lvh, 180px);
+}
+
+.me__photo {
+    padding: 8px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: 
+        color-mix(in srgb, var(--c-glass) 18%, transparent);
+    backdrop-filter: blur(16px);
+    will-change: transform;
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) 9%, transparent),
+        inset 0.3px 1px 0px 0px color-mix(in srgb, var(--c-light) 20%, transparent), 
+        inset -0.3px -1px 5px 0px color-mix(in srgb, var(--c-dark) 18%, transparent), 
+        0px 1px 5px 0px color-mix(in srgb, var(--c-dark) 12%, transparent), 
+        0px 6px 16px 0px color-mix(in srgb, var(--c-dark) 10%, transparent);
+}
+
+.me__photo img {
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: contain;
+    position: relative;
+    max-width: 440px;
+    aspect-ratio: 1;
+}
+
+.me__photo::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    display: block;
+    border-radius: 50%;
+    box-shadow: 
+        inset -0.5px -1px 1px 0px color-mix(in srgb, var(--c-dark) 24%, transparent), 
+        inset 1px 2px 4px 0px color-mix(in srgb, var(--c-dark) 16%, transparent), 
+        0.5px 1px 0px 0px color-mix(in srgb, var(--c-light) 24%, transparent);
+}
+
+.me__h {
+    font-size: clamp(40px, 5vw, 80px);
+    font-family: var(--f-display);
+    line-height: 1.2em;
+    margin: 0.6em 0 0.6em;
+    text-align: center;
+    max-width: calc(var(--w-m) + 10%);
+}
+
+.me__wip_1 {
+    top: clamp(40px, 4lvh, 80px);
+    rotate: 19deg;
+    --overlay: linear-gradient(175deg, color-mix(in srgb, var(--c-light) 30%, transparent), transparent);
+}
+
+.me__wip_2 {
+    bottom: 30px;
+    rotate: -7deg;
+    --overlay: linear-gradient(3deg, transparent, color-mix(in srgb, var(--c-light) 25%, transparent));
+}
