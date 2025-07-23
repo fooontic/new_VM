@@ -65,3 +65,33 @@
     rotate: -7deg;
     --overlay: linear-gradient(3deg, transparent, color-mix(in srgb, var(--c-light) 25%, transparent));
 }
+
+.me__links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 2em;
+}
+
+.me__links a {
+    font-size: clamp(20px, 3vw, 24px);
+    font-weight: bold;
+    color: currentColor;
+    text-decoration-thickness: 0.05em;
+    text-underline-position: under;
+    text-decoration-color: color-mix(in srgb, currentColor, transparent 70%);
+    transition: all 160ms;
+}
+
+.me__links a:hover {
+    color: var(--c-action);
+}
+
+@media (max-width: 360px) {
+    .me__links {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+}
