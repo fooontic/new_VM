@@ -1,7 +1,7 @@
 export function initScrollBgRepaint() {
     const body = document.body;
-    const caseColor = body.style.getPropertyValue('--case-bg-color');
-    let threshold = window.innerHeight * 0.5; // одна видимая часть экрана
+    const caseColor = getComputedStyle(body).getPropertyValue('--case-bg-color').trim();
+    let threshold = window.innerHeight * 0.5; 
 
     function updateBgColor() {
         const scrolled = window.scrollY || window.pageYOffset;
@@ -10,18 +10,19 @@ export function initScrollBgRepaint() {
         } else {
             body.style.setProperty("--case-bg-color", caseColor);
         }
+
+        // console.log("scrollY:", window.scrollY, "threshold:", threshold);
+        // console.log("current color:", getComputedStyle(body).getPropertyValue('--case-bg-color'));
     }
 
     window.addEventListener("scroll", () => requestAnimationFrame(updateBgColor));
     window.addEventListener("resize", () => {
-        // на случай если высота экрана изменилась
         threshold = window.innerHeight;
         requestAnimationFrame(updateBgColor);
     });
 
-    // вызвать при загрузке, если сразу загружена проскролленная страница
+    
     window.addEventListener("load", () => requestAnimationFrame(updateBgColor));
 
-    // и сразу после инициализации
     requestAnimationFrame(updateBgColor);
 }

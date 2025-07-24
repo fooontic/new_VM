@@ -18,6 +18,7 @@
 @import "./styles/metrics.css";
 @import "./styles/me.css";
 @import "./styles/wip.css";
+@import "./styles/exp.css";
 
 @import "./styles/cases/resale.css";
 @import "./styles/cases/funnel.css";
@@ -67,6 +68,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  /* overflow-x: hidden; */
 }
 
 html,
@@ -91,6 +93,10 @@ canvas {
 strong,
 .bold {
   font-weight: bold;
+}
+
+.normal {
+  font-weight: normal;
 }
 
 .italic {

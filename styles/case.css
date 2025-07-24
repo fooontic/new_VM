@@ -16,6 +16,8 @@
 }
 
 .case__body {
+    width: 100%;
+    box-sizing: border-box;
     max-width: var(--w-l);
     margin: 0 auto;
     padding: 0 max(var(--min-padding), 5vw) 10lvh;
