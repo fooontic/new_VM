@@ -8,6 +8,7 @@
     --radius-s: min(0.6em, 1.5vw);
     --radius-m: min(1.2em, 3vw);
     --min-padding: 32px;
+    --body-padding: max(var(--min-padding), 5vw);
     
     background-color: var(--case-bg-color);
     overflow-x: hidden;
@@ -16,11 +17,9 @@
 }
 
 .case__body {
-    width: 100%;
-    box-sizing: border-box;
     max-width: var(--w-l);
     margin: 0 auto;
-    padding: 0 max(var(--min-padding), 5vw) 10lvh;
+    padding: 0 var(--body-padding) 10lvh;
 }
 
 .case__summary {

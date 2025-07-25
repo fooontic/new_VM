@@ -1,0 +1,77 @@
+.play-wip__body {
+    padding-top: clamp(90px, 14lvh, 180px);
+    padding-bottom: clamp(50px, 8lvh, 100px);
+    min-height: 50svh;
+}
+
+.play-wip__wip {
+    position: relative;
+    min-height: 47%;
+    padding-top: 25%;
+    background: url(/img/play_wip.webp);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.play-wip__wip::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    aspect-ratio: 2.09 / 1;
+    background: linear-gradient(180deg, 
+        color-mix(in srgb, var(--case-bg-color) 30%, transparent) 0%, 
+        color-mix(in srgb, var(--case-bg-color) 31%, transparent) 11.33%, 
+        color-mix(in srgb, var(--case-bg-color) 32%, transparent) 19.72%, 
+        color-mix(in srgb, var(--case-bg-color) 35%, transparent) 25.7%, 
+        color-mix(in srgb, var(--case-bg-color) 38%, transparent) 29.79%, 
+        color-mix(in srgb, var(--case-bg-color) 43%, transparent) 32.52%, 
+        color-mix(in srgb, var(--case-bg-color) 48%, transparent) 34.41%, 
+        color-mix(in srgb, var(--case-bg-color) 53%, transparent) 35.98%, 
+        color-mix(in srgb, var(--case-bg-color) 59%, transparent) 37.76%, 
+        color-mix(in srgb, var(--case-bg-color) 65%, transparent) 40.27%, 
+        color-mix(in srgb, var(--case-bg-color) 71%, transparent) 44.04%, 
+        color-mix(in srgb, var(--case-bg-color) 77%, transparent) 49.58%, 
+        color-mix(in srgb, var(--case-bg-color) 83%, transparent) 57.42%, 
+        color-mix(in srgb, var(--case-bg-color) 89%, transparent) 68.09%, 
+        color-mix(in srgb, var(--case-bg-color) 95%, transparent) 82.11%, 
+        #161E1D 100%);
+}
+
+.play-wip__message {
+    position: relative;
+    text-align: center;
+    text-wrap: balance;
+}
+
+.play-wip__h {
+    font-size: clamp(32px, 4vw, 48px);
+    font-family: var(--f-display);
+    line-height: 1.2em;
+    margin: 0.6em 0 0.6em;
+    text-align: center;
+    max-width: calc(var(--w-m) + 10%);
+}
+
+.play-wip__tape_1 {
+    top: 5%;
+    rotate: 3deg;
+    --overlay: linear-gradient(179deg, color-mix(in srgb, var(--c-light) 30%, transparent), transparent);
+    --tapeY: 400%;
+}
+
+.play-wip__tape_2 {
+    top: 5%;
+    rotate: -12deg;
+    --overlay: linear-gradient(-2deg, transparent, color-mix(in srgb, var(--c-light) 25%, transparent));
+    --tapeY: 350%;
+}
+
+@media (max-width: 1279px) {
+    .play-wip__body {
+        overflow-x: hidden;
+    }
+}

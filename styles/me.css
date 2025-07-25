@@ -73,7 +73,7 @@
 }
 
 .me__links a {
-    font-size: clamp(20px, 3vw, 24px);
+    font-size: clamp(20px, 4vw, 28px);
     font-weight: bold;
     color: currentColor;
     text-decoration-thickness: 0.05em;
