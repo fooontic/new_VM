@@ -96,7 +96,11 @@
         interpolate-size: allow-keywords;
     }
 
-    [open]::details-content {
+    /* [open]::details-content {
         height: auto;
-    }
+    } */
+}
+
+[open]::details-content {
+    height: auto;
 }
