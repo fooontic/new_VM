@@ -68,6 +68,7 @@
 }
 
 .case__text-list {
+    list-style-type: none;
     font-size: var(--fz);
     line-height: 160%;
     padding-left: 0.6ch;
@@ -80,11 +81,17 @@
 }
 
 .case__text-list li {
+    position: relative;
     margin-bottom: 0.8em;
     padding-inline-start: 1.8ch;
 }
 
-.case__text-list li::marker {
+@supports selector(::marker) {}
+
+.case__text-list li::before {
+    position: absolute;
+    left: 0;
+    translate: -100%;
     content: '✦';
     font-size: 0.8em;
     color: color-mix(in srgb, currentColor, transparent 60%);
