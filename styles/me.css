@@ -64,6 +64,10 @@
     --overlay: linear-gradient(3deg, transparent, color-mix(in srgb, var(--c-light) 25%, transparent));
 }
 
+.me__desc {
+    margin-bottom: 0;
+}
+
 .me__links {
     display: grid;
     grid-template-columns: 1fr 1fr;
