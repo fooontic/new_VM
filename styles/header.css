@@ -12,13 +12,21 @@
 .header__logo {
     --op: 70%;
     display: block;
-}
-
-.header__logo svg {
-    fill: color-mix(in srgb, var(--c-content) var(--op), transparent);
+    width: 60px;
     height: 24px;
+    mask-image: 
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 164 68"><path d="M61.624 60.212c-1.613 2.506.2 5.792 3.198 5.792h93.984c2.997 0 4.811-3.286 3.197-5.792L125.296 3.197c-1.492-2.317-4.903-2.317-6.395 0l-6.561 10.191a.803.803 0 0 1-1.351 0l-6.561-10.191c-1.492-2.317-4.903-2.317-6.395 0L61.624 60.212ZM5.44 1.995c-2.998 0-4.812 3.286-3.198 5.792l36.707 57.015c1.492 2.317 4.903 2.317 6.395 0L81.375 7.787c1.614-2.506-.2-5.792-3.197-5.792H5.439Z"/></svg>');
+    -webkit-mask-image: 
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 164 68"><path d="M61.624 60.212c-1.613 2.506.2 5.792 3.198 5.792h93.984c2.997 0 4.811-3.286 3.197-5.792L125.296 3.197c-1.492-2.317-4.903-2.317-6.395 0l-6.561 10.191a.803.803 0 0 1-1.351 0l-6.561-10.191c-1.492-2.317-4.903-2.317-6.395 0L61.624 60.212ZM5.44 1.995c-2.998 0-4.812 3.286-3.198 5.792l36.707 57.015c1.492 2.317 4.903 2.317 6.395 0L81.375 7.787c1.614-2.506-.2-5.792-3.197-5.792H5.439Z"/></svg>');
+    mask-size: contain;
+    mask-position: left;
+    mask-repeat: no-repeat;
     shape-rendering: geometricPrecision;
-    transition: fill 200ms;
+    background: color-mix(in srgb, var(--c-content) var(--op), transparent);
+    backdrop-filter: blur(10px);
+    filter: drop-shadow(0px 1px 4px color-mix(in srgb, var(--c-dark) 70%, transparent));
+    transition: background 200ms;
+    font-size: 0;
 }
 
 a.header__logo:hover {
@@ -50,8 +58,7 @@ a.header__logo:hover {
     border-right: .08em solid currentColor;
     transform: translate(0, 0);
     transition: transform 600ms;
-    transition-timing-function: ease-in;
-    
+    transition-timing-function: ease-in; 
 }
 
 .header__link::before {
@@ -103,8 +110,9 @@ a.header__logo:hover {
         padding: 8px 16px;
     }
 
-    .header__logo svg {
+    .header__logo {
         height: 20px;
+        mask-position: 3px;
     }
 
     .header__nav {
