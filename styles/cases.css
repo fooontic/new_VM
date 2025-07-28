@@ -229,9 +229,10 @@
 }
 
 .cases__item:last-of-type:hover .cases__more:hover {
-    opacity: 1;
+    cursor: default;
+    /* opacity: 1;
     box-shadow: 
-        inset 0 0 0 1px color-mix(in srgb, var(--c-light) 24%, transparent);
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) 24%, transparent); */
 }
 
 /* .cases__list:has(.cases__item_active:last-child) .cases__title, */
