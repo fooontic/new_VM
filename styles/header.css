@@ -45,9 +45,11 @@ a.header__logo:hover {
     font-size: var(--size-m);
     line-height: 48px;
     color: var(--c-content);
-    text-decoration: none;
+    text-decoration-thickness: 0.05em;
+    text-underline-position: under;
+    text-decoration-color: color-mix(in srgb, currentColor, transparent 70%);
     opacity: 0.6;
-    transition: color 160ms, opacity 160ms;
+    transition: all 160ms;
 }
 
 .header__link::before,

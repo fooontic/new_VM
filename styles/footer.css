@@ -122,9 +122,11 @@
 .footer__link {
     font-size: var(--size-m);
     color: var(--c-content);
-    text-decoration: none;
+    text-decoration-thickness: 0.05em;
+    text-underline-position: under;
+    text-decoration-color: color-mix(in srgb, currentColor, transparent 70%);
     opacity: 0.7;
-    transition: color 160ms, opacity 160ms;
+    transition: all 160ms 160ms;
 }
 
 .footer__link:hover {
