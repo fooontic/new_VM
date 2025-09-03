@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vadik Matveev — an Amsterdam based Product Designer with more then 10 years of experience</title>
+
+    <link rel="icon" href="/favicon/favicon.ico" sizes="32x32">
+    <link rel="icon" href="/favicon/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
+
+    <meta property="og:url" content="https://vadik.design">
+    <meta property="og:title" content="Vadik Matveev">
+    <meta property="og:description" content="Product Designer portfolio">
+    <meta itemprop="description" content="Product Designer portfolio">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://vadik.design/og.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Vadik Matveev">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vadik.design">
+    <meta property="twitter:title" content="Vadik Matveev">
+    <meta property="twitter:description" content="Product Designer portfolio">
+    <meta property="twitter:image" content="https://vadik.design/og.jpg">
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:site" content="@fooontic_">
+
+    <link rel="stylesheet" href="/styles.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: sans-serif;
+            background-color: #f3f3f3;
+        }
+
+        .canvas-wrapper {
+            width: 100%;
+            height: 100%;
+            cursor: grab;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .canvas {
+            width: 200vw;      /* шире в 2 раза */
+            height: 200vh;     /* и выше в 2 раза */
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            transition: transform 0.1s ease-out;
+            padding: 40px;
+        }
+
+        .card {
+            width: 280px;
+            height: 180px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="canvas-wrapper" id="canvasWrapper">
+        <div class="canvas" id="canvas">
+            <div class="card">Card 1</div>
+            <div class="card">Card 2</div>
+            <div class="card">Card 3</div>
+            <div class="card">Card 4</div>
+            <div class="card">Card 5</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 7</div>
+            <div class="card">Card 8</div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const canvas = document.getElementById("canvas");
+    const wrapper = document.getElementById("canvasWrapper");
+
+    let isDragging = false;
+    let startX = 0, startY = 0;
+    let currentX = 0, currentY = 0;
+    let offsetX = 0, offsetY = 0;
+
+    function onMouseDown(e) {
+        isDragging = true;
+        startX = e.clientX - offsetX;
+        startY = e.clientY - offsetY;
+        wrapper.style.cursor = 'grabbing';
+    }
+
+    function onMouseMove(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        currentX = e.clientX - startX;
+        currentY = e.clientY - startY;
+        offsetX = currentX;
+        offsetY = currentY;
+        canvas.style.transform = `translate(${currentX}px, ${currentY}px)`;
+    }
+
+    function onMouseUp() {
+        isDragging = false;
+        wrapper.style.cursor = 'grab';
+    }
+
+    // Touch Support
+    function onTouchStart(e) {
+        startX = e.touches[0].clientX - offsetX;
+        startY = e.touches[0].clientY - offsetY;
+        isDragging = true;
+    }
+
+    function onTouchMove(e) {
+        if (!isDragging) return;
+        currentX = e.touches[0].clientX - startX;
+        currentY = e.touches[0].clientY - startY;
+        offsetX = currentX;
+        offsetY = currentY;
+        canvas.style.transform = `translate(${currentX}px, ${currentY}px)`;
+    }
+
+    function onTouchEnd() {
+        isDragging = false;
+    }
+
+    // Mouse events
+    wrapper.addEventListener("mousedown", onMouseDown);
+    wrapper.addEventListener("mousemove", onMouseMove);
+    wrapper.addEventListener("mouseup", onMouseUp);
+    wrapper.addEventListener("mouseleave", onMouseUp);
+
+    // Touch events
+    wrapper.addEventListener("touchstart", onTouchStart);
+    wrapper.addEventListener("touchmove", onTouchMove);
+    wrapper.addEventListener("touchend", onTouchEnd);
+</script>
+
+</html>
