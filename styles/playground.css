@@ -8,8 +8,33 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    font-family: sans-serif;
     background-color: var(--case-bg-color);
+}
+
+.playground__intro {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    translate: -50% 0;
+    width: 90%;
+    max-width: var(--w-s);
+}
+
+.playground__h {
+    font-size: clamp(40px, 5vw, 80px);
+    line-height: 1.2em;
+    margin: 0.3em 0 0.45em;
+    font-family: var(--f-display);
+    text-align: center;
+}
+
+.playground__deck {
+    max-width: 80%;
+    opacity: 0.5;
+    font-size: var(--fz);
+    line-height: 150%;
+    text-align: center;
+    margin-inline: auto;
 }
 
 .playground__canvas {
@@ -20,17 +45,23 @@
     position: relative;
 }
 
+
+
+
+
 .canvas__container {
-    width: 200vw;      /* шире в 2 раза */
-    height: 200vh;     /* и выше в 2 раза */
+    width: 200vw;
+    height: 200vh;
     position: absolute;
-    left: 0;
-    top: 0;
-    display: flex;
+    left: 50%;
+    top: 50%;
+    /* display: flex; */
     flex-wrap: wrap;
     align-content: flex-start;
+    transform: translate(-50%, -40%);
     transition: transform 0.1s ease-out;
     padding: 40px;
+    background: color-mix(in srgb, blue 10%, transparent);
 }
 
 .card {

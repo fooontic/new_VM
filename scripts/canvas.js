@@ -13,17 +13,17 @@ export function initCanvas() {
     let currentX = 0, currentY = 0;
     let offsetX = 0, offsetY = 0;
 
-    // ── NEW: пределы
+    // пределы
     let minX = 0, maxX = 0, minY = 0, maxY = 0;
-    const overscroll = 500; // поставь, например, 80 для небольшого «люфта» за границы
+    const overscroll = 300; 
 
-    // ── NEW: утилиты
+    // утилиты
     const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
     function applyTransform() {
-        canvas.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        canvas.style.transform = `translate(calc(-50% + ${offsetX}px), calc(-40% + ${offsetY}px))`;
     }
 
-    // ── NEW: пересчитка границ на основе реальных размеров
+
     function measureBounds() {
         const wRect = wrapper.getBoundingClientRect();
         const wW = wRect.width;
@@ -31,25 +31,29 @@ export function initCanvas() {
 
         // Важно: берем размеры canvas из computedStyle, чтобы transform не влиял
         const cs = getComputedStyle(canvas);
-        const cW = parseFloat(cs.width);
-        const cH = parseFloat(cs.height);
+        const cssW = parseFloat(cs.width);
+        const cssH = parseFloat(cs.height);
 
-        maxX = overscroll;
-        maxY = overscroll;
-        minX = Math.min(0, wW - cW) - overscroll;
-        minY = Math.min(0, wH - cH) - overscroll;
+        const cW = Math.max(cssW || 0, canvas.scrollWidth  || 0);
+        const cH = Math.max(cssH || 0, canvas.scrollHeight || 0);
 
-        // На случай если текущая позиция уже «вылетела» — вернуть в допустимые рамки
-        // ---- ДОБАВИЛОСЬ ----
-        if (offsetX === 0 && offsetY === 0) {
-            // центрируем по X, а по Y оставляем сверху
-            offsetX = clamp((wW - cW) / 2, minX, maxX);
-            offsetY = clamp(offsetY, minY, maxY);
-        } else {
-            // если уже таскали, просто клампим в пределах
-            offsetX = clamp(offsetX, minX, maxX);
-            offsetY = clamp(offsetY, minY, maxY);
-        }
+        const xMinAbs = Math.min(0, wW - cW) - overscroll;
+        const yMinAbs = Math.min(0, wH - cH) - overscroll;
+        const xMaxAbs = overscroll;
+        const yMaxAbs = overscroll;
+
+        const xBaseCenter = (wW - cW) / 2;
+        const yBaseCenter = (wH - cH) * 0.4;
+
+        minX = xMinAbs - xBaseCenter;
+        maxX = xMaxAbs - xBaseCenter;
+
+        minY = yMinAbs - yBaseCenter;
+        maxY = yMaxAbs - yBaseCenter;
+
+        offsetX = clamp(offsetX, minX, maxX);
+        offsetY = clamp(offsetY, minY, maxY);
+
 
         applyTransform();
     }
