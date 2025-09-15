@@ -15,7 +15,7 @@ export function initCanvas() {
 
     // пределы
     let minX = 0, maxX = 0, minY = 0, maxY = 0;
-    const overscroll = 300; 
+    const overscroll = 0; 
 
     // утилиты
     const clamp = (v, min, max) => Math.max(min, Math.min(max, v));

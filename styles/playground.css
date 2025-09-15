@@ -61,7 +61,10 @@
     transform: translate(-50%, -40%);
     transition: transform 0.1s ease-out;
     padding: 40px;
-    background: color-mix(in srgb, blue 10%, transparent);
+    /* background: color-mix(in srgb, blue 10%, transparent); */
+    background-image: radial-gradient(color-mix(in srgb, var(--c-light) 15%, transparent) 5%, transparent 5%);
+    background-size: 30px 30px;
+    background-repeat: repeat;
 }
 
 .card {
