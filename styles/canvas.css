@@ -37,3 +37,27 @@
         0px 1px 5px 0px color-mix(in srgb, var(--c-dark) 12%, transparent), 
         0px 6px 16px 0px color-mix(in srgb, var(--c-dark) 10%, transparent);
 }
+
+
+/* скрыт по умолчанию */
+.lightbox-move-layer {
+  position: fixed;
+  z-index: 9999;
+  transition: all 0.4s ease;
+  will-change: transform, top, left, width, height;
+  pointer-events: none;
+}
+
+.lightbox__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9998;
+  pointer-events: none;
+}
+.lightbox__backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
