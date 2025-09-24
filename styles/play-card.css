@@ -1,0 +1,106 @@
+.play-card {
+    position: absolute;
+    max-width: 80vw;
+}
+
+.play-card__pic:hover {
+    cursor: pointer;
+}
+
+.play-card img,
+.play-card video {
+    width: 100%;
+    display: block;
+    object-fit: contain;
+    position: relative;
+    border-radius: var(--radius-s);
+}
+
+.play-card__pic {
+    position: relative;
+}
+
+.play-card__pic::before {
+    --sh-offset: 0px;
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    width: calc(100% + 12px);
+    height: calc(100% + 12px);
+    /* inset: -4px; */
+    /* outline: 2px solid #00f; */
+    /* outline-offset: 0;
+    background-color: red; */
+    backdrop-filter: blur(16px);
+    background-color: color-mix(in srgb, var(--c-glass) 18%, transparent);
+    border-radius: calc(var(--radius-s) + 6px); 
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) 9%, transparent),
+        inset 0.3px 1px 0px 0px color-mix(in srgb, var(--c-light) 20%, transparent), 
+        inset -0.3px -1px 5px 0px color-mix(in srgb, var(--c-dark) 18%, transparent), 
+        0px 1px 5px 0px color-mix(in srgb, var(--c-dark) 12%, transparent), 
+        0px 6px 16px 0px color-mix(in srgb, var(--c-dark) 10%, transparent);
+    scale: 1 1;
+    transition: 
+        scale 1000ms 
+        linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%),
+        border-radius 300ms;
+}
+
+
+
+.play-card__pic:hover::before {
+    cursor: pointer;
+    scale: var(--scaleX) var(--scaleY);
+    border-radius: calc(var(--radius-s) + 8px); 
+    /* scaleX = 1 + ((1.1 - 1) * (4 / 3)) = 1 + (0.1 * 1.333) = 1 + 0.1333 = 1.1333 */
+}
+
+.play-card__caption {
+    margin-top: 1.2em;
+}
+
+.play-card__desc {
+    margin: 0;
+    color: color-mix(in srgb, var(--c-content) 80%, transparent);
+}
+
+.play-card__tags {
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: calc(var(--size-m) * 0.7);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transition: opacity 200ms;
+}
+
+.play-card:hover .play-card__tags {
+    opacity: 1;
+}
+
+.play-card__tags li {
+    padding: 2px 6px;
+    border-radius: 6px;
+    background-color: color-mix(in srgb, var(--c-glass) 18%, transparent);
+    color: color-mix(in srgb, var(--c-content) 60%, transparent);;
+    backdrop-filter: blur(8px);
+}
+
+.play-card_music-box {
+    width: 420px;
+    left: 65%;
+    top: 40%;
+    rotate: 6deg;
+
+    --scaleX: calc(1 + ((1.02 - 1) * (625 / 420)));
+    --scaleY: 1.02;
+}

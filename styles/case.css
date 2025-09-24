@@ -5,8 +5,6 @@
 
     --fz: clamp(16px, 1.5vw, 20px);
 
-    --radius-s: min(0.6em, 1.5vw);
-    --radius-m: min(1.2em, 3vw);
     --min-padding: 32px;
     --body-padding: max(var(--min-padding), 5vw);
     
