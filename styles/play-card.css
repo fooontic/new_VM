@@ -81,7 +81,7 @@
     list-style-type: none;
     font-size: calc(var(--size-m) * 0.7);
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.05em;
     opacity: 0;
     transition: opacity 200ms;
@@ -185,12 +185,23 @@
 
 .play-card_liquid-button {
     width: 400px;
-    left: 56%;
+    left: 54%;
     top: 18%;
     rotate: 2deg;
 
     --scaleX: 1.02;
     --scaleY: calc(1 + ((1.02 - 1) * (1294 / 1092)));
+    --tag-color: color-mix(in srgb, var(--c-dark) 32%, transparent);
+}
+
+.play-card_blue-icons {
+    width: 360px;
+    left: 13%;
+    top: 43%;
+    rotate: 3deg;
+
+    --scaleX: 1.02;
+    --scaleY: calc(1 + ((1.02 - 1) * (1 / 1)));
     --tag-color: color-mix(in srgb, var(--c-dark) 32%, transparent);
 }
 
