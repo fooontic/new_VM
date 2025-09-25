@@ -65,7 +65,7 @@
 }
 
 .play-card__desc {
-    padding: 0 1em;
+    padding: 0 0.6em;
     margin: 0;
     color: color-mix(in srgb, var(--c-content) 80%, transparent);
 }
@@ -181,5 +181,16 @@
     --scaleX: 1.02;
     --scaleY: calc(1 + ((1.02 - 1) * (1606 / 1140)));
     --tag-color: color-mix(in srgb, var(--c-glass) 18%, transparent);
+}
+
+.play-card_liquid-button {
+    width: 400px;
+    left: 56%;
+    top: 18%;
+    rotate: 2deg;
+
+    --scaleX: 1.02;
+    --scaleY: calc(1 + ((1.02 - 1) * (1294 / 1092)));
+    --tag-color: color-mix(in srgb, var(--c-dark) 32%, transparent);
 }
 
