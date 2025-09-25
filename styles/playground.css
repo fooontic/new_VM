@@ -14,7 +14,7 @@
 .playground__intro {
     position: absolute;
     left: 50%;
-    top: 30%;
+    top: 35%;
     translate: -50% 0;
     width: 90%;
     max-width: var(--w-s);

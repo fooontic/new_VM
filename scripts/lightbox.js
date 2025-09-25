@@ -3,35 +3,28 @@ export function initLightbox() {
     backdrop.className = 'lightbox__backdrop';
     document.body.appendChild(backdrop);
 
-
     let activeImg = null;
     let originalParent = null;
     let placeholder = null;
 
-
-    document.querySelectorAll('.play-card__pic img').forEach((img) => {
-        img.style.cursor = 'zoom-in';
+    document.querySelectorAll('.play-card__pic img, .play-card__pic video').forEach((img) => {
         img.addEventListener('click', () => {
             const rect = img.getBoundingClientRect();
             const scrollY = window.scrollY;
             const scrollX = window.scrollX;
 
-
             activeImg = img;
             originalParent = img.parentNode;
-
 
             const card = img.closest('.play-card');
             const cardRotate = getComputedStyle(card).rotate;
             img.dataset.originalRotate = cardRotate !== 'none' ? cardRotate : '0deg';
-
 
             // Заглушка
             placeholder = document.createElement('div');
             placeholder.style.width = `${rect.width}px`;
             placeholder.style.height = `${rect.height}px`;
             originalParent.replaceChild(placeholder, img);
-
 
             // Начальные стили
             img.classList.add('lightbox-move-layer');
@@ -42,14 +35,12 @@ export function initLightbox() {
             img.style.rotate = img.dataset.originalRotate;
             document.body.appendChild(img);
 
-
             backdrop.classList.add('active');
-
 
             requestAnimationFrame(() => {
                 img.style.top = `50%`;
                 img.style.left = `50%`;
-                img.style.transform = `translate(-50%, -50%) scale(1)`;
+                img.style.transform = `translate(-50%, -50%)`;
                 img.style.rotate = `0deg`; // выравниваем к центру
                 img.style.width = `80vw`;
                 img.style.height = `80vh`;
@@ -60,15 +51,12 @@ export function initLightbox() {
         });
     });
 
-
     backdrop.addEventListener('click', () => {
-    if (!activeImg || !placeholder) return;
-
+        if (!activeImg || !placeholder) return;
 
         const rect = placeholder.getBoundingClientRect();
         const scrollY = window.scrollY;
         const scrollX = window.scrollX;
-
 
         activeImg.style.top = `${rect.top + scrollY}px`;
         activeImg.style.left = `${rect.left + scrollX}px`;
@@ -77,9 +65,7 @@ export function initLightbox() {
         activeImg.style.width = `${rect.width}px`;
         activeImg.style.height = `${rect.height}px`;
 
-
         backdrop.classList.remove('active');
-
 
         setTimeout(() => {
             // Зафиксировать размеры перед возвратом
@@ -100,14 +86,12 @@ export function initLightbox() {
             activeImg.style.removeProperty('max-width');
             activeImg.style.removeProperty('rotate');
 
-
             activeImg.classList.remove('lightbox-move-layer');
             placeholder.replaceWith(activeImg);
-
 
             activeImg = null;
             placeholder = null;
             originalParent = null;
-            }, 400);
+            }, 150);
     });
 }

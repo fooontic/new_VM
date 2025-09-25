@@ -2,8 +2,8 @@
 
 
 .canvas__container {
-    width: 200vw;
-    height: 200vh;
+    width: 3000px;
+    height: 4000px;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -41,23 +41,24 @@
 
 /* скрыт по умолчанию */
 .lightbox-move-layer {
-  position: fixed;
-  z-index: 9999;
-  transition: all 0.4s ease;
-  will-change: transform, top, left, width, height;
-  pointer-events: none;
+    position: fixed;
+    z-index: 9999;
+    transition: all 0.35s ease;
+    will-change: transform, top, left, width, height;
+    pointer-events: none;
+    border-radius: var(--radius-s);
 }
 
 .lightbox__backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 9998;
-  pointer-events: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 9998;
+    pointer-events: none;
 }
 .lightbox__backdrop.active {
-  opacity: 1;
-  pointer-events: auto;
+    opacity: 1;
+    pointer-events: auto;
 }
