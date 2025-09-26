@@ -2,6 +2,7 @@
 
 
 .canvas__container {
+    --dots-color: color-mix(in srgb, var(--c-light) 20%, var(--c-action));
     width: 3000px;
     height: 4000px;
     position: absolute;
@@ -12,34 +13,12 @@
     transform: translate(-50%, -40%);
     transition: transform 0.1s ease-out;
     padding: 40px;
-    background-image: radial-gradient(color-mix(in srgb, var(--c-light) 15%, transparent) 5%, transparent 5%);
+    background-image: 
+        radial-gradient(color-mix(in srgb, var(--dots-color) 20%, transparent) 5%, transparent 5%);
     background-size: 30px 30px;
     background-repeat: repeat;
 }
 
-.card {
-    width: 280px;
-    height: 180px;
-    margin: 20px;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    user-select: none;
-    background-color: color-mix(in srgb, var(--c-glass) 18%, transparent);
-    /* backdrop-filter: blur(24px); */
-    box-shadow: 
-        inset 0 0 0 1px color-mix(in srgb, var(--c-light) 9%, transparent),
-        inset 0.3px 1px 0px 0px color-mix(in srgb, var(--c-light) 20%, transparent), 
-        inset -0.3px -1px 5px 0px color-mix(in srgb, var(--c-dark) 18%, transparent), 
-        0px 1px 5px 0px color-mix(in srgb, var(--c-dark) 12%, transparent), 
-        0px 6px 16px 0px color-mix(in srgb, var(--c-dark) 10%, transparent);
-}
-
-
-/* скрыт по умолчанию */
 .lightbox-move-layer {
     position: fixed;
     z-index: 9999;
