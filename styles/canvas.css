@@ -1,4 +1,6 @@
-.canvas {}
+.canvas {
+    user-select: none;
+}
 
 
 .canvas__container {
