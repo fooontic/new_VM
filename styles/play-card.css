@@ -1,12 +1,14 @@
 .play-card {
     position: absolute;
     max-width: 80vw;
-    /* transition: rotate 300ms; */
 }
 
-/* .play-card:hover {
-    rotate: 0deg;
-} */
+.play-card:hover {
+    & .play-card__caption {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
 
 .play-card__pic:hover {
     cursor: default;
@@ -57,11 +59,13 @@
     cursor: default;
     scale: var(--scaleX) var(--scaleY);
     border-radius: calc(var(--radius-s) + 8px); 
-    /* scaleX = 1 + ((1.1 - 1) * (4 / 3)) = 1 + (0.1 * 1.333) = 1 + 0.1333 = 1.1333 */
 }
 
 .play-card__caption {
     margin-top: 1.2em;
+    opacity: 0;
+    translate: 0 12%;
+    transition: opacity 200ms, translate 400ms cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .play-card__desc {
