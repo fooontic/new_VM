@@ -226,9 +226,9 @@
 }
 
 .play-card_coffee {
-    width: 600px;
+    width: 540px;
     left: 19%;
-    top: 60%;
+    top: 62%;
 
     & .play-card__caption {
         position: absolute;
@@ -261,7 +261,16 @@
     rotate: 3deg;
 
     --scaleX: 1.02;
-    --scaleY: calc(1 + ((1.02 - 1) * (46 / 40)));
+    --scaleY: calc(1 + ((1.02 - 1) * (84 / 70)));
     --tag-color: color-mix(in srgb, var(--c-dark) 32%, transparent);
 }
 
+.play-card_card {
+    width: 260px;
+    left: 82%;
+    top: 58%;
+    rotate: 3deg;
+    box-shadow: 
+        0px 1px 5px 0px color-mix(in srgb, var(--c-dark) 12%, transparent), 
+        0px 6px 16px 0px color-mix(in srgb, var(--c-dark) 10%, transparent);
+}
