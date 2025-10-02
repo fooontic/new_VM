@@ -7,7 +7,7 @@ export function initLightbox() {
     let originalParent = null;
     let placeholder = null;
 
-    document.querySelectorAll('.play-card__pic img, .play-card__pic video').forEach((img) => {
+    document.querySelectorAll('.play-card__pic_openable img, .play-card__pic_openable video').forEach((img) => {
         img.addEventListener('click', () => {
             const rect = img.getBoundingClientRect();
             const scrollY = window.scrollY;
