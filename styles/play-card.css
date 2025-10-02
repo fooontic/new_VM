@@ -161,7 +161,7 @@
 
 .play-card_music-box {
     width: 380px;
-    left: 61%;
+    left: 62%;
     top: 40%;
     rotate: 5deg;
 
@@ -227,8 +227,8 @@
 
 .play-card_coffee {
     width: 600px;
-    left: 17%;
-    top: 59%;
+    left: 19%;
+    top: 60%;
 
     & .play-card__caption {
         position: absolute;
@@ -245,12 +245,23 @@
 
 .play-card_ipad {
     width: 800px;
-    left: 47%;
-    top: 62%;
+    left: 48%;
+    top: 64%;
     rotate: -2deg;
 
     & .play-card__desc {
         padding-left: 14%;
     }
+}
+
+.play-card_3d {
+    width: 560px;
+    left: 15%;
+    top: 78%;
+    rotate: 3deg;
+
+    --scaleX: 1.02;
+    --scaleY: calc(1 + ((1.02 - 1) * (46 / 40)));
+    --tag-color: color-mix(in srgb, var(--c-dark) 32%, transparent);
 }
 
