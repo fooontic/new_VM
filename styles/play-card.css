@@ -242,3 +242,15 @@
     }
 }
 
+
+.play-card_ipad {
+    width: 800px;
+    left: 47%;
+    top: 62%;
+    rotate: -2deg;
+
+    & .play-card__desc {
+        padding-left: 14%;
+    }
+}
+
