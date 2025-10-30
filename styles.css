@@ -24,11 +24,14 @@
 @import "./styles/canvas.css";
 @import "./styles/play-card.css";
 @import "./styles/play-extra.css";
+@import "./styles/lastfm-widget.css";
 
 @import "./styles/cases/resale.css";
 @import "./styles/cases/funnel.css";
 @import "./styles/cases/movie-card.css";
 @import "./styles/cases/screensavers.css";
+
+/* @import "./styles/tracks.css"; */
 
 @font-face {
   font-family: "DM Sans";
