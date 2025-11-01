@@ -31,7 +31,6 @@
 .play-card__pic_openable {
 
     &::before {
-        --sh-offset: 0px;
         content: '';
         position: absolute;
         left: 50%;
@@ -293,8 +292,10 @@
 
 .play-card_lastfm {
     width: 300px;
-    max-height: 200px;
     left: 82%;
     top: 48%;
-    rotate: -2deg;
+    /* rotate: -2deg; */
+
+    left: 62%;
+    top: 31%;
 }

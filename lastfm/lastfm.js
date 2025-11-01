@@ -388,7 +388,9 @@ class Tracks extends HTMLElement {
                     create('div', { 'class': 'scrobblehistory' }, '')
                 )
             ),
-            create('div', { 'id': 'playlist', 'inert': false }),
+            create('div', { 'class': 'playlist__wrap' },
+                    create('div', { 'id': 'playlist', 'inert': false })
+            ),
             create('div', { 'class': 'footer' },
                 create('a', {
                     href: 'https://github.com/StigNygaard/lastfm-widgets',
