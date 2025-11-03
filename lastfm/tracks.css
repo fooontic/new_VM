@@ -42,9 +42,15 @@
   --icon-scrobbling: url(data:image/gif;base64,R0lGODlhDAAMAJECANvb28zMzP///wAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQwIDc5LjE2MDQ1MSwgMjAxNy8wNS8wNi0wMTowODoyMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpiNjlhZmFkNi05MTBkLTQ1OTEtOGM4Yi1jMjY2YjJlNzg4NTAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MUM2MDk2RkE5QTMwMTFFODhBOURFRjVDQzExMEFEMUYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MUM2MDk2Rjk5QTMwMTFFODhBOURFRjVDQzExMEFEMUYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTggKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2Yzk4NWVmOS0xMDNmLTQ4MzctYTg3Yy01NjM3MzdlM2ZkZWEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6YjY5YWZhZDYtOTEwZC00NTkxLThjOGItYzI2NmIyZTc4ODUwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBt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);
   --icon-github: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFNTE3OEEyQTk5QTAxMUUyOUExNUJDMTA0NkE4OTA0RCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFNTE3OEEyQjk5QTAxMUUyOUExNUJDMTA0NkE4OTA0RCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkU1MTc4QTI4OTlBMDExRTI5QTE1QkMxMDQ2QTg5MDREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU1MTc4QTI5OTlBMDExRTI5QTE1QkMxMDQ2QTg5MDREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+m4QGuQAAAyRJREFUeNrEl21ojWEYx895TDPbMNlBK46IUiNmPvHBSUjaqc0H8pF5+aDUKPEBqU2NhRQpX5Rv5jWlDIWlMCv7MMSWsWwmb3tpXub4XXWdPHvc9/Gc41nu+nedc7/8r/99PffLdYdDPsvkwsgkTBwsA/PADJCnzX2gHTwBt8Hl7p537/3whn04XoDZDcpBlk+9P8AFcAghzRkJwPF4zGGw0Y9QS0mAM2AnQj77FqCzrtcwB1Hk81SYojHK4DyGuQ6mhIIrBWB9Xm7ug/6B/nZrBHBegrkFxoVGpnwBMSLR9EcEcC4qb8pP14BWcBcUgewMnF3T34VqhWMFkThLJAalwnENOAKiHpJq1FZgI2AT6HZtuxZwR9GidSHtI30jOrbawxlVX78/AbNfhHlomEUJJI89O2MqeE79T8/nk8nMBm/dK576hZgmA3cp/R4l9/UeSxiHLVIlNm4nFfT0bxyuIj7LHRTKai+zdJobwMKzcZSJb0ePV5PKN+BqAAKE47UlMnERELMM3EdYP/yrd+XYb2mOiYBiQ8OQnoRBlXrl9JZix7D1pHTazu4MoyBcnYamqAjIMTR8G4FT8LuhLsexXYYjICBiqhQBvYb6fLZIJCjPypVvaOoVAW2WcasCnL2Nq82xHJNSqlCeFcDshaPK0twkAhosjZL31QYw+1rlMpWGMArl23SBsZZO58F2tlJXmjOXS+s4WGvpMiBJT/I2PInZ6lIs9/hBsNS1hS6BG0DSqmYEDRlCXQrmy50P1oDRKTSegmNbUsA0zDMwRhPJXeCE3vWLPQMvan6X8AgIa1vcR4AkGZkDR4ejJ1UHpsaVI0g2LInpOsNFUud1rhxSV+fzC9Woz2EZkWQuja7/B+jUrgtIMpy9YCW4n4K41YfzRneW5E1KJTe4B2Zq1Q5EHEtj4U3AfEzR5SVY4l7QYQPJdN2as7RKBF0BPZqqH4VgMAMBL8Byxr7y8zCZiDlnOcEKIPmUpgB5Z2ww5RdOiiRiNajUmWda5IG6WbhsyY2fx6m8gLcoJDJFkH219M3We1+cnda93pfycZpIJEL/s/wSYADmOAwAQgdpBAAAAABJRU5ErkJggg==);
 
+  --header-height: 48px;
+  --widget-height: 260px;
+
   background: none;
-  max-height: 200px;
-  --header-height: 40px;
+  max-height: var(--widget-height);
+  font-family: var(--f-primary);
+  font-size: 16px;
+  color: var(--c-content);
+  -webkit-font-smoothing: antialiased;
 }
 :host([hidden]) {
   display: none;
@@ -67,9 +73,13 @@
 
 a {
   text-decoration: none;
+  text-decoration-color: color-mix(in srgb, currentColor, transparent 70%);
+  transition: all 160ms;
 }
 a:hover {
   text-decoration: underline;
+  text-decoration-thickness: 0.05em;
+  text-underline-position: under;
 }
 
 
@@ -85,6 +95,15 @@ a:hover {
   background-size: cover;
 
   background: none;
+
+  &::before {
+    content: 'My realtime playlist';
+    font-size: 1.2em;
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    translate: 0 calc(-50% + 1px);
+  }
 }
 
 :host(.dynaheader) .header {
@@ -130,7 +149,7 @@ a:hover {
 .header .avatar {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid #787;
+  border: 1px solid color-mix(in srgb, var(--c-dark) 50%, transparent);
   margin: 0;
   padding: 0;
   aspect-ratio: 1 / 1;
@@ -139,7 +158,13 @@ a:hover {
   display: inline-block;
 
   display: block;
+  box-sizing: border-box;
+
+  &:hover {
+    border: 1px solid color-mix(in srgb, var(--c-dark) 20%, transparent);
+  }
 }
+
 :host(.dynaheader) .header .avatar {
   top: 26px;
   right: 26px;
@@ -179,6 +204,10 @@ a.username {
   right: 2px;
   width: 2em;
   transition: all var(--transition-time-in) ease var(--transition-delay-in);
+
+  top: 50%;
+  right: 6px;
+  translate: 0 calc(-50% + 1px);
 }
 
 
@@ -200,6 +229,8 @@ a.username {
   display: block;
   transform: translateY(calc(100% + 1px)); /* +1px because Firefox sometimes mis-positions (css rounding error?) TODO investigate */
   transition: transform var(--transition-time-out) ease-in-out var(--transition-delay-out);
+
+  display: none;
 }
 .footer a {
   color: #787;
@@ -221,10 +252,30 @@ a.username {
 }
 
 .playlist__wrap {
-  margin-top: 40px;
-  height: 30ex;
+  margin-top: calc(var(--header-height) + 8px);
+  height: calc(var(--widget-height) - var(--header-height) - 8px);
+  box-sizing: border-box;
   overflow-y: auto;
   scrollbar-width: none;
+  padding: 6px;
+  border-radius: 12px;
+  background-color: color-mix(in srgb, var(--c-dark) 10%, transparent);
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - var(--header-height) - 8px);
+    display: block;
+    border-radius: 12px;
+    box-shadow: 
+      inset 0 -1px 0px color-mix(in srgb, var(--c-light) 22%, transparent),
+      inset 0 1px 1px color-mix(in srgb, var(--c-dark) 24%, transparent),
+      inset 0 1px 4px color-mix(in srgb, var(--c-dark) 16%, transparent);
+    pointer-events: none;
+  }
 }
 
 #playlist {
@@ -233,6 +284,8 @@ a.username {
   padding: 0;
   border: none;
   margin: 0;
+
+  gap: 2px;
 }
 :host(.dynaheader) #playlist {
   margin-top: 0;
@@ -249,6 +302,8 @@ a.username {
 
 #playlist a {
   color: rgba(34, 34, 34, 1);
+
+  color: var(--c-content);
 }
 
 #playlist > div {
@@ -256,8 +311,10 @@ a.username {
   padding: 1px;
   border-bottom: 1px solid #eee;
   background-color: #fff;
-
+  
   background: none;
+  padding: 6px;
+  border-bottom: none;
 }
 #playlist > div:last-child {
   border-bottom: none;
@@ -272,6 +329,9 @@ a.username {
 
   background-color: #fbe9e9;
   padding-right: 4px;
+  
+  background-color: color-mix(in srgb, var(--c-dark) 10%, transparent);
+  transition: background-color 200ms;
 }
 :host(.no-albums) #playlist > div.albuminfo {
   display: none;
@@ -280,23 +340,29 @@ a.username {
 #playlist > div.trackinfo {
   display: grid;
   grid-template-columns: [coverstart] 32px [trackstart] auto [timestart] 5.7em [end];
-  grid-template-rows: [top] 18px [middle] 14px [bottom];
+  grid-template-rows: [top] 24px [middle] 20px [bottom];
   grid-template-areas:
-    'cover track play'
-    'cover artist play';
+  'cover track play'
+  'cover artist play';
   column-gap: 1px;
+  
+  grid-template-columns: [coverstart] 44px [trackstart] auto [timestart] 5em [end];
+  border-radius: 8px;
+  transition: background-color 200ms;
 }
 #playlist > div.albuminfo:hover {
-  background-color: #fadcdc;
+  background-color: color-mix(in srgb, var(--c-dark) 20%, transparent);
 }
 #playlist > div.trackinfo:hover {
-  background-color: #f9f9f9;
+  background-color: color-mix(in srgb, var(--c-light) 8%, transparent);
 }
 #playlist > div.trackinfo.nowplaying {
   background-color: #fff9e5;
+  background-color: color-mix(in srgb, var(--c-action) 8%, transparent);
 }
 #playlist > div.trackinfo.nowplaying:hover {
   background-color: #fcf2cf;
+  background-color: color-mix(in srgb, var(--c-action) 16%, transparent);
 }
 
 #playlist div.trackinfo > *, div.albuminfo > * {
@@ -312,12 +378,20 @@ a.username {
 #playlist div.trackinfo img, div.albuminfo img {
   width: 32px;
   height: 32px;
+  
+  width: 44px;
+  height: 44px;
 }
 #playlist div.trackinfo .cover {
   background-image: var(--icon-track);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  
+  border-radius: 4px;
+  box-shadow: 
+    0 1px 4px color-mix(in srgb, var(--c-dark) 24%, transparent),
+    0 2px 12px color-mix(in srgb, var(--c-dark) 20%, transparent);
 }
 
 #playlist div.trackinfo > .track {
@@ -325,6 +399,10 @@ a.username {
   font-weight: bold; /* bold = 700 */
   line-height: 18px; /* equals height -> center vertically */
   padding-left: 4px;
+  
+  line-height: 24px; /* equals height -> center vertically */
+  font-weight: normal;
+  padding-left: 12px;
 }
 #playlist div.trackinfo > .track.loved::after {
   content: var(--icon-loved);
@@ -334,6 +412,10 @@ a.username {
   grid-area: artist;
   font-size: 85%;
   padding-left: 4px;
+  
+  line-height: 20px; /* equals height -> center vertically */
+  opacity: 0.5;
+  padding-left: 12px;
 }
 
 #playlist div.trackinfo > .play {
@@ -343,6 +425,10 @@ a.username {
   line-height: 32px; /* equals height -> center vertically */
   text-align: right;
   padding-right: 4px;
+  
+  line-height: 44px; /* equals height -> center vertically */
+  opacity: 0.5;
+  color: var(--c-content);
 }
 #playlist div.trackinfo.nowplaying > .play::before { /* Scrobbling now */
   content: var(--icon-scrobbling);

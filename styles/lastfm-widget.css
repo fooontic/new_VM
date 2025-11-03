@@ -1,7 +1,6 @@
-.lasfm-widget {
+.lastfm-widget {
+    position: relative;
     width: 100%;
-    font-family: var(--f-primary);
-    font-size: 16px;
 
     &::before {
         content: '';
@@ -26,4 +25,105 @@
             scale 1000ms 
             linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%);
     }
+}
+
+.lastfm-widget__trigger {
+    &:hover .lastfm-widget__links {
+        opacity: 1;
+    }
+    
+    &:hover li {
+        translate: 0 0;
+    }
+}
+
+.lastfm-widget__links {
+    position: absolute;
+    z-index: -2;
+    top: calc(100% + 20px);
+    display: flex;
+    gap: 8px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    opacity: 0;
+    transition: opacity 200ms;
+    
+    & li:first-child .lastfm-widget__link {
+        width: calc-size(auto, size);
+        interpolate-size: allow-keywords;
+    }
+    
+    & li:first-child:has(~ li .lastfm-widget__link:hover) .lastfm-widget__link {
+        width: 40px;
+    }
+    
+    & li {
+        translate: 0 -130%;
+        transition: translate 240ms;
+    }
+
+    & li:nth-child(2) { transition-duration: 300ms; }
+    & li:nth-child(3) { transition-duration: 700ms; }
+    
+}
+
+.lastfm-widget__link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: var(--size-s);
+    line-height: 40px;
+    color: var(--c-content);
+    text-decoration: none;
+    padding: 0 16px;
+    border-radius: 99em;
+    backdrop-filter: blur(16px);
+    background-color: color-mix(in srgb, var(--c-glass) 18%, transparent);
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) 9%, transparent),
+        inset 0.3px 1px 0px 0px color-mix(in srgb, var(--c-light) 20%, transparent), 
+        inset -0.3px -1px 5px 0px color-mix(in srgb, var(--c-dark) 18%, transparent), 
+        0px 1px 5px 0px color-mix(in srgb, var(--c-dark) 12%, transparent), 
+        0px 6px 16px 0px color-mix(in srgb, var(--c-dark) 10%, transparent);
+    overflow: hidden;
+    transition: all 260ms;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &:hover {
+        width: calc-size(auto, size);
+        interpolate-size: allow-keywords;
+    }
+    
+    &:not(:hover) {
+        transition-delay: 100ms;
+        transition-duration: 160ms;
+        transition-timing-function: ease-in;
+    }
+}
+
+.lastfm-widget__text {
+    text-wrap: nowrap;
+}
+
+.lastfm-widget__icon {
+    width: 24px;
+    height: 24px;
+    flex: 1 0 auto;
+    translate: -8px 0;
 }

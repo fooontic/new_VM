@@ -69,6 +69,23 @@
     opacity: 0;
     translate: 0 12%;
     transition: opacity 200ms, translate 400ms cubic-bezier(0.22, 0.61, 0.36, 1);
+
+    & a {
+        position: relative;
+        color: currentColor;
+        text-decoration-thickness: 0.05em;
+        text-underline-position: under;
+        text-decoration-color: color-mix(in srgb, currentColor, transparent 70%);
+        transition: all 160ms;
+        
+        &:hover {
+            color: var(--c-action);
+        }
+    }
+}
+
+.play-card__caption_small {
+    font-size: smaller;
 }
 
 .play-card__desc {
@@ -291,11 +308,17 @@
 
 
 .play-card_lastfm {
-    width: 300px;
+    z-index: 1;
+    width: 320px;
     left: 82%;
     top: 48%;
     /* rotate: -2deg; */
 
     left: 62%;
     top: 31%;
+
+    & .play-card__caption {
+        margin-top: 5em;
+        text-align: center;
+    }
 }
