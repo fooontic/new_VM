@@ -220,7 +220,7 @@
 
 .play-card_blue-icons {
     width: 360px;
-    left: 13%;
+    left: 10%;
     top: 43%;
     rotate: 3deg;
 
@@ -255,6 +255,8 @@
             padding: 0 4em;
         }
     }
+
+    & img { pointer-events: none; }
 }
 
 
@@ -288,6 +290,8 @@
     box-shadow: 
         0px 1px 5px 0px color-mix(in srgb, var(--c-dark) 12%, transparent), 
         0px 6px 16px 0px color-mix(in srgb, var(--c-dark) 10%, transparent);
+
+    & img { pointer-events: none; }
 }
 
 .play-card_tumbler {
@@ -318,4 +322,11 @@
         margin-top: 5em;
         text-align: center;
     }
+}
+
+.play-card_laptop {
+    width: 800px;
+    left: -0%;
+    top: -0%;
+    max-width: unset;
 }
