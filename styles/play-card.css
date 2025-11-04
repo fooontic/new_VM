@@ -311,11 +311,8 @@
     z-index: 1;
     width: 320px;
     left: 82%;
-    top: 48%;
-    /* rotate: -2deg; */
-
-    left: 62%;
-    top: 31%;
+    top: 46%;
+    rotate: -1deg;
 
     & .play-card__caption {
         margin-top: 5em;
