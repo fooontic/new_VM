@@ -243,7 +243,7 @@
 .play-card_coffee {
     width: 540px;
     left: 19%;
-    top: 62%;
+    top: 60%;
 
     & .play-card__caption {
         position: absolute;
@@ -259,7 +259,7 @@
 
 
 .play-card_ipad {
-    width: 800px;
+    width: 750px;
     left: 48%;
     top: 64%;
     rotate: -2deg;
@@ -272,7 +272,7 @@
 .play-card_3d {
     width: 560px;
     left: 15%;
-    top: 82%;
+    top: 77%;
     rotate: 3deg;
 
     --scaleX: 1.02;
