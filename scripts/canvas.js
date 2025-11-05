@@ -13,6 +13,9 @@ export function initCanvas() {
     let currentX = 0, currentY = 0;
     let offsetX = 0, offsetY = 0;
 
+    const anchorX = 0.50; // -50%
+    const anchorY = 0.40; // -40%
+
     // пределы
     let minX = 0, maxX = 0, minY = 0, maxY = 0;
     const overscroll = 0; 
@@ -37,23 +40,20 @@ export function initCanvas() {
         const cW = Math.max(cssW || 0, canvas.scrollWidth  || 0);
         const cH = Math.max(cssH || 0, canvas.scrollHeight || 0);
 
-        const xMinAbs = Math.min(0, wW - cW) - overscroll;
-        const yMinAbs = Math.min(0, wH - cH) - overscroll;
-        const xMaxAbs = overscroll;
-        const yMaxAbs = overscroll;
+        // Границы в пикселях, согласованные с translate(-50%, -40%)
+        const xMin =  anchorX * cW - wW / 2 - overscroll;          // упёрли левый край в 0
+        const xMax =  wW / 2 - (1 - anchorX) * cW + overscroll;    // упёрли правый край в wW
 
-        const xBaseCenter = (wW - cW) / 2;
-        const yBaseCenter = (wH - cH) * 0.4;
+        const yMin =  anchorY * cH - wH / 2 - overscroll;          // верх в 0
+        const yMax =  wH / 2 - (1 - anchorY) * cH + overscroll;    // низ в wH
 
-        minX = xMinAbs - xBaseCenter;
-        maxX = xMaxAbs - xBaseCenter;
-
-        minY = yMinAbs - yBaseCenter;
-        maxY = yMaxAbs - yBaseCenter;
+        minX = Math.min(xMin, xMax);
+        maxX = Math.max(xMin, xMax);
+        minY = Math.min(yMin, yMax);
+        maxY = Math.max(yMin, yMax);
 
         offsetX = clamp(offsetX, minX, maxX);
         offsetY = clamp(offsetY, minY, maxY);
-
 
         applyTransform();
     }

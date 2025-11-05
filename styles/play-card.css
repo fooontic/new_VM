@@ -329,4 +329,6 @@
     left: -0%;
     top: -0%;
     max-width: unset;
+
+    & img { pointer-events: none; }
 }

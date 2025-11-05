@@ -29,10 +29,11 @@
 }
 
 .playground__deck {
-    max-width: 90%;
+    max-width: 80%;
     font-size: var(--fz);
     line-height: 150%;
     text-align: center;
+    text-wrap: balance;
     margin-inline: auto;
     color: color-mix(in srgb, var(--c-content) 50%, transparent);
 

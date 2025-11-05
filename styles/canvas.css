@@ -15,6 +15,7 @@
     transform: translate(-50%, -40%);
     transition: transform 0.1s ease-out;
     padding: 40px;
+    box-sizing: border-box;
     background-image: 
         radial-gradient(color-mix(in srgb, var(--dots-color) 20%, transparent) 5%, transparent 5%);
     background-size: 30px 30px;
