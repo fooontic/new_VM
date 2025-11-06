@@ -106,9 +106,15 @@
     }
 
     &:hover {
-        width: calc-size(auto, size);
-        interpolate-size: allow-keywords;
+        width: auto;
         background-color: color-mix(in srgb, var(--c-glass) 28%, transparent);
+    }
+
+    @supports (width: calc-size(auto, size)) {
+        &:hover {
+            width: calc-size(auto, size);
+            interpolate-size: allow-keywords;
+        }
     }
     
     &:not(:hover) {
