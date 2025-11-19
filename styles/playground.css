@@ -65,4 +65,8 @@
     .playground__canvas {
         display: none;
     }
+
+    .playground__canvas.playground__canvas_test {
+        display: block;
+    }
 }
