@@ -93,6 +93,9 @@ export function initCanvas() {
 
     function onTouchMove(e) {
         if (!isDragging) return;
+
+        e.preventDefault();
+
         const t = e.touches[0];
         currentX = t.clientX - startX;
         currentY = t.clientY - startY;

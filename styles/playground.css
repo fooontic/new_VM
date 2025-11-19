@@ -3,6 +3,9 @@
     height: 100%;
     overflow: hidden;
     background-color: var(--case-bg-color);
+    
+    overscroll-behavior: contain;
+    touch-action: none;
 }
 
 .playground__intro {

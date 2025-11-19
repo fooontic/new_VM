@@ -5,8 +5,9 @@
 
 .canvas__container {
     --dots-color: color-mix(in srgb, var(--c-light) 20%, var(--c-action));
-    width: 3000px;
-    height: 4000px;
+    min-width: 3000px;
+    width: 200vw;
+    aspect-ratio: 3 / 4;
     position: absolute;
     left: 50%;
     top: 50%;
