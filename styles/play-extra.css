@@ -152,14 +152,16 @@
 
 .play-extra_neoicons {
     position: absolute;
-    width: 17.3%;
-    max-width: 80vw;
+    width: 14%;
+    max-width: 90vw;
+    min-height: 7.5%;
     left: 68%;
     top: 5%;
 
     & img {
         position: absolute;
         width: 300px;
+        max-width: 60vw;
         display: block;
         object-fit: contain;
         border-radius: calc(var(--radius-m) * 2);
@@ -210,25 +212,29 @@
         
         & img:nth-child(3) {
             rotate: -5deg;
-            translate: -50% 3%;
+            translate: -48% 3%;
         }
 
         & .play-extra_neoicons__caption {
             opacity: 1;
-            translate: 0 0;
+            translate: -50% 0;
         }
     }
 }
 
 .play-extra_neoicons__pics {
     width: 100%;
-    aspect-ratio: 35 / 22;
+    aspect-ratio: 35 / 26;
 }
 
 .play-extra_neoicons__caption {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    bottom: 0;
     text-align: center;
     opacity: 0;
-    translate: 0 15%;
+    translate: -50% 20%;
     rotate: 3deg;
     transition: opacity 200ms, rotate 200ms, translate 400ms cubic-bezier(0.22, 0.61, 0.36, 1);
 

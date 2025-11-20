@@ -68,7 +68,7 @@
 .play-card__caption {
     margin-top: 1.2em;
     opacity: 0;
-    translate: 0 12%;
+    translate: 0 17%;
     transition: opacity 200ms, translate 400ms cubic-bezier(0.22, 0.61, 0.36, 1);
 
     & a {
