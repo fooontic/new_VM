@@ -134,3 +134,16 @@
     flex: 1 0 auto;
     translate: -8px 0;
 }
+
+@media ( pointer:coarse ) {
+    .lastfm-widget__trigger {
+        & .lastfm-widget__links {
+            opacity: 1;
+        }
+    
+        & li {
+            translate: 0 0;
+        }
+    }
+}
+
