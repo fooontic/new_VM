@@ -168,10 +168,14 @@ export function initCanvas() {
     requestAnimationFrame(() => {
         requestAnimationFrame(() => {
             measureBounds();
+            canvas.classList.add("ready");
         });
     });
 
     window.addEventListener("load", () => {
-        setTimeout(measureBounds, 50);
+        setTimeout(() => {
+            measureBounds();
+            canvas.classList.add("ready");
+        }, 50);
     });
 }
