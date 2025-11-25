@@ -56,7 +56,7 @@
 
 .playground__canvas {
     width: 100%;
-    height: 100%;
+    height: 100dvh;
     cursor: grab;
     overflow: hidden;
     position: relative;

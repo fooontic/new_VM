@@ -4,7 +4,7 @@ export function initCanvas() {
     const wrapper = document.getElementById("canvasWrapper");
 
     if (!canvas || !wrapper) {
-        console.warn("[initCanvas] #canvas или #canvasWrapper не найдены");
+        console.warn("[initCanvas] #canvas or #canvasWrapper not found");
         return;
     }
 
@@ -15,37 +15,66 @@ export function initCanvas() {
 
     const anchorX = 0.50; // -50%
     const anchorY = 0.40; // -40%
-
-    // пределы
+    
     let minX = 0, maxX = 0, minY = 0, maxY = 0;
+    let wW = 0, wH = 0, cW = 0, cH = 0;
+
     const overscroll = 0; 
 
-    // утилиты
     const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+
     function applyTransform() {
-        canvas.style.transform = `translate(calc(-50% + ${offsetX}px), calc(-40% + ${offsetY}px))`;
+        const baseX = wW / 2 - anchorX * cW;
+        const baseY = wH / 2 - anchorY * cH;
+
+        canvas.style.transform = `translate(${baseX + offsetX}px, ${baseY + offsetY}px)`;
     }
 
-
     function measureBounds() {
+        const viewportW = window.innerWidth  || document.documentElement.clientWidth;
+        const viewportH = window.innerHeight || document.documentElement.clientHeight;
+
         const wRect = wrapper.getBoundingClientRect();
-        const wW = wRect.width;
-        const wH = wRect.height;
+        let rawWW = wRect.width;
+        let rawWH = wRect.height;
 
-        // Важно: берем размеры canvas из computedStyle, чтобы transform не влиял
+        // размеры из CSS
         const cs = getComputedStyle(canvas);
-        const cssW = parseFloat(cs.width);
-        const cssH = parseFloat(cs.height);
+        const cssW = parseFloat(cs.width)  || 0;
+        const cssH = parseFloat(cs.height) || 0;
 
-        const cW = Math.max(cssW || 0, canvas.scrollWidth  || 0);
-        const cH = Math.max(cssH || 0, canvas.scrollHeight || 0);
+        let rawCW = canvas.offsetWidth  || cssW;
+        let rawCH = canvas.offsetHeight || cssH;
 
-        // Границы в пикселях, согласованные с translate(-50%, -40%)
-        const xMin =  anchorX * cW - wW / 2 - overscroll;          // упёрли левый край в 0
-        const xMax =  wW / 2 - (1 - anchorX) * cW + overscroll;    // упёрли правый край в wW
+        // --- SANITY CHECK ДЛЯ SAFARI ---
+        // если wrapper/канвас почему-то больше вьюпорта в разы — считаем, что Safari сошёл с ума
 
-        const yMin =  anchorY * cH - wH / 2 - overscroll;          // верх в 0
-        const yMax =  wH / 2 - (1 - anchorY) * cH + overscroll;    // низ в wH
+        if (!rawWW || rawWW > viewportW * 2) {
+            rawWW = viewportW;
+        }
+        if (!rawWH || rawWH > viewportH * 2) {
+            rawWH = viewportH;
+        }
+
+        // если высота канваса вдруг равна высоте документа / wrapper-а — берём CSS-высоту
+        if (cssH > 0 && (rawCH > cssH * 2 || rawCH > viewportH * 4)) {
+            rawCH = cssH;
+        }
+        if (cssW > 0 && (rawCW > cssW * 2 || rawCW > viewportW * 4)) {
+            rawCW = cssW;
+        }
+
+        wW = rawWW;
+        wH = rawWH;
+        cW = rawCW;
+        cH = rawCH;
+
+        // границы
+        const xMin =  anchorX * cW - wW / 2 - overscroll;
+        const xMax =  wW / 2 - (1 - anchorX) * cW + overscroll;
+
+        const yMin =  anchorY * cH - wH / 2 - overscroll;
+        const yMax =  wH / 2 - (1 - anchorY) * cH + overscroll;
 
         minX = Math.min(xMin, xMax);
         maxX = Math.max(xMin, xMax);
@@ -56,6 +85,9 @@ export function initCanvas() {
         offsetY = clamp(offsetY, minY, maxY);
 
         applyTransform();
+
+        // можешь оставить лог для проверки:
+        console.log("wH, cH, viewportH, cssH:", wH, cH, viewportH, cssH);
     }
 
     function onMouseDown(e) {
@@ -71,7 +103,6 @@ export function initCanvas() {
         currentX = e.clientX - startX;
         currentY = e.clientY - startY;
 
-        // ── CHANGED: клампим
         offsetX = clamp(currentX, minX, maxX);
         offsetY = clamp(currentY, minY, maxY);
 
@@ -100,7 +131,6 @@ export function initCanvas() {
         currentX = t.clientX - startX;
         currentY = t.clientY - startY;
 
-        // ── CHANGED: клампим
         offsetX = clamp(currentX, minX, maxX);
         offsetY = clamp(currentY, minY, maxY);
 
@@ -123,13 +153,25 @@ export function initCanvas() {
     wrapper.addEventListener("touchend", onTouchEnd);
     wrapper.addEventListener("touchcancel", onTouchEnd);
 
-    // ── NEW: первая расчётка и пересчёт на ресайз
+    // ── NEW
     measureBounds();
+    
     const ro = new ResizeObserver(measureBounds);
     ro.observe(wrapper);
     ro.observe(canvas);
 
-    // (опционально) Чуть более отзывчиво на поворот/зум в мобильном браузере:
+    // 
     window.addEventListener('orientationchange', measureBounds);
     window.addEventListener('resize', measureBounds);
+
+    // небольшой rAF-дубль — пусть подхватит изменения layout
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            measureBounds();
+        });
+    });
+
+    window.addEventListener("load", () => {
+        setTimeout(measureBounds, 50);
+    });
 }

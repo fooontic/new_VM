@@ -1,5 +1,18 @@
-.canvas {
+.canvas,
+.canvas * {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
     user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.canvas__item {
+    animation: fadeIn 500ms 200ms both;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 
@@ -10,12 +23,12 @@
     max-width: 4000px;
     aspect-ratio: 3 / 4;
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: 0;
+    top: 0;
     flex-wrap: wrap;
     align-content: flex-start;
-    transform: translate(-50%, -40%);
-    transition: transform 0.1s ease-out;
+    /* transform: translate(-50%, -40%); */
+    /* transition: transform 0.1s ease-out; */
     padding: 40px;
     box-sizing: border-box;
     background-image: 
