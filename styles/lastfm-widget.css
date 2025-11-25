@@ -54,12 +54,18 @@
     transition: opacity 200ms;
     
     & li:first-child .lastfm-widget__link {
-        width: calc-size(auto, size);
-        interpolate-size: allow-keywords;
+        max-width: 300px;
+    }
+    
+    @supports (width: calc-size(auto, size)) {
+        & li:first-child .lastfm-widget__link {
+            width: calc-size(auto, size);
+            interpolate-size: allow-keywords;
+        }
     }
     
     & li:first-child:has(~ li .lastfm-widget__link:hover) .lastfm-widget__link {
-        width: 40px;
+        max-width: 40px;
     }
     
     & li {
@@ -76,7 +82,8 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    width: 40px;
+    /* width: 40px; */
+    max-width: 40px;
     height: 40px;
     box-sizing: border-box;
     font-size: var(--size-s);
@@ -106,8 +113,14 @@
     }
 
     &:hover {
-        width: auto;
+        max-width: 300px;
         background-color: color-mix(in srgb, var(--c-glass) 28%, transparent);
+    }
+
+    &:not(:hover) {
+        transition-delay: 100ms;
+        transition-duration: 160ms;
+        transition-timing-function: ease-in;
     }
 
     @supports (width: calc-size(auto, size)) {
@@ -116,12 +129,7 @@
             interpolate-size: allow-keywords;
         }
     }
-    
-    &:not(:hover) {
-        transition-delay: 100ms;
-        transition-duration: 160ms;
-        transition-timing-function: ease-in;
-    }
+
 }
 
 .lastfm-widget__text {
