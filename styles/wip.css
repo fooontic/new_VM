@@ -15,7 +15,7 @@
         linear-gradient(125deg, 
         transparent 15%, var(--c-action) 15%, var(--c-action) 45%, transparent 45%, transparent 74%, var(--c-action) 74%
         ), */
-        var(--c-action);
+        #E4F400;
     background-size: auto min(40px, 5vw);
     box-shadow: 
         inset 0px 1px 0 0px color-mix(in srgb, var(--c-light) 20%, transparent),
